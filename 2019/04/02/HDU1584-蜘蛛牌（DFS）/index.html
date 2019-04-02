@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>HDU1584 蜘蛛牌（DFS） | 可爱的Yisin呀</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="听说此题做不出深搜就还没到功夫QAQ 说的可能就是我 这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~">
+<meta name="keywords" content="搜索,DFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU1584 蜘蛛牌（DFS）">
+<meta property="og:url" content="http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/index.html">
+<meta property="og:site_name" content="可爱的Yisin呀">
+<meta property="og:description" content="听说此题做不出深搜就还没到功夫QAQ 说的可能就是我 这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-02T11:38:58.532Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HDU1584 蜘蛛牌（DFS）">
+<meta name="twitter:description" content="听说此题做不出深搜就还没到功夫QAQ 说的可能就是我 这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~">
+  
+    <link rel="alternative" href="/atom.xml" title="可爱的Yisin呀" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("CzgPOtlgW4BOkXOCLpICSFIS-gzGzoHsz", "VOcvpXw3KkWllYpSS76f5wnA");</script>
+<script src="/js/Counter.js"></script>
+  
+</head></html>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1554121724&amp;di=da0399f8d0f9ff33d37ba6f0d24767a5&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F08%2F20171208151350_udRYe.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Yisin</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">可爱的Yisin呀</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CF/" style="font-size: 10px;">CF</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/图论/" style="font-size: 15px;">图论</a> <a href="/tags/心情/" style="font-size: 10px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/新年/" style="font-size: 10px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/自闭/" style="font-size: 15px;">自闭</a> <a href="/tags/难过的夜晚/" style="font-size: 10px;">难过的夜晚</a> <a href="/tags/题解/" style="font-size: 15px;">题解</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://zoomdong.top/">WDNB</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://viewsetting.github.io/">viewsetting</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.ziwenblog.xyz/">超级可爱的紫闻</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Yisin</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1554121724&amp;di=da0399f8d0f9ff33d37ba6f0d24767a5&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F08%2F20171208151350_udRYe.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Yisin</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">可爱的Yisin呀</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-HDU1584-蜘蛛牌（DFS）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/02/HDU1584-蜘蛛牌（DFS）/" class="article-date">
+  	<time datetime="2019-04-02T10:54:57.000Z" itemprop="datePublished">2019-04-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HDU1584 蜘蛛牌（DFS）
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/DFS/">DFS</a>
+	</div>
+
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2019/04/02/HDU1584-蜘蛛牌（DFS）/" class="leancloud_visitors post-title-link" style="font-size: 12px" data-flag-title="HDU1584 蜘蛛牌（DFS）">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>听说此题做不出深搜就还没到功夫QAQ</p>
+<p>说的可能就是我</p>
+<p>这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~<br><a id="more"></a></p>
+<h1 id="HDU1584-蜘蛛牌（DFS）"><a href="#HDU1584-蜘蛛牌（DFS）" class="headerlink" title="HDU1584 蜘蛛牌（DFS）"></a>HDU1584 蜘蛛牌（DFS）</h1><p><a href="https://vjudge.net/contest/292152#problem/C" target="_blank">题目链接&lt;–点这里</a></p>
+<p>蜘蛛牌是windows xp操作系统自带的一款纸牌游戏，游戏规则是这样的：只能将牌拖到比她大一的牌上面（A最小，K最大），如果拖动的牌上有按顺序排好的牌时，那么这些牌也跟着一起移动，游戏的目的是将所有的牌按同一花色从小到大排好，为了简单起见，我们的游戏只有同一花色的10张牌，从A到10，且随机的在一行上展开，编号从1到10，把第i号上的牌移到第j号牌上，移动距离为abs(i-j)，现在你要做的是求出完成游戏的最小移动距离。 </p>
+<p><b><font color="yellow">Input</font></b></p>
+<p>第一个输入数据是T，表示数据的组数。 </p>
+<p>每组数据有一行，10个输入数据，数据的范围是[1,10]，分别表示A到10，我们保证每组数据都是合法的。</p>
+<p><b><font color="yellow">Output</font></b></p>
+<p>对应每组数据输出最小移动距离。</p>
+<p><b><font color="yellow">Sample Input</font></b></p>
+<p>1</p>
+<p>1 2 3 4 5 6 7 8 9 10</p>
+<p><b><font color="yellow">Sample Output</font></b></p>
+<p>9</p>
+<p><a href="https://blog.csdn.net/longyuan20102011/article/details/7246994" target="_blank">我觉得这位巨巨讲的很好，可戳</a></p>
+<p>如果我来讲的话，这道题的关键点和所有DFS一样，就是有个递归过程。那么我们脑动模拟蜘蛛纸牌过程，可以发现这个递归关键点在于要不要先把第i张牌移动到比它大1的数字下方。</p>
+<p>需要注意的是，比它大1的数字不一定在一开始的位置，所以需要用一个vis[]数组标记每张牌是否被移动。因为每张牌只能放在比它大1的牌下方，所以如果某张牌被标记为移动，只需要从这张牌往后遍历第一张没有被移动的牌，就是一开始那张牌现在所在的位置。</p>
+<p>整个dfs过程我们需要两个变量，num代表已经排好的牌数量，sum代表当前距离和。优化剪枝的地方在于，如果sum&gt;ans(之前搜索到的最小完整sum值)，可以直接return，因为这一定不是最优解。边界条件就是当num==9时，说明我们移动了9张牌，整个蜘蛛纸牌已经有序，需要return，把sum值赋给ans（因为没有被剪枝，所以此时sum一定 &lt; ans,为当前搜索到的最优解。</p>
+<p>代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">15</span>],vis[<span class="number">15</span>],ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(sum&gt;ans)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(num==<span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ans=sum;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!vis[i])</span><br><span class="line">            &#123;</span><br><span class="line">                vis[i]=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=<span class="number">10</span>;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!vis[j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        dfs(num+<span class="number">1</span>,sum+<span class="built_in">abs</span>(a[i]-a[j]));</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                vis[i]=<span class="number">0</span>;  <span class="comment">//回溯，dfs的关键</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            a[x]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=<span class="number">1000000</span>;</span><br><span class="line">        dfs(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/01/密码学之数论基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">密码学之数论基础</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="HDU1584-蜘蛛牌（DFS）" data-title="HDU1584 蜘蛛牌（DFS）" data-url="http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/" data-images="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1554121724&amp;di=da0399f8d0f9ff33d37ba6f0d24767a5&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F08%2F20171208151350_udRYe.png" data-content="HDU1584 蜘蛛牌（DFS）">
+    <div class="ds-share-inline">
+      <ul class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2019 Yisin
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
