@@ -3,24 +3,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>今日心情 | 可爱的Yisin呀</title>
+  <title>HDU1426 Sudoku Killer（DFS） | 可爱的Yisin呀</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很多事情过去了就是过去了，我以为自己是一个很旷达的人，其实并没有。我会想起以前我们都很舒服的笑容，也会想起还没有完成的美好愿望。那个被时光逐渐湮没的无忧无虑的，我，和你。 莎翁说：“凡是过往，皆为序章。”我不是一个恋旧的人，但最近总会莫名其妙想起去年的那段时光，仿佛是大学至今最欢乐的日子了。所以很嘲讽是么？当回忆过往的时候，你以为的你以为就是你以为么？我以为最刻骨铭心的人，也许只是过客罢了；而我以">
-<meta name="keywords" content="心情">
+  <meta name="description" content="和数独的不解之缘:D 初三的时候有段时间特别喜欢解数独，大概玩了一个星期就已经能把书里最难的数独题在十分钟以内破解。我觉得数独纯粹是一个推理+解方程的游戏，把所有能明确推理出来的空填上，剩下的只要设一个x就可以解出来，并没有什么奇技淫巧。 回到这道题，我还是有点害怕DFS。不怕不怕，多写写Yisin你一定可以的！吼= =">
+<meta name="keywords" content="搜索,DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今日心情">
-<meta property="og:url" content="http://yisin.top/2019/03/26/今日心情/index.html">
+<meta property="og:title" content="HDU1426 Sudoku Killer（DFS）">
+<meta property="og:url" content="http://yisin.top/2019/04/02/HDU1426-Sudoku-Killer（DFS）/index.html">
 <meta property="og:site_name" content="可爱的Yisin呀">
-<meta property="og:description" content="很多事情过去了就是过去了，我以为自己是一个很旷达的人，其实并没有。我会想起以前我们都很舒服的笑容，也会想起还没有完成的美好愿望。那个被时光逐渐湮没的无忧无虑的，我，和你。 莎翁说：“凡是过往，皆为序章。”我不是一个恋旧的人，但最近总会莫名其妙想起去年的那段时光，仿佛是大学至今最欢乐的日子了。所以很嘲讽是么？当回忆过往的时候，你以为的你以为就是你以为么？我以为最刻骨铭心的人，也许只是过客罢了；而我以">
+<meta property="og:description" content="和数独的不解之缘:D 初三的时候有段时间特别喜欢解数独，大概玩了一个星期就已经能把书里最难的数独题在十分钟以内破解。我觉得数独纯粹是一个推理+解方程的游戏，把所有能明确推理出来的空填上，剩下的只要设一个x就可以解出来，并没有什么奇技淫巧。 回到这道题，我还是有点害怕DFS。不怕不怕，多写写Yisin你一定可以的！吼= =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T15:06:17.041Z">
+<meta property="og:updated_time" content="2019-04-02T13:20:03.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="今日心情">
-<meta name="twitter:description" content="很多事情过去了就是过去了，我以为自己是一个很旷达的人，其实并没有。我会想起以前我们都很舒服的笑容，也会想起还没有完成的美好愿望。那个被时光逐渐湮没的无忧无虑的，我，和你。 莎翁说：“凡是过往，皆为序章。”我不是一个恋旧的人，但最近总会莫名其妙想起去年的那段时光，仿佛是大学至今最欢乐的日子了。所以很嘲讽是么？当回忆过往的时候，你以为的你以为就是你以为么？我以为最刻骨铭心的人，也许只是过客罢了；而我以">
+<meta name="twitter:title" content="HDU1426 Sudoku Killer（DFS）">
+<meta name="twitter:description" content="和数独的不解之缘:D 初三的时候有段时间特别喜欢解数独，大概玩了一个星期就已经能把书里最难的数独题在十分钟以内破解。我觉得数独纯粹是一个推理+解方程的游戏，把所有能明确推理出来的空填上，剩下的只要设一个x就可以解出来，并没有什么奇技淫巧。 回到这道题，我还是有点害怕DFS。不怕不怕，多写写Yisin你一定可以的！吼= =">
   
     <link rel="alternative" href="/atom.xml" title="可爱的Yisin呀" type="application/atom+xml">
   
@@ -178,11 +178,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-今日心情" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HDU1426-Sudoku-Killer（DFS）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/26/今日心情/" class="article-date">
-  	<time datetime="2019-03-26T14:43:09.000Z" itemprop="datePublished">2019-03-26</time>
+      <a href="/2019/04/02/HDU1426-Sudoku-Killer（DFS）/" class="article-date">
+  	<time datetime="2019-04-02T12:25:50.000Z" itemprop="datePublished">2019-04-02</time>
 </a>
     </div>
   
@@ -195,7 +195,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      今日心情
+      HDU1426 Sudoku Killer（DFS）
       
     </h1>
   
@@ -205,19 +205,19 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心情/">心情</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
+	<a class="article-category-link" href="/categories/DFS/">DFS</a>
 	</div>
 
 
         
           
 <div class="counter-tag counter">
-    <span id="/2019/03/26/今日心情/" class="leancloud_visitors post-title-link" style="font-size: 12px" data-flag-title="今日心情">
+    <span id="/2019/04/02/HDU1426-Sudoku-Killer（DFS）/" class="leancloud_visitors post-title-link" style="font-size: 12px" data-flag-title="HDU1426 Sudoku Killer（DFS）">
          &nbsp;
         view
     </span>
@@ -230,13 +230,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>很多事情过去了就是过去了，我以为自己是一个很旷达的人，其实并没有。我会想起以前我们都很舒服的笑容，也会想起还没有完成的美好愿望。那个被时光逐渐湮没的无忧无虑的，我，和你。</p>
-<p>莎翁说：“凡是过往，皆为序章。”我不是一个恋旧的人，但最近总会莫名其妙想起去年的那段时光，仿佛是大学至今最欢乐的日子了。所以很嘲讽是么？当回忆过往的时候，你以为的你以为就是你以为么？我以为最刻骨铭心的人，也许只是过客罢了；而我以为的过客，却成了去年一年最怀念的时光的主角。</p>
-<p>我做错了很多。没有好好读书，没有好好打竞赛，挥霍着一天又一天，但这些的后果不过是用剩余的时光填补。但是如果是此情可待成追忆呢？又要拿什么来后悔？</p>
-<p>也许一生只爱一个人确实很美好。我不驳斥一些人内心埋下的这种愿望。但是我觉得，只要在一段感情里尽力了，不互相辜负，那就够了。至于结果，何必在意，在意无用。</p>
-<p>所以我只能后悔。但是倘若再来一遍，我还是只能后悔。人生的路千万条，我先踏上了那条指引我来到他面前的路，不撞南墙心不死。其余的，留给时间体会。也许那个时候和你一起的月光很美，但是，我不能对你说，今晚的月色真美。因为彼时，他是我全部的月光。</p>
-<p>时至今日，本不该期待些什么，存些小女生的心思反倒是一种阻碍了。好好学习，好好训练，剩下的时间就可以去看世界。如果不能再见，那就祝你早安，午安，晚安。</p>
-<p>祝你幸福。</p>
+        <p>和数独的不解之缘:D</p>
+<p>初三的时候有段时间特别喜欢解数独，大概玩了一个星期就已经能把书里最难的数独题在十分钟以内破解。我觉得数独纯粹是一个推理+解方程的游戏，把所有能明确推理出来的空填上，剩下的只要设一个x就可以解出来，并没有什么奇技淫巧。</p>
+<p>回到这道题，我还是有点害怕DFS。不怕不怕，多写写Yisin你一定可以的！吼= =<br><a id="more"></a></p>
+<h1 id="HDU1426-Sudoku-Killer（DFS）"><a href="#HDU1426-Sudoku-Killer（DFS）" class="headerlink" title="HDU1426 Sudoku Killer（DFS）"></a>HDU1426 Sudoku Killer（DFS）</h1><p><a href="https://vjudge.net/contest/292152#problem/D" target="_blank">题目链接&lt;–点这里</a></p>
+<p>自从2006年3月10日至11日的首届数独世界锦标赛以后，数独这项游戏越来越受到人们的喜爱和重视。 </p>
+<p>据说，在2008北京奥运会上，会将数独列为一个单独的项目进行比赛，冠军将有可能获得的一份巨大的奖品———HDU免费七日游外加lcy亲笔签名以及同hdu acm team合影留念的机会。 </p>
+<p>所以全球人民前仆后继，为了奖品日夜训练茶饭不思。当然也包括初学者linle，不过他太笨了又没有多少耐性，只能做做最最基本的数独题，不过他还是想得到那些奖品，你能帮帮他吗？你只要把答案告诉他就可以，不用教他是怎么做的。 </p>
+<p>数独游戏的规则是这样的：在一个9x9的方格中，你需要把数字1-9填写到空格当中，并且使方格的每一行和每一列中都包含1-9这九个数字。同时还要保证，空格中用粗线划分成9个3x3的方格也同时包含1-9这九个数字。比如有这样一个题，大家可以仔细观察一下，在这里面每行、每列，以及每个3x3的方格都包含1-9这九个数字。 </p>
+<p><b><font color="yellow">Input</font></b></p>
+<p>本题包含多组测试，每组之间由一个空行隔开。每组测试会给你一个 9*9 的矩阵，同一行相邻的两个元素用一个空格分开。其中1-9代表该位置的已经填好的数，问号（?）表示需要你填的数。 </p>
+<p><b><font color="yellow">Output</font></b></p>
+<p>对于每组测试，请输出它的解，同一行相邻的两个数用一个空格分开。两组解之间要一个空行。</p>
+<p>对于每组测试数据保证它有且只有一个解。 </p>
+<p><b><font color="yellow">Sample Input</font></b></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">7 1 2 ? 6 ? 3 5 8</span><br><span class="line">? 6 5 2 ? 7 1 ? 4</span><br><span class="line">? ? 8 5 1 3 6 7 2</span><br><span class="line">9 2 4 ? 5 6 ? 3 7</span><br><span class="line">5 ? 6 ? ? ? 2 4 1</span><br><span class="line">1 ? 3 7 2 ? 9 ? 5</span><br><span class="line">? ? 1 9 7 5 4 8 6</span><br><span class="line">6 ? 7 8 3 ? 5 1 9</span><br><span class="line">8 5 9 ? 4 ? ? 2 3</span><br></pre></td></tr></table></figure>
+<p><b><font color="yellow">Sample Output</font></b></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">7 1 2 4 6 9 3 5 8</span><br><span class="line">3 6 5 2 8 7 1 9 4</span><br><span class="line">4 9 8 5 1 3 6 7 2</span><br><span class="line">9 2 4 1 5 6 8 3 7</span><br><span class="line">5 7 6 3 9 8 2 4 1</span><br><span class="line">1 8 3 7 2 4 9 6 5</span><br><span class="line">2 3 1 9 7 5 4 8 6</span><br><span class="line">6 4 7 8 3 2 5 1 9</span><br><span class="line">8 5 9 6 4 1 7 2 3</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -246,18 +256,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/03/28/蓝桥杯总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/14/我再也不想生病了/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          蓝桥杯总结
+          我再也不想生病了
         
       </div>
     </a>
   
   
-    <a href="/2019/03/18/天梯赛选拔Day1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">天梯赛选拔Day1</div>
+    <a href="/2019/04/02/HDU1584-蜘蛛牌（DFS）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU1584 蜘蛛牌（DFS）</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -267,7 +277,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="今日心情" data-title="今日心情" data-url="http://yisin.top/2019/03/26/今日心情/" data-images="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1554121724&amp;di=da0399f8d0f9ff33d37ba6f0d24767a5&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F08%2F20171208151350_udRYe.png" data-content="今日心情">
+<div class="ds-share share" data-thread-key="HDU1426-Sudoku-Killer（DFS）" data-title="HDU1426 Sudoku Killer（DFS）" data-url="http://yisin.top/2019/04/02/HDU1426-Sudoku-Killer（DFS）/" data-images="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1554121724&amp;di=da0399f8d0f9ff33d37ba6f0d24767a5&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F08%2F20171208151350_udRYe.png" data-content="HDU1426 Sudoku Killer（DFS）">
     <div class="ds-share-inline">
       <ul class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
