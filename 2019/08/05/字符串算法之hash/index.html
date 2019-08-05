@@ -17,12 +17,13 @@
 <meta property="og:description" content="Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[1-r]">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[l-r]=hash[r]-seed^{r-l+1}*hash[l-1]">
 <meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[1]=a_{1}">
 <meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[2]=a_{1}*base+a_{2}">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[3]=(a_{1}*seed+a_{2})*seed+a_{3}=a_{1}*seed^{2}+a_{2}*seed+a_{3}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?\inline&space;hash[3]=(a_{1}*seed+a_{2})*seed+a_{3}=a_{1}*seed^{2}+a_{2}*seed+a_{3}">
 <meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[4]=[(a_{1}*seed+a_{2})*seed+a_{3}]*seed+a_{4}=a_{1}*seed^{3}+a_{2}*seed^{2}+a_{3}*seed+a_{4}">
 <meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed+a_{4}">
-<meta property="og:updated_time" content="2019-08-05T03:05:04.839Z">
+<meta property="og:updated_time" content="2019-08-05T07:45:35.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串算法之hash">
 <meta name="twitter:description" content="Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。">
@@ -194,20 +195,20 @@
 <p>正确的姿势是把长度记录下来 int la=strlen(a); for(int j=0;j&lt;la;j++) </p>
 <h3 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h3><p>在进行字符串hash的时候，我们经常会用到某一段的hash值</p>
 <p>这时候怎么办呢？</p>
-<p>假设我们已经得到了<a href="https://www.codecogs.com/eqnedit.php?latex=hash[1-r]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[1-r]" title="hash[1-r]"></a></p>
-<p>那么 $hash[l-r]=hash[r]-seed^{r-l+1}*hash[l-1]$（seed表示进制）</p>
+<p>假设我们已经得到了<img src="https://latex.codecogs.com/gif.latex?hash[1-r]" title="hash[1-r]"></p>
+<p>那么 <img src="https://latex.codecogs.com/gif.latex?hash[l-r]=hash[r]-seed^{r-l+1}*hash[l-1]" title="hash[l-r]=hash[r]-seed^{r-l+1}*hash[l-1]">（seed表示进制）</p>
 <p>举个例子</p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[1]=a_{1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[1]=a_{1}" title="hash[1]=a_{1}"></a></p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[2]=a_{1}*base&plus;a_{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[2]=a_{1}*base&plus;a_{2}" title="hash[2]=a_{1}*base+a_{2}"></a></p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[3]=(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}=a_{1}*seed^{2}&plus;a_{2}*seed&plus;a_{3}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[3]=(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}=a_{1}*seed^{2}&plus;a_{2}*seed&plus;a_{3}" title="hash[3]=(a_{1}*seed+a_{2})*seed+a_{3}=a_{1}*seed^{2}+a_{2}*seed+a_{3}"></a></p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[4]=[(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}]*seed&plus;a_{4}=a_{1}*seed^{3}&plus;a_{2}*seed^{2}&plus;a_{3}*seed&plus;a_{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[4]=[(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}]*seed&plus;a_{4}=a_{1}*seed^{3}&plus;a_{2}*seed^{2}&plus;a_{3}*seed&plus;a_{4}" title="hash[4]=[(a_{1}*seed+a_{2})*seed+a_{3}]*seed+a_{4}=a_{1}*seed^{3}+a_{2}*seed^{2}+a_{3}*seed+a_{4}"></a></p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed&plus;a_{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed&plus;a_{4}" title="hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed+a_{4}"></a></p>
+<p><img src="https://latex.codecogs.com/gif.latex?hash[1]=a_{1}" title="hash[1]=a_{1}"></p>
+<p><img src="https://latex.codecogs.com/gif.latex?hash[2]=a_{1}*base&plus;a_{2}" title="hash[2]=a_{1}*base+a_{2}"></p>
+<p><img src="https://latex.codecogs.com/gif.latex?\inline&space;hash[3]=(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}=a_{1}*seed^{2}&plus;a_{2}*seed&plus;a_{3}" title="hash[3]=(a_{1}*seed+a_{2})*seed+a_{3}=a_{1}*seed^{2}+a_{2}*seed+a_{3}"></p>
+<p><img src="https://latex.codecogs.com/gif.latex?hash[4]=[(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}]*seed&plus;a_{4}=a_{1}*seed^{3}&plus;a_{2}*seed^{2}&plus;a_{3}*seed&plus;a_{4}" title="hash[4]=[(a_{1}*seed+a_{2})*seed+a_{3}]*seed+a_{4}=a_{1}*seed^{3}+a_{2}*seed^{2}+a_{3}*seed+a_{4}"></p>
+<p><img src="https://latex.codecogs.com/gif.latex?hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed&plus;a_{4}" title="hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed+a_{4}"></p>
 <p>很明显可以看出这个公式是对的</p>
 <p>最好自己手写一下，这样才能体会到其中的奥妙</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月05日 11:05</p>
+        <p>最后更新： 2019年08月05日 15:45</p>
         <p>原始链接： <a class="post-url" href="/2019/08/05/字符串算法之hash/" title="字符串算法之hash">http://yisin.top/2019/08/05/字符串算法之hash/</a></p>
         <footer>
             <a href="http://yisin.top">
