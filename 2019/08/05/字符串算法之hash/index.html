@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>字符串算法之hash | 可爱的Yisin呀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Yisin,Yisin's Blog">
+  
+  <meta name="description" content="Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。">
+<meta name="keywords" content="字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串算法之hash">
+<meta property="og:url" content="http://yisin.top/2019/08/05/字符串算法之hash/index.html">
+<meta property="og:site_name" content="可爱的Yisin呀">
+<meta property="og:description" content="Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[1-r]">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[l-r]=hash[r]-seed^{r-l+1}*hash[l-1]">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[1]=a_{1}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[2]=a_{1}*base+a_{2}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[3]=(a_{1}*seed+a_{2})*seed+a_{3}=a_{1}*seed^{2}+a_{2}*seed+a_{3}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[4]=[(a_{1}*seed+a_{2})*seed+a_{3}]*seed+a_{4}=a_{1}*seed^{3}+a_{2}*seed^{2}+a_{3}*seed+a_{4}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed+a_{4}">
+<meta property="og:updated_time" content="2019-08-05T02:57:58.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符串算法之hash">
+<meta name="twitter:description" content="Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。">
+<meta name="twitter:image" content="https://latex.codecogs.com/gif.latex?hash[1-r]">
+  
+  
+    <link rel="icon" href="/1.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Yisin&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/1.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Yisin&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        可爱的Yisin呀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Yisin" target="_blank" href="https://yisin.top/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-字符串算法之hash" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+  
+    <h1 class="post-title" itemprop="name">
+      字符串算法之hash
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/算法/">算法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-08-05
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+            
+        </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+            
+            <p>Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。<br><a id="more"></a></p>
+<h1 id="字符串算法之hash"><a href="#字符串算法之hash" class="headerlink" title="字符串算法之hash"></a>字符串算法之hash</h1><p>我还是觉得hash好神奇。<s>这到底是什么鬼东西啊喂！</s></p>
+<p><s>翻译过来就是搞砸,乱搞的意思嘛</s></p>
+<p>hash算法广泛应用于计算机的各类领域，像什么md5，文件效验，<s>磁力链接 等等</s>都会用到hash算法</p>
+<p>在ACM中，hash算法主要应用于搜索状态判重，字符串的比较等</p>
+<p>hash的主要思想是：对于一个空间、时间需求较大的状态，在一定错误率的基础上进行状态压缩，降低其时间、空间的需求量</p>
+<p>对于字符串hash来说，就是把一串字符串压缩成一个hash值，方便我们进行数据的处理</p>
+<p>接下来我们重点讲一下字符串hash的实现方法</p>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>在ACM中，使用最广泛的算法叫做：BKDR Hash</p>
+<p>它的核心思想是：</p>
+<p><blockquote><br>对于一个字符串，选取恰当的进制，将一个字符串看做是一个大整数</blockquote></p>
+<p>（众人：***,你这是要让我们写高精啊）</p>
+<p>然后再对一个随便什么数取模就可以啦<br><br>当然这个“恰当的进制”和“随便什么数”是有讲究的</p>
+<p>根据砖家的研究：</p>
+<p>进制一般选择大于字符串中的最大的字符且不含模数的质因子的数</p>
+<p>比如说，如果你是对一串小写字母做字符串hash，那么131这个进制就是不错的选择</p>
+<p>而“随便什么数”有三种方法</p>
+<ol>
+<li><p>选择两个模数，判断的时候只有两个hash值都相同才算相同</p>
+</li>
+<li><p>选择一个大质数，像11111111111111111111111或者212370440130137957</p>
+</li>
+<li><p>用unsigned long long 自然溢出</p>
+</li>
+</ol>
+<p>注意：尽量不要只用一个较小的质数，根据<a href="https://baike.baidu.com/item/%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA/2715290?fr=aladdin" target="_blank">生日悖论</a>，很容易被卡</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li><p>unsigned long long 自然溢出</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lli long long int </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100001</span>;</span><br><span class="line"><span class="keyword">int</span> seed=<span class="number">27</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c=<span class="string">'+'</span>;<span class="keyword">int</span> x=<span class="number">0</span>;<span class="keyword">bool</span> flag=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)&#123;c=getchar();<span class="keyword">if</span>(c==<span class="string">'-'</span>)flag=<span class="number">1</span>;&#125;</span><br><span class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)x=x*<span class="number">10</span>+c<span class="number">-48</span>,c=getchar();</span><br><span class="line">    n=flag==<span class="number">1</span>?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">char</span> a[MAXN];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span> ,<span class="keyword">bool</span>&gt;happen;</span><br><span class="line"><span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> base=<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,a);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="built_in">strlen</span>(a);j++)</span><br><span class="line">            base=base*seed+(a[j]);</span><br><span class="line">        <span class="keyword">if</span>(!happen[base])</span><br><span class="line">            happen[base]=<span class="number">1</span>,tot++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,tot);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双hash</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">2e7</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod1=<span class="number">19260817</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod2=<span class="number">19660813</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> seed=<span class="number">233</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> seed2=<span class="number">133</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">1501</span>];</span><br><span class="line">    <span class="keyword">int</span> h1,h2,l;</span><br><span class="line">&#125;a[<span class="number">10001</span>];</span><br><span class="line"><span class="function">ull <span class="title">gethash1</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">int</span> l)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ull ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=l;i++)</span><br><span class="line">        ans=(ans*seed+(ull)s[i])%mod1;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ull <span class="title">gethash2</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">int</span> l)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ull ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=l;i++)</span><br><span class="line">        ans=(ans*seed2+(ull)s[i])%mod2;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> hash1[MAXN],hash2[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,a[i].s+<span class="number">1</span>);</span><br><span class="line">        a[i].l=<span class="built_in">strlen</span>(a[i].s+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i].h1=gethash1(a[i].s,a[i].l)%mod1;</span><br><span class="line">        a[i].h2=gethash2(a[i].s,a[i].l)%mod2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">if</span>(hash1[a[i].h1]==<span class="number">0</span>||hash2[a[i].h2]==<span class="number">0</span>)</span><br><span class="line">            hash1[a[i].h1]=<span class="number">1</span>,hash2[a[i].h2]=<span class="number">1</span>,ans++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>大质数hash</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lli long long int </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100001</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> mod=<span class="number">212370440130137957</span>;</span><br><span class="line"><span class="keyword">int</span> seed=<span class="number">27</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c=<span class="string">'+'</span>;<span class="keyword">int</span> x=<span class="number">0</span>;<span class="keyword">bool</span> flag=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)&#123;c=getchar();<span class="keyword">if</span>(c==<span class="string">'-'</span>)flag=<span class="number">1</span>;&#125;</span><br><span class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)x=x*<span class="number">10</span>+c<span class="number">-48</span>,c=getchar();</span><br><span class="line">    n=flag==<span class="number">1</span>?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">char</span> a[MAXN];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">bool</span>&gt;happen;</span><br><span class="line"><span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> base=<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,a);</span><br><span class="line">        <span class="keyword">int</span> la=<span class="built_in">strlen</span>(a);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;la;j++)</span><br><span class="line">            base=(base*seed+(a[j]) )%mod;</span><br><span class="line">        <span class="keyword">if</span>(!happen[base])</span><br><span class="line">            happen[base]=<span class="number">1</span>,tot++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,tot);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>特别注意：在循环的时候，不要写： for(int j=0;j&lt;strlen(a);j++) ！！！！因为strlen的复杂度是O(n2)，数据稍微一大你就会被卡T</p>
+<p>正确的姿势是把长度记录下来 int la=strlen(a); for(int j=0;j&lt;la;j++) </p>
+<h3 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h3><p>在进行字符串hash的时候，我们经常会用到某一段的hash值</p>
+<p>这时候怎么办呢？</p>
+<p>假设我们已经得到了<a href="https://www.codecogs.com/eqnedit.php?latex=hash[1-r]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[1-r]" title="hash[1-r]"></a></p>
+<p>那么 <a href="https://www.codecogs.com/eqnedit.php?latex=hash[l-r]=hash[r]-seed^{r-l&plus;1}*hash[l-1]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[l-r]=hash[r]-seed^{r-l&plus;1}*hash[l-1]" title="hash[l-r]=hash[r]-seed^{r-l+1}*hash[l-1]"></a>（seed表示进制）</p>
+<p>举个例子</p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[1]=a_{1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[1]=a_{1}" title="hash[1]=a_{1}"></a></p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[2]=a_{1}*base&plus;a_{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[2]=a_{1}*base&plus;a_{2}" title="hash[2]=a_{1}*base+a_{2}"></a></p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[3]=(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}=a_{1}*seed^{2}&plus;a_{2}*seed&plus;a_{3}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[3]=(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}=a_{1}*seed^{2}&plus;a_{2}*seed&plus;a_{3}" title="hash[3]=(a_{1}*seed+a_{2})*seed+a_{3}=a_{1}*seed^{2}+a_{2}*seed+a_{3}"></a></p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[4]=[(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}]*seed&plus;a_{4}=a_{1}*seed^{3}&plus;a_{2}*seed^{2}&plus;a_{3}*seed&plus;a_{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[4]=[(a_{1}*seed&plus;a_{2})*seed&plus;a_{3}]*seed&plus;a_{4}=a_{1}*seed^{3}&plus;a_{2}*seed^{2}&plus;a_{3}*seed&plus;a_{4}" title="hash[4]=[(a_{1}*seed+a_{2})*seed+a_{3}]*seed+a_{4}=a_{1}*seed^{3}+a_{2}*seed^{2}+a_{3}*seed+a_{4}"></a></p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed&plus;a_{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed&plus;a_{4}" title="hash[3-4]=hash[4]-base^{2}*hash[2]=a_{3}*seed+a_{4}"></a></p>
+<p>很明显可以看出这个公式是对的</p>
+<p>最好自己手写一下，这样才能体会到其中的奥妙</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年08月05日 10:57</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/05/字符串算法之hash/" title="字符串算法之hash">http://yisin.top/2019/08/05/字符串算法之hash/</a></p>
+        <footer>
+            <a href="http://yisin.top">
+                <img src="/images/1.png" alt="Yisin">
+                Yisin
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+            
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2019/08/05/字符串算法之hash/&title=《字符串算法之hash》 — 可爱的Yisin呀&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564981085649&di=b16d2d0e0d5aecc0dfb8cdb21a5277d7&imgtype=0&src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fl%2Fpublic%2Fp2504501925.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2019/08/05/字符串算法之hash/&title=《字符串算法之hash》 — 可爱的Yisin呀&source=Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2019/08/05/字符串算法之hash/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《字符串算法之hash》 — 可爱的Yisin呀&url=http://yisin.top/2019/08/05/字符串算法之hash/&via=http://yisin.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2019/08/05/字符串算法之hash/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2019/08/05/字符串算法之hash/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/字符串/" class="color4">字符串</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串算法之hash"><span class="post-toc-text">字符串算法之hash</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现方法"><span class="post-toc-text">实现方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思想"><span class="post-toc-text">思想</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用技巧"><span class="post-toc-text">常用技巧</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/08/05/2019·8·杂杂杂篇/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          2019·8·杂杂杂篇
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/05/30/戊戌变法剧本/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">戊戌变法剧本</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: 'CuteYisin',
+                repo: 'comments.github.io',
+                oauth: {
+                    client_id: 'a43b3583886a5b52cdfb',
+                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div> -->
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Yisin<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yisin.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 15px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 10px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 10px;">生活记录</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 15px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 10px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 10px;">生活记录</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
