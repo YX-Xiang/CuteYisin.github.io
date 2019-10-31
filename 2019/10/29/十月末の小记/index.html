@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>HDU1584 蜘蛛牌（DFS） | 可爱的Yisin呀</title>
+  <title>十月末の小记 | 可爱的Yisin呀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Yisin,Yisin's Blog">
   
-  <meta name="description" content="听说此题做不出深搜就还没到功夫QAQ 说的可能就是我 这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~">
-<meta name="keywords" content="搜索,DFS">
+  <meta name="description" content="十月十月十月， 好像又陷入了悲伤的漩涡。 觉得自己一事无成， 觉得自己资质平庸。">
+<meta name="keywords" content="随笔,心情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU1584 蜘蛛牌（DFS）">
-<meta property="og:url" content="http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/index.html">
+<meta property="og:title" content="十月末の小记">
+<meta property="og:url" content="http://yisin.top/2019/10/29/十月末の小记/index.html">
 <meta property="og:site_name" content="可爱的Yisin呀">
-<meta property="og:description" content="听说此题做不出深搜就还没到功夫QAQ 说的可能就是我 这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~">
+<meta property="og:description" content="十月十月十月， 好像又陷入了悲伤的漩涡。 觉得自己一事无成， 觉得自己资质平庸。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-02T11:38:58.532Z">
+<meta property="og:updated_time" content="2019-10-31T12:25:47.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU1584 蜘蛛牌（DFS）">
-<meta name="twitter:description" content="听说此题做不出深搜就还没到功夫QAQ 说的可能就是我 这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~">
+<meta name="twitter:title" content="十月末の小记">
+<meta name="twitter:description" content="十月十月十月， 好像又陷入了悲伤的漩涡。 觉得自己一事无成， 觉得自己资质平庸。">
   
   
     <link rel="icon" href="/1.ico">
@@ -110,14 +110,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-HDU1584-蜘蛛牌（DFS）" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-十月末の小记" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         <header class="article-header">
             
   
     <h1 class="post-title" itemprop="name">
-      HDU1584 蜘蛛牌（DFS）
+      十月末の小记
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -125,12 +125,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/DFS/">DFS</a>
+                      <a href="/categories/随笔/">随笔</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-04-02
+          <i class="fa fa-calendar"></i>  2019-10-29
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -146,31 +146,31 @@
         <div class="article-entry post-content" itemprop="articleBody">
             
             
-            <p>听说此题做不出深搜就还没到功夫QAQ</p>
-<p>说的可能就是我</p>
-<p>这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~<br><a id="more"></a></p>
-<h1 id="HDU1584-蜘蛛牌（DFS）"><a href="#HDU1584-蜘蛛牌（DFS）" class="headerlink" title="HDU1584 蜘蛛牌（DFS）"></a>HDU1584 蜘蛛牌（DFS）</h1><p><a href="https://vjudge.net/contest/292152#problem/C" target="_blank">题目链接&lt;–点这里</a></p>
-<p>蜘蛛牌是windows xp操作系统自带的一款纸牌游戏，游戏规则是这样的：只能将牌拖到比她大一的牌上面（A最小，K最大），如果拖动的牌上有按顺序排好的牌时，那么这些牌也跟着一起移动，游戏的目的是将所有的牌按同一花色从小到大排好，为了简单起见，我们的游戏只有同一花色的10张牌，从A到10，且随机的在一行上展开，编号从1到10，把第i号上的牌移到第j号牌上，移动距离为abs(i-j)，现在你要做的是求出完成游戏的最小移动距离。 </p>
-<p><b><font color="yellow">Input</font></b></p>
-<p>第一个输入数据是T，表示数据的组数。 </p>
-<p>每组数据有一行，10个输入数据，数据的范围是[1,10]，分别表示A到10，我们保证每组数据都是合法的。</p>
-<p><b><font color="yellow">Output</font></b></p>
-<p>对应每组数据输出最小移动距离。</p>
-<p><b><font color="yellow">Sample Input</font></b></p>
-<p>1</p>
-<p>1 2 3 4 5 6 7 8 9 10</p>
-<p><b><font color="yellow">Sample Output</font></b></p>
-<p>9</p>
-<p><a href="https://blog.csdn.net/longyuan20102011/article/details/7246994" target="_blank">我觉得这位巨巨讲的很好，可戳</a></p>
-<p>如果我来讲的话，这道题的关键点和所有DFS一样，就是有个递归过程。那么我们脑动模拟蜘蛛纸牌过程，可以发现这个递归关键点在于要不要先把第i张牌移动到比它大1的数字下方。</p>
-<p>需要注意的是，比它大1的数字不一定在一开始的位置，所以需要用一个vis[]数组标记每张牌是否被移动。因为每张牌只能放在比它大1的牌下方，所以如果某张牌被标记为移动，只需要从这张牌往后遍历第一张没有被移动的牌，就是一开始那张牌现在所在的位置。</p>
-<p>整个dfs过程我们需要两个变量，num代表已经排好的牌数量，sum代表当前距离和。优化剪枝的地方在于，如果sum&gt;ans(之前搜索到的最小完整sum值)，可以直接return，因为这一定不是最优解。边界条件就是当num==9时，说明我们移动了9张牌，整个蜘蛛纸牌已经有序，需要return，把sum值赋给ans（因为没有被剪枝，所以此时sum一定 &lt; ans,为当前搜索到的最优解。</p>
-<p>代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">15</span>],vis[<span class="number">15</span>],ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(sum&gt;ans)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(num==<span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ans=sum;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!vis[i])</span><br><span class="line">            &#123;</span><br><span class="line">                vis[i]=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=<span class="number">10</span>;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!vis[j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        dfs(num+<span class="number">1</span>,sum+<span class="built_in">abs</span>(a[i]-a[j]));</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                vis[i]=<span class="number">0</span>;  <span class="comment">//回溯，dfs的关键</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            a[x]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=<span class="number">1000000</span>;</span><br><span class="line">        dfs(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>十月十月十月，</p>
+<p>好像又陷入了悲伤的漩涡。</p>
+<p>觉得自己一事无成，</p>
+<p>觉得自己资质平庸。<br><a id="more"></a></p>
+<h1 id="十月末の小记"><a href="#十月末の小记" class="headerlink" title="十月末の小记"></a>十月末の小记</h1><p>十月恍恍惚惚就过到了月末。</p>
+<p>感觉这个月好像经历了很多事情，但是却一事无成？</p>
+<p>月初国庆选拔赛拿到了去往上海的资格，实现了今年赛区“三过家门而不入”。然后五号一次团建，虽然饭菜并没有非常如意，但是和兔子的第一次集体旅行还值得一提。</p>
+<p>然后迷迷糊糊就去了厦门。这个学期的第一站。然后，赛后本来还很激动地以为自己首战就可以拿铜，结果，铁首。厦门的悲伤不太想赘述，因为回忆起来真的十分难受。不敢置信，我们队如今实力居然还有可能打铁。这意味着我一直对我们的巨大憧憬幻灭了。</p>
+<p>中间经历了一场大学物理波动与光学考试。其实这门课我已经算学得很认真了。平心而论，我认为跟大一学线性代数的状态差不多，一开始听得比较认真，只是后面跟的比较吃力，久而久之就有些气馁了。</p>
+<p>但是感觉和周围人的状态相比还是偏努力一点？也许是方法的问题，学习这种理论性学科我向来缺乏经验。但是也不甘心直接撇弃。</p>
+<p>考完以后的感觉就是重点其实全部都扫到了，但是由于复习的战线拉得过长，前面一些东西的印象不深，考试的时候脑子一片空白。但是其实考完感觉还可以，毕竟大部分都是那种一眼题，出错的概率还是很小的。</p>
+<p>等待成绩的日子既紧张又轻松，既烦躁又开心。但是最后看到成绩的那刻人都不好了。不算差，比之前进步很多，然而比预期低了一些。问了一下室友的成绩，结果发现她的成绩也比我高了一截……（泪崩</p>
+<p>于是最后，得知全年级九十分以上占比百分之六十。相对无言，唯有泪千行。</p>
+<p>这件事的悲伤持续了很久，以至于我开始对自己产生怀疑。那年高考我对于计算机的选择是不是就是个错误。虽然高中一开始确实文理比较平均，没有特别出色的，然后为了追求成绩的最大化，田忌赛马式地选了历史政治技术，虽然也是真心喜欢这些科目，毕竟还是存了那些心思的。</p>
+<p>感性，文艺，这些词一直伴随着我。就算在文科班，我的语文水平也是顶尖的，甚至最后我都是朝年级前几的语文成绩发起进攻的。我喜欢语文，我喜欢历史，我本可以岁月静好地留在省内读文学，但是，“今日长缨在手，何时缚住苍龙”？就是因为对黑客的向往，我背井离乡了，断了自己对文科的路。</p>
+<p>时至今日，我仍然记得历史老师对我寄予的殷切希望。那是我高三最后的光。他说，相信我可以冲一冲浙大；每次考完试我总会缠着他帮我分析试卷；甚至最后，我和他聊理想，谈历史。我当初，也是很真心地喜欢这个老师，并且想成为和他一样的光。但是，最后我背叛了自己跟他说的梦想。</p>
+<p>假如当初再努力一些……其实高考不选择文科不单纯是因为对计算机爱的深沉。只是文科的分数普遍高，而去一个不怎么知名的学校我也不愿意。放弃文科，第一痛苦的是另一个梦想，第二痛苦的就是现在被数理折磨。</p>
+<p>然后，这个月的月底，进了河北省人文知识竞赛。参加这个比赛纯粹当放松，加分奖项我从来不缺，就当是为了当初被放弃的另一个梦想奋斗几周。高三的诗词大会，真真是最美好的时光。</p>
+<p>又扯了好多呀。唉，悲伤的十月……</p>
+<p>但是还是要继续加油鸭！</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年04月02日 19:38</p>
-        <p>原始链接： <a class="post-url" href="/2019/04/02/HDU1584-蜘蛛牌（DFS）/" title="HDU1584 蜘蛛牌（DFS）">http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/</a></p>
+        <p>最后更新： 2019年10月31日 20:25</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/29/十月末の小记/" title="十月末の小记">http://yisin.top/2019/10/29/十月末の小记/</a></p>
         <footer>
             <a href="http://yisin.top">
                 <img src="/images/1.png" alt="Yisin">
@@ -227,7 +227,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/&title=《HDU1584 蜘蛛牌（DFS）》 — 可爱的Yisin呀&pic=http://yisin.topimages/1.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2019/10/29/十月末の小记/&title=《十月末の小记》 — 可爱的Yisin呀&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572364336415&di=c1b0b25f0520e93641d955e5d151577a&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_ls%2F0%2F10496065526_240180%2F0.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -237,24 +237,25 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/&title=《HDU1584 蜘蛛牌（DFS）》 — 可爱的Yisin呀&source=听说此题做不出深搜就还没到功夫QAQ
-说的可能就是我
-这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2019/10/29/十月末の小记/&title=《十月末の小记》 — 可爱的Yisin呀&source=十月十月十月，
+好像又陷入了悲伤的漩涡。
+觉得自己一事无成，
+觉得自己资质平庸。" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2019/10/29/十月末の小记/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HDU1584 蜘蛛牌（DFS）》 — 可爱的Yisin呀&url=http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/&via=http://yisin.top" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《十月末の小记》 — 可爱的Yisin呀&url=http://yisin.top/2019/10/29/十月末の小记/&via=http://yisin.top" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2019/10/29/十月末の小记/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -264,7 +265,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2019/04/02/HDU1584-蜘蛛牌（DFS）/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2019/10/29/十月末の小记/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -276,9 +277,9 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/搜索/" class="color3">搜索</a>
+    <a href="/tags/随笔/" class="color3">随笔</a>
       
-    <a href="/tags/DFS/" class="color4">DFS</a>
+    <a href="/tags/心情/" class="color3">心情</a>
       
   </li>
 
@@ -291,26 +292,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HDU1584-蜘蛛牌（DFS）"><span class="post-toc-text">HDU1584 蜘蛛牌（DFS）</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#十月末の小记"><span class="post-toc-text">十月末の小记</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/04/02/HDU1426-Sudoku-Killer（DFS）/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          HDU1426 Sudoku Killer（DFS）
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/04/01/密码学之数论基础/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">密码学之数论基础</span>
+    <a href="/2019/10/27/CCPC厦门站团队赛后总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">CCPC厦门站团队赛后总结</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
