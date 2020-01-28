@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>博弈论初探 | 可爱的Yisin呀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Yisin,Yisin's Blog">
+  
+  <meta name="description" content="我们把动物利用大自然移动的瘾魂， 在决策人期待的空间里， 形成三维均衡的学术理论， 称为博弈论。 社会学领域非常经典的博弈论问题就是囚徒困境， 在算法竞赛领域的博弈论往往归纳为ICG（公平组合游戏），典型表现为取石子游戏。">
+<meta name="keywords" content="博弈论,石子游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论初探">
+<meta property="og:url" content="http://yisin.top/2020/01/27/博弈论初探/index.html">
+<meta property="og:site_name" content="可爱的Yisin呀">
+<meta property="og:description" content="我们把动物利用大自然移动的瘾魂， 在决策人期待的空间里， 形成三维均衡的学术理论， 称为博弈论。 社会学领域非常经典的博弈论问题就是囚徒困境， 在算法竞赛领域的博弈论往往归纳为ICG（公平组合游戏），典型表现为取石子游戏。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1417592/201811/1417592-20181111182450620-2006846872.png">
+<meta property="og:updated_time" content="2020-01-28T06:20:07.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博弈论初探">
+<meta name="twitter:description" content="我们把动物利用大自然移动的瘾魂， 在决策人期待的空间里， 形成三维均衡的学术理论， 称为博弈论。 社会学领域非常经典的博弈论问题就是囚徒困境， 在算法竞赛领域的博弈论往往归纳为ICG（公平组合游戏），典型表现为取石子游戏。">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1417592/201811/1417592-20181111182450620-2006846872.png">
+  
+  
+    <link rel="icon" href="/1.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Yisin&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/1.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Yisin&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        可爱的Yisin呀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Yisin" target="_blank" href="https://yisin.top/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-博弈论初探" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+  
+    <h1 class="post-title" itemprop="name">
+      博弈论初探
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/算法/">算法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-01-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+            
+        </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+            
+            <p>我们把动物利用大自然移动的瘾魂，</p>
+<p>在决策人期待的空间里，</p>
+<p>形成三维均衡的学术理论，</p>
+<p>称为博弈论。</p>
+<p>社会学领域非常经典的博弈论问题就是囚徒困境，</p>
+<p>在算法竞赛领域的博弈论往往归纳为ICG（公平组合游戏），典型表现为取石子游戏。<br><a id="more"></a></p>
+<h1 id="博弈论初探"><a href="#博弈论初探" class="headerlink" title="博弈论初探"></a>博弈论初探</h1><h2 id="博弈论入门之巴什博弈"><a href="#博弈论入门之巴什博弈" class="headerlink" title="博弈论入门之巴什博弈"></a>博弈论入门之巴什博弈</h2><ul>
+<li>有n个物品放置一堆，两个人轮流从中取物， 规定每次至少取1个，最多取m个，最后取光者得胜。</li>
+</ul>
+<p>我们从最简单的情景开始分析</p>
+<p>当石子有1~m个时，毫无疑问，先手必胜</p>
+<p>当石子有m+1个时，先手无论拿几个，后手都可以拿干净，先手必败</p>
+<p>当石子有m+2~2m时，先手可以拿走几个，剩下m+1个，先手必胜</p>
+<p>我们不难发现，面临m+1个石子的人一定失败。</p>
+<p>这样的话两个人的最优策略一定是通过拿走石子，使得对方拿石子时还有m+1个</p>
+<ul>
+<li>设当前的石子数为n=k∗(m+1)+r</li>
+</ul>
+<p>先手会首先拿走r个，接下来假设后手拿走x个，先手会拿走m+1−x个，这样博弈下去后手最终一定失败</p>
+<ul>
+<li>设当前的石子数为n=k∗(m+1)</li>
+</ul>
+<p>假设先手拿x个，后手一定会拿m+1−x个，这样下去先手一定失败</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><ol>
+<li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1846" target="_blank" rel="noopener">hdu1846</a></li>
+</ol>
+<ul>
+<li>巴什博弈裸题</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n,m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">        <span class="keyword">if</span>(n%(m+<span class="number">1</span>) !=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"first\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"second\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4764" target="_blank" rel="noopener">hdu4764</a></li>
+</ol>
+<ul>
+<li><p>唐和江是好朋友。为了决定晚餐谁请客，他们在玩游戏。具体来说，唐和江将轮流在白板上写数字(整数)。唐先写，然后写江，再写唐，等等……此外，假设前一轮中所写的数字是X，下一个玩游戏的人应该写一个数字Y，使1 &lt;= Y - X &lt;= k。第一个写数字不小于N的人将输掉游戏。注意，在第一轮中，Tang只能在[1,k]范围内(包括1和k)写下一个数字。你可以认为唐和江的表现将一直处于最佳状态，因为他们都是非常聪明的学生。</p>
+</li>
+<li><p>我们可以把模型抽象一下,有n−1个石子，一个人最多拿k个，问最后谁赢</p>
+</li>
+<li><p>——》裸的巴什博奕</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)&amp;&amp;(n||m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((n<span class="number">-1</span>)%(m+<span class="number">1</span>) !=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"Tang\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Jiang\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1847" target="_blank" rel="noopener">hdu1847</a></li>
+</ol>
+<ul>
+<li>巴什博弈的一个小变形。第一个必胜态不难推理出来是3。那么再仔细想，其实只需要用到1和2，等同于k值为2的巴什博弈。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">3</span>!=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"Kiki\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Cici\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="博弈论入门之斐波那契博弈"><a href="#博弈论入门之斐波那契博弈" class="headerlink" title="博弈论入门之斐波那契博弈"></a>博弈论入门之斐波那契博弈</h2><ul>
+<li>有一堆石子，两个顶尖聪明的人玩游戏，先取者可以取走任意多个，但不能全取完，以后每人取的石子数不能超过上个人的两倍</li>
+</ul>
+<p>斐波那契博弈有一个非常重要的性质：</p>
+<p>先手必败，当且仅当石子数为<font color="red">斐波那契数</font></p>
+<p>是不是很神奇？？</p>
+<p>证明如下：</p>
+<ul>
+<li><p>n=2 先手输</p>
+</li>
+<li><p>n=3 先手输</p>
+</li>
+<li><p>假设n&lt;=k，且牌数为Fibonacci数时，都是先手必输。</p>
+</li>
+<li><p>那么n=k+1时，因为F(k+1)=F(k)+F(k−1)，即要取完F(k+1)张牌，可以分成两步：先取完F(k−1)张牌，再取完F(k)张牌。对于F(k−1)张牌，先取A者输！意味着对于F(k)张牌，A还得必须先取，所以A输。</p>
+</li>
+</ul>
+<p>那么，牌数为非Fibonacci数时，先取牌者有没有必胜的策略呢？</p>
+<p>引用一个定理：当一个数不是Fibonacci数时，这个数必然等于若干个Fibonacci数之和，并且这些Fibonacci数在Fibonacci数列中都不相邻。</p>
+<ul>
+<li><p>对于非Fibonacci数a，a=f(n)+…+f(i)+f(j) ，其中f(j)是式中最小的Fibonacci数，f(i)是第二小的Fibonacci数。</p>
+</li>
+<li><p>由于f(i)、f(j)在Fibonacci数列中并不是相邻的，所以f(i)&gt;2∗f(j)。所以先取者可以直接取走f(j)张牌，后取者无法一次取走f(i)张牌，f(i)是Fibonacci数，由前面的分析，后取者必败。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;mp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a=<span class="number">1</span>,b=<span class="number">2</span>;</span><br><span class="line">    mp[a]=<span class="number">1</span>,mp[b]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll c=a+b;</span><br><span class="line">        a=b;</span><br><span class="line">        b=c;</span><br><span class="line">        mp[a]=<span class="number">1</span>,mp[b]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(mp[n]) <span class="built_in">printf</span>(<span class="string">"Second win\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"First win\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="博弈论入门之nim游戏"><a href="#博弈论入门之nim游戏" class="headerlink" title="博弈论入门之nim游戏"></a>博弈论入门之nim游戏</h2><ul>
+<li>有n堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)，没法拿的人失败。问谁会胜利？</li>
+</ul>
+<p>面对新的博弈问题，我们按照套路，从简单的情况入手</p>
+<p>当只有1堆石子的时候，先手可以全部拿走。先手必胜</p>
+<p>当有2堆石子且石子个数相同的时候，先手不论拿多少，后手都可以从另一堆中拿同样多的石子，先手必败，否则先手必胜</p>
+<p>当有三堆的时候呢？</p>
+<p>当有n堆的时候呢？</p>
+<p>这样玩下去确实是很繁琐，不过前辈们总结出了一条非常厉害的规律！</p>
+<font color="red">当n堆石子的数量异或和等于0时，先手必胜，否则先手必败</font>
+
+<p>证明如下：</p>
+<ul>
+<li><p>设^表示异或运算</p>
+</li>
+<li><p>nim游戏的必败态我们是知道的，就是当前n堆石子的数量都为零</p>
+</li>
+<li><p>设a[i]表示第i堆石子的数量，那么当前局面就是</p>
+</li>
+<li><p>0 ^ 0 ^ 0 ^ … ^ 0 = 0</p>
+</li>
+<li><p>对于先手来说，如果当前局面是</p>
+</li>
+<li><p>a<sub>1</sub> ^ a<sub>2</sub> ^ a<sub>3</sub> ^ … ^ a<sub>n</sub> = k</p>
+</li>
+<li><p>那么一定存在某个a<sub>i</sub>，它的二进制表示在最高位k上一定是1</p>
+</li>
+<li><p>我们将a<sub>i</sub> ^ k，这样就变成了</p>
+</li>
+<li><p>a<sub>1</sub> ^ a<sub>2</sub> ^ a<sub>3</sub> ^ … ^ a<sub>n</sub> ^ k = 0</p>
+</li>
+<li><p>此时先手必胜</p>
+</li>
+<li><p>对于先手来说，如果当前局面是</p>
+</li>
+<li><p>a<sub>1</sub> ^ a<sub>2</sub> ^ a<sub>3</sub> ^ … ^ a<sub>n</sub> = 0</p>
+</li>
+<li><p>那么我们不可能将某一个a<sub>i</sub>异或一个数字后使得</p>
+</li>
+<li><p>a<sub>1</sub> ^ a<sub>2</sub> ^ a<sub>3</sub> ^ … ^ a<sub>n</sub> = 0</p>
+</li>
+<li><p>此时先手必败</p>
+</li>
+</ul>
+<h3 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h3><ol>
+<li><a href="https://www.luogu.com.cn/problem/P2197" target="_blank" rel="noopener">洛谷P2197</a></li>
+</ol>
+<ul>
+<li>Nim裸题</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n,m=<span class="number">0</span>;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">            m^=x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(m) <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><a href="http://poj.org/problem?id=1704" target="_blank" rel="noopener">POJ1704</a></li>
+</ol>
+<ul>
+<li><p>好巧妙的Nim啊！！！</p>
+</li>
+<li><p>首先我们想到一种必败态：即仅有两个点且相邻</p>
+</li>
+<li><p>那么我们可以把所有的点排序之后两两捆绑，这样如果A移动第一个，那么B可以把第二个移动相同的步数</p>
+</li>
+<li><p>这样我们就解决了顺序的问题</p>
+</li>
+<li><p>那么接下来就考虑如何解决博弈问题</p>
+</li>
+<li><p>这里有个神仙操作</p>
+</li>
+<li><p>把两点直接的距离看做一堆石子，然后请Nim来就可以啦</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n,m;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)  <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        sort(a,a+n);</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            m=a[<span class="number">0</span>]<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i+=<span class="number">2</span>)</span><br><span class="line">                m^=(a[i]-a[i<span class="number">-1</span>]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            m=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i+=<span class="number">2</span>)</span><br><span class="line">                m^=(a[i]-a[i<span class="number">-1</span>]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(m) <span class="built_in">printf</span>(<span class="string">"Georgia will win\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Bob will win\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h3><ul>
+<li><p>Moore’s Nim</p>
+<blockquote>
+<ul>
+<li>n堆石子，每次从不超过k堆中取任意多个石子，最后不能取的人失败。</li>
+</ul>
+<p>这是一个nim游戏的变形，结论：<font color="pink">把n堆石子的石子数用二进制表示，统计每个二进制位上1的个数，若每一位上1的个数mod(k+1)全部为0，则必败，否则必胜。</font></p>
+<p>证明：</p>
+<ul>
+<li>全为0的局面一定是必败态。</li>
+<li>任何一个P状态，经过一次操作以后必然会到达N状态：在某一次移动中，至少有一堆被改变，也就是说至少有一个二进制位被改变。由于最多只能改变k堆石子，所以对于任何一个二进制位，1的个数至多改变k。而由于原先的总数为k+1的整数倍，所以改变之后必然不可能是k+1的整数倍。故在P状态下一次操作的结果必然是N状态。</li>
+<li>任何N状态，总有一种操作使其变化成P状态。从高位到低位考虑所有的二进制位。假设用了某种方法，改变了m堆，使i为之前的所有位都回归到k+1的整数倍。现在要证明总有一种方法让第i位也恢复到k+1的整数倍。</li>
+<li>有一个比较显然的性质，对于那些已经改变的m堆，当前位可以自由选择1或0.</li>
+<li>设除去已经更改的m堆，剩下堆i位上1的总和为sum</li>
+<li>分类讨论：</li>
+<li><ol>
+<li>sum&lt;=k-m,此时可以将这些堆上的1全部拿掉，然后让那m堆得i位全部置成0.</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>sum&gt;k-m 此时我们在之前改变的m堆中选择k+1-sum堆，将他们的第i位设置成1。剩下的设置成0.由于k+1-sum&lt;k+1-(k-m)&lt;m+1,也就是说k+1-sum&lt;=m，故这是可以达到的；</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>anti-nim反nim游戏</p>
+<blockquote>
+<ul>
+<li>正常的nim游戏是取走最后一颗的人获胜，而反nim游戏是取走最后一颗的人输。</li>
+</ul>
+<p>一个状态为必胜态，当且仅当：</p>
+<ol>
+<li>所有堆的石子个数为1，且NIM_sum(xor和)=0</li>
+<li>至少有一堆的石子个数大于1，且 NIM_sum(xor和)≠0</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/1417592/201811/1417592-20181111182450620-2006846872.png"></p>
+<ul>
+<li><p>新Nim游戏</p>
+<blockquote>
+<ul>
+<li>在第一个回合中，第一个游戏者可以直接拿走若干个整堆的火柴。可以一堆都不拿，但不可以全部拿走。第二回合也一样，第二个游戏者也有这样一次机会。从第三个回合（又轮到第一个游戏者）开始，规则和Nim游戏一样。</li>
+<li>如果你先拿，怎样才能保证获胜？如果可以获胜的话，还要让第一回合拿的火柴总数尽量小。</li>
+</ul>
+<p>为使后手必败，先手留给后手的必然是若干线性无关的数字，否则后手可以留下一个异或和为零的非空子集使得先手必败，故问题转化为拿走和最小的数字使得留下的数线性无关，即留下和最大的线性基，这样拿走的数量显然最少，找到和最大的线性基只需贪心的把数字从大到小加入到基中即可（证明需用到拟阵）</p>
+<p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3105" target="_blank" rel="noopener">bzoj3105</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line">&gt; <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line">&gt; <span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line">&gt; <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="keyword">int</span> num[<span class="number">1005</span>],d[<span class="number">1005</span>];</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt;    <span class="keyword">return</span> a&gt;b;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="function"><span class="keyword">int</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt;    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">31</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">&gt;     &#123;</span><br><span class="line">&gt;         <span class="keyword">if</span>(k&amp;(<span class="number">1</span>&lt;&lt;i))</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;             <span class="keyword">if</span>(!d[i])</span><br><span class="line">&gt;             &#123;</span><br><span class="line">&gt;                 d[i]=k;</span><br><span class="line">&gt;                 <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;             <span class="keyword">else</span></span><br><span class="line">&gt;                 k^=d[i];</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt;     <span class="keyword">int</span> k;ll m=<span class="number">0</span>;</span><br><span class="line">&gt;     <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">&gt;     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)</span><br><span class="line">&gt;         <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</span><br><span class="line">&gt;     sort(num,num+k,cmp);</span><br><span class="line">&gt;     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++)</span><br><span class="line">&gt;     &#123;</span><br><span class="line">&gt;         <span class="keyword">if</span>(!Insert(num[i]))</span><br><span class="line">&gt;             m+=num[i];</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="built_in">printf</span>(<span class="string">"%lld"</span>,m);</span><br><span class="line">&gt;     <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>Nim游戏求方案总数</p>
+<blockquote>
+<ul>
+<li>给定一个Nim状态，求该状态能够到达获胜状态的方案总数。</li>
+<li>若该状态为P状态，则Nim和为零，肯定方案总数为0</li>
+<li><p>若Nim和不为零，则表明该状态处于N状态，由于该位置是N位置，所以Nim和不为零，我们要求有多少总方案，改变其状态，使Nim和为零。</p>
+</li>
+<li><p>Nim和的求法为x1,x2,x3…xn的异或和，考察第一堆石头，设a=x1,b=(x2+x3+…+xn)，那么:</p>
+</li>
+<li>Nim=a^b—————————1</li>
+<li>假设改变a即第一堆石头的数目之后，新的Nim和为0,即:</li>
+<li>Nim’=a’ ^ b=0———————2</li>
+<li>由于改变了石头的数目，必有:</li>
+<li>a’&lt;a———————————3</li>
+<li>由方程1,2可以得到b=Nim ^ a = Nim’ ^ a’,又Nim’=0，故:</li>
+<li>Nim ^ a= a’————————4</li>
+<li>将得到的方程4带入方程3，得到关系式：</li>
+<li>Nim ^ a &lt; a————————5</li>
+<li>也就是说，对于每一堆石头来说，只要满足关系式5，则就一定可以通过将这一堆的石头的数目改变从而使新的Nim和为0，也就是从N位置转移到P位置。统计共有多少堆石头满足关系式5，就有多少种转移的方案啦。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><a href="http://poj.org/problem?id=2975" target="_blank" rel="noopener">poj2975</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> num[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)</span><br><span class="line">    &#123;</span><br><span class="line">        ll m=<span class="number">0</span>;<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</span><br><span class="line">            m^=num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((num[i]^m)&lt;num[i])</span><br><span class="line">                ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/4010/C" target="_blank" rel="noopener">2020 CCPC-Wannafly Winter Camp Day2 C</a></p>
+<ul>
+<li><p>如何将上一题O(n^2)降为O(nlogn)？当然是位运算啦！</p>
+</li>
+<li><p>因为 y &gt; x ^ y，所以y的最高位一定高于或等于x的最高位，否则x的最高位不变，不满足</p>
+</li>
+<li><p>考虑异或和的最高的为 1 的二进制位，所有这一位是 1 的 y 显然都满足条件，这一位是 0 的都不满足条件。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">65</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    ll a,b=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">        b^=a;</span><br><span class="line">        ll x=a;</span><br><span class="line">        <span class="keyword">int</span> k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;x;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt[j]+=x%<span class="number">2</span>;</span><br><span class="line">            x/=<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ll sum=b;</span><br><span class="line">        <span class="keyword">while</span>(sum)</span><br><span class="line">        &#123;</span><br><span class="line">            sum/=<span class="number">2</span>;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,cnt[k<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="博弈论入门之威佐夫博弈"><a href="#博弈论入门之威佐夫博弈" class="headerlink" title="博弈论入门之威佐夫博弈"></a>博弈论入门之威佐夫博弈</h2><ul>
+<li><p>有两堆石子，两个顶尖聪明的人在玩游戏，每次每个人可以从任意一堆石子中取任意多的石子或者从两堆石子中取同样多的石子，不能取得人输，分析谁会获得胜利</p>
+</li>
+<li><p>定义先手必输的局势为奇异局势，前几个奇异局势为 (0,0),(1,2),(3,5),(4,7),(6,10)…</p>
+</li>
+<li><p>假设(x,y)为第k个奇异局势</p>
+</li>
+<li><p>性质：</p>
+</li>
+<li><ol>
+<li>x为前1…k个奇异局势中没有出现过的最小正整数，y=x+k</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>任何一个自热数都包含在一个且仅有一个奇异局势中</li>
+</ol>
+</li>
+<li><p>证明有需要可以自寻，窝已经绕晕了QWQ</p>
+</li>
+<li><p>人们通过对上述性质的探索，同时结合Betty定理，给出了威佐夫博弈的重要结论</p>
+</li>
+<li><p>假设两堆石子为(x,y)（其中x&lt;y）</p>
+</li>
+<li><p>那么先手必败，当且仅当</p>
+</li>
+<li><font color="pink">(y−x)∗(√<span style="text-decoration:overline;">5</span>+1)/2=x </font>
+</li>
+<li><p>其中的(√<span style="text-decoration:overline;">5</span>+1)/2实际就是1.618…，黄金分割数！</p>
+</li>
+</ul>
+<p><a href="http://poj.org/problem?id=1067" target="_blank" rel="noopener">POJ1067</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a&gt;b) swap(a,b);</span><br><span class="line">        <span class="keyword">int</span> c=(b-a)*(<span class="built_in">sqrt</span>(<span class="number">5.0</span>)+<span class="number">1.0</span>)/<span class="number">2.0</span>;</span><br><span class="line">        <span class="keyword">if</span>(c==a) <span class="built_in">puts</span>(<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.51nod.com/Challenge/Problem.html#problemId=1185" target="_blank" rel="noopener">51NOD 1185 威佐夫游戏 V2</a></p>
+<ul>
+<li><p>这题本来也是裸题，但是！</p>
+</li>
+<li><p>可恶的出题人卡精度红红火火恍恍惚惚</p>
+</li>
+<li><p>然后我尝试了一下python3交</p>
+</li>
+<li><p>python真香~</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line">t=int(input().strip())</span><br><span class="line"><span class="keyword">for</span> case <span class="keyword">in</span> range(t):</span><br><span class="line">    a, b = map(int, input().strip().split())</span><br><span class="line">    p=Decimal((Decimal(<span class="number">5</span>).sqrt()+<span class="number">1</span>)/<span class="number">2</span>)</span><br><span class="line">    dif=abs(a-b)</span><br><span class="line">    a=min(a,b)</span><br><span class="line">    <span class="keyword">if</span> a==int(p*dif):</span><br><span class="line">        print(<span class="string">"B"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"A"</span>)</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年01月28日 14:20</p>
+        <p>原始链接： <a class="post-url" href="/2020/01/27/博弈论初探/" title="博弈论初探">http://yisin.top/2020/01/27/博弈论初探/</a></p>
+        <footer>
+            <a href="http://yisin.top">
+                <img src="/images/1.png" alt="Yisin">
+                Yisin
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+            
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2020/01/27/博弈论初探/&title=《博弈论初探》 — 可爱的Yisin呀&pic=http://5b0988e595225.cdn.sohucs.com/images/20180916/1bae3dcfc4774070bf001f21fb9d81a5.gif" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2020/01/27/博弈论初探/&title=《博弈论初探》 — 可爱的Yisin呀&source=我们把动物利用大自然移动的瘾魂，
+在决策人期待的空间里，
+形成三维均衡的学术理论，
+称为博弈论。
+社会学领域非常经典的博弈论问题就是囚徒困境，
+在算法竞赛..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2020/01/27/博弈论初探/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《博弈论初探》 — 可爱的Yisin呀&url=http://yisin.top/2020/01/27/博弈论初探/&via=http://yisin.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2020/01/27/博弈论初探/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2020/01/27/博弈论初探/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/博弈论/" class="color4">博弈论</a>
+      
+    <a href="/tags/石子游戏/" class="color5">石子游戏</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#博弈论初探"><span class="post-toc-text">博弈论初探</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博弈论入门之巴什博弈"><span class="post-toc-text">博弈论入门之巴什博弈</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例题"><span class="post-toc-text">例题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博弈论入门之斐波那契博弈"><span class="post-toc-text">博弈论入门之斐波那契博弈</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博弈论入门之nim游戏"><span class="post-toc-text">博弈论入门之nim游戏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例题-1"><span class="post-toc-text">例题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变形"><span class="post-toc-text">变形</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博弈论入门之威佐夫博弈"><span class="post-toc-text">博弈论入门之威佐夫博弈</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/18/我的2019/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">我的2019</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: 'CuteYisin',
+                repo: 'comments.github.io',
+                oauth: {
+                    client_id: 'a43b3583886a5b52cdfb',
+                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div> -->
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Yisin<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yisin.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/解题报告/">解题报告</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 16.67px;">题解</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 16.67px;">题解</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
