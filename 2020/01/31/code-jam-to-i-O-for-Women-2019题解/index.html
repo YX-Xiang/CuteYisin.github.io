@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>code jam to i/O for Women 2019题解 | 可爱的Yisin呀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Yisin,Yisin's Blog">
+  
+  <meta name="description" content="谷歌承诺 “building for everyone”。 Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！ Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！">
+<meta name="keywords" content="题解,谷歌">
+<meta property="og:type" content="article">
+<meta property="og:title" content="code jam to i&#x2F;O for Women 2019题解">
+<meta property="og:url" content="http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/index.html">
+<meta property="og:site_name" content="可爱的Yisin呀">
+<meta property="og:description" content="谷歌承诺 “building for everyone”。 Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！ Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-31T09:04:43.017Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="code jam to i&#x2F;O for Women 2019题解">
+<meta name="twitter:description" content="谷歌承诺 “building for everyone”。 Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！ Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！">
+  
+  
+    <link rel="icon" href="/1.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Yisin&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/1.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Yisin&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        可爱的Yisin呀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Yisin" target="_blank" href="https://yisin.top/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-code-jam-to-i-O-for-Women-2019题解" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+  
+    <h1 class="post-title" itemprop="name">
+      code jam to i/O for Women 2019题解
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/题解/">题解</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-01-31
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+            
+        </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+            
+            <p>谷歌承诺 “building for everyone”。</p>
+<p>Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！</p>
+<p>Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！<br><a id="more"></a></p>
+<h1 id="code-jam-to-i-O-for-Women-2019题解"><a href="#code-jam-to-i-O-for-Women-2019题解" class="headerlink" title="code jam to i/O for Women 2019题解"></a>code jam to i/O for Women 2019题解</h1><h2 id="Grid-Escape"><a href="#Grid-Escape" class="headerlink" title="Grid Escape"></a>Grid Escape</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>You are designing a new “escape” adventure that uses a rectangular grid of rooms (unit cells) with R rows and C columns. Each room has four doors oriented in the four orthogonal directions of the grid: north, south, east, and west. The doors on the border of the grid lead outside, and all of the other doors lead to other rooms.</p>
+<p>The adventure will be played by exactly R × C players, with each player starting in a different one of the R × C rooms. Once everyone is in position and the game starts, all of the doors close, and there is a mechanical trick: one of the four doors in each room can be opened from inside the room, and the other three doors cannot be opened. This remains consistent throughout the adventure; in a given room, it is always the same door that can be opened. Notice that it is possible that a door that connects two rooms might be able to be opened from one side but not the other.</p>
+<p>Each player moves independently of all other players. Players can only go through doors that they opened themselves, and they must close doors behind them. Each player will keep going through doors until they go through a door that leads outside (and therefore they escape), or they have made R × C moves without escaping (at which point they are considered to have failed, and they do not escape).</p>
+<p>You want to choose which door in each room can be opened, such that exactly K of the players will be able to escape. Can you find a way to do this, or determine that it is IMPOSSIBLE?</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input gives the number of test cases, T. T test cases follow. Each consists of one line containing three integers R, C, and K, as described above.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is IMPOSSIBLE if there is no solution, or POSSIBLE if there is. If there is a solution, output R more lines of C characters each, representing the grid of rooms. The j-th character on the i-th of these lines represents the room in the i-th row and j-th column of the grid; each character must be either uppercase N, S, E, or W, according to whether the door that opens from that room is the one that leads north, south, east, or west.</p>
+<p>If multiple answers are possible, you may output any one of them.</p>
+<h3 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h3><p>1 ≤ T ≤ 100.</p>
+<h4 id="Time-limit"><a href="#Time-limit" class="headerlink" title="Time limit:"></a>Time limit:</h4><p>20 seconds per test set. (10 seconds per test run.)</p>
+<h4 id="Memory-limit"><a href="#Memory-limit" class="headerlink" title="Memory limit:"></a>Memory limit:</h4><p>1GB.</p>
+<p>1 ≤ R.</p>
+<p>1 ≤ C.</p>
+<p>0 ≤ K ≤ R × C.</p>
+<p>Test set 1 (Visible)</p>
+<p>1 ≤ (R × C) ≤ 8.</p>
+<p>Test set 2 (Hidden)</p>
+<p>1 ≤ (R × C) ≤ 100.</p>
+<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><p>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2 3 2</span><br><span class="line">1 1 0</span><br></pre></td></tr></table></figure></p>
+<p>Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: POSSIBLE</span><br><span class="line">SES</span><br><span class="line">SNW</span><br><span class="line">Case #2: IMPOSSIBLE</span><br></pre></td></tr></table></figure></p>
+<p>In our solution for Sample Case #1, the two players who start in the westernmost two rooms will go south until they escape, whereas the four players who start in the other four rooms will travel between those rooms in an endless clockwise circle and cannot escape.</p>
+<p>In Sample Case #2, there is only one room, so the player can definitely escape regardless of which particular door can be opened.</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这是一道构造题。每个人构造方式必然不尽相同，分享一下我的思路吧。</p>
+<p>首先我们需要明确什么时候直接输出IMPOSSIBLE。一开始我以为只有1 1 0才满足这个条件。但是后来在写构造的过程中我发现只要满足条件<font color="pink">C*W-k==1</font>的，都是不能够构造出来的。</p>
+<p>采用反证法，假设C*W-k==1可以构造，即所有格子只有一个格子不能逃脱。那这个格子不管开哪扇门，必然都可以进入可逃脱区，与已知不能逃脱相悖。因此C*W-k==1是不能被构造的。</p>
+<p>那么我们可以从后往前对格子进行可逃脱赋值。最后一排格子标记为’E’,剩余只需要标记为’S’，即可从右下角离开。完成这部分标记后，需对剩余格子进行一遍搜索配对。</p>
+<p>如果我们选取两个相邻格子，让他们可以开启同一扇门（即相邻边），则这两个格子都无法逃脱，陷入死循环。因此剩余偶数个格子时随意搜索应该都可以配对成功。</p>
+<p>如果剩余奇数格子时，则只需要将最后三个格子配对，也可以形成死循环。</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for(int x=a;x&lt;b;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>),<span class="built_in">cin</span>.tie(<span class="number">0</span>),<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=t;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> r,c,k;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;r&gt;&gt;c&gt;&gt;k;</span><br><span class="line">        <span class="keyword">if</span>(r*c-k==<span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;i&lt;&lt;<span class="string">": IMPOSSIBLE"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x=r*c;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;i&lt;&lt;<span class="string">": POSSIBLE"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=r;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;=c;m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[j][m]=<span class="string">' '</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>((x<span class="number">-1</span>)/c==r<span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[r][x%c==<span class="number">0</span>?c:x%c]=<span class="string">'E'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    a[(x<span class="number">-1</span>)/c+<span class="number">1</span>][x%c==<span class="number">0</span>?c:x%c]=<span class="string">'S'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                x--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=r;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;=c;m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(a[j][m]==<span class="string">' '</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(a[j+<span class="number">1</span>][m]==<span class="string">' '</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            a[j][m]=<span class="string">'S'</span>;</span><br><span class="line">                            a[j+<span class="number">1</span>][m]=<span class="string">'N'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(a[j][m+<span class="number">1</span>]==<span class="string">' '</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            a[j][m]=<span class="string">'E'</span>;</span><br><span class="line">                            a[j][m+<span class="number">1</span>]=<span class="string">'W'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">if</span>(j&gt;<span class="number">1</span>) a[j][m]=<span class="string">'N'</span>;</span><br><span class="line">                            <span class="keyword">else</span> <span class="keyword">if</span>(m&gt;<span class="number">1</span>) a[j][m]=<span class="string">'W'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=r;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;=c;m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">cout</span>&lt;&lt;a[j][m];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Parcel-Posts"><a href="#Parcel-Posts" class="headerlink" title="Parcel Posts"></a>Parcel Posts</h2><h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h3><p>You just bought a parcel of land that is K kilometers long; it is so narrow that, for the purposes of this problem, we will consider it to be a polyline that runs from west to east, varying in elevation. You know the elevations of the land (in meters) at K + 1 regularly spaced measurement marks M0, M1, …, MK. These marks are 0, 1, …, K km, respectively, from the western end.</p>
+<p>In this region, a wooden post denotes the boundary between two adjacent parcels of land. Wooden posts can only be placed at measurement marks, and there can be at most one post at each mark. Right now, there are two posts: one at the 0 km mark, and one at the K km mark. A measurement mark with a post is considered to be part of both of the parcels it demarcates, so your parcel of land includes all measurement marks between 0 and K km, inclusive.</p>
+<p>A parcel is considered desirable if it contains three measurement marks such that the west-most and east-most of those three marks are both strictly higher than the remaining one of the three marks, or both strictly lower than the remaining one of the three marks. People like some variation in their landscapes! Notice that these three marks are not necessarily consecutive, and the west-most and east-most of the three marks are not necessarily the west-most and east-most marks of the parcel.</p>
+<p>Consider an example with K = 5 and M0, M1, …, MK = 5, 6, 6, 1, 2, 4. The measurement marks with elevations 5, 2, and 4 satisfy the condition, as do the measurement marks with elevations 6, 1, and 2. However, the measurement marks with elevations 6, 6, and 1 do not satisfy the condition, nor do the measurement marks with elevations 1, 2, and 4. Any three measurement marks that satisfy the condition make the whole parcel desirable; for example, a parcel containing the measurement marks 4 7 6 7 is desirable because of the first three values.</p>
+<p>Your parcel is desirable, but you think it may be possible to extract even more value from it! You want to add additional posts to this parcel to divide it up into multiple parcels, all of which must be desirable, since you do not want to waste any land. What is the largest number of posts you can add?</p>
+<h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input gives the number of test cases, T. T test cases follow. Each case begins with one line containing an integer K: the length, in kilometers, of your parcel of land. Then, there is one more line with K + 1 integers M0, M1, …, Mk; where Mi is the elevation (in meters) at the measurement mark that is i km from the western end of your land.</p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the largest possible number of posts you can add, as described above.</p>
+<h3 id="Limits-1"><a href="#Limits-1" class="headerlink" title="Limits"></a>Limits</h3><h4 id="Time-limit-1"><a href="#Time-limit-1" class="headerlink" title="Time limit:"></a>Time limit:</h4><p>20 seconds per test set. (10 seconds per test run.)</p>
+<h4 id="Memory-limit-1"><a href="#Memory-limit-1" class="headerlink" title="Memory limit:"></a>Memory limit:</h4><p>1GB.</p>
+<p>1 ≤ T ≤ 100.</p>
+<p>0 ≤ Mi ≤ 1000, for all i.</p>
+<p>(Mi - Mj) × (Mk - Mj) &gt; 0, for some i &lt; j &lt; k. (Your starting parcel is desirable.)</p>
+<p>Test set 1 (Visible)</p>
+<p>4 ≤ K ≤ 10.</p>
+<p>Test set 2 (Hidden)</p>
+<p>4 ≤ K ≤ 1000.</p>
+<h3 id="Sample-1"><a href="#Sample-1" class="headerlink" title="Sample"></a>Sample</h3><p>Input </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4</span><br><span class="line">4 8 7 3 5</span><br><span class="line">4</span><br><span class="line">4 8 7 7 5</span><br><span class="line">7</span><br><span class="line">1 2 2 1 2 1 2 1</span><br><span class="line">6</span><br><span class="line">2 1 3 10 9 12 20</span><br></pre></td></tr></table></figure>
+<p>Output   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 1</span><br><span class="line">Case #2: 0</span><br><span class="line">Case #3: 2</span><br><span class="line">Case #4: 1</span><br></pre></td></tr></table></figure>
+<p>In Sample Case #1, you can add one post at 2 km to get a total of two desirable parcels. The parcel from 0 to 2 km is desirable because 4 &lt; 8 and 8 &gt; 7. The parcel from 2 to 4 km is desirable because 7 &gt; 3 and 3 &lt; 5.</p>
+<p>In Sample Case #2, there is no way to add another post. If you added one at 1 km or 3 km, one of the parcels would include only two measurement marks and could not be desirable. If you added one at 2 km, the parcel between 0 and 2 km would be desirable, but the parcel between 2 and 4 km would not.</p>
+<p>In Sample Case #3, posts can be added at 3 km and 5 km.</p>
+<p>In Sample Case #4, a post can be added at 2 km. Notice that the parcel from 2 km to 6 km is desirable because 10 &gt; 9 and 9 &lt; 12. However, there is no way to add a second post.</p>
+<h3 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3><p>我真的没想到……就是个暴力（努力想了半天发现数据小，而且！给了20s！！！绝了。这大概也是跟codeforces最大的不同吧，无法想象codeforces给20s是一种怎样的体验。）</p>
+<p>首先我们要明确题意（这题目真的非常绕），实质是问你最多能将数组w划定多少个区间，使得每个区间内存在i&lt;j&lt;k，且w[i]&lt;w[j],w[k]&lt;w[j],或者w[i]&gt;w[j],w[k]&gt;w[j]。</p>
+<p>那么我们可以通过枚举区间的右端点，极端暴力是O(n^3)，二分优化可以做到O(n^2logn)。但是题目时限非常宽，所以就直接暴力了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for(int x=a;x&lt;b;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>),<span class="built_in">cin</span>.tie(<span class="number">0</span>),<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> temp=<span class="number">1</span>;temp&lt;=t;temp++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=k;i++) <span class="built_in">cin</span>&gt;&gt;m[i];</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>,i,j;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=k;i=j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(j=i+<span class="number">2</span>;j&lt;=k;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> x=i+<span class="number">1</span>;x&lt;j;x++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>((m[x]&gt;m[i]&amp;&amp;m[x]&gt;m[j])||(m[x]&lt;m[i]&amp;&amp;m[x]&lt;m[j]))</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                        flag=<span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(flag) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;temp&lt;&lt;<span class="string">": "</span>&lt;&lt;ans<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年01月31日 17:04</p>
+        <p>原始链接： <a class="post-url" href="/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" title="code jam to i/O for Women 2019题解">http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/</a></p>
+        <footer>
+            <a href="http://yisin.top">
+                <img src="/images/1.png" alt="Yisin">
+                Yisin
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+            
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/&title=《code jam to i/O for Women 2019题解》 — 可爱的Yisin呀&pic=http://p0.ifengimg.com/pmop/2018/1026/D5C79DB2F64153D42569538C268F3E12DE0C88FF_size634_w356_h200.gif" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/&title=《code jam to i/O for Women 2019题解》 — 可爱的Yisin呀&source=谷歌承诺 “building for everyone”。
+Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《code jam to i/O for Women 2019题解》 — 可爱的Yisin呀&url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/&via=http://yisin.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/题解/" class="color3">题解</a>
+      
+    <a href="/tags/谷歌/" class="color3">谷歌</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#code-jam-to-i-O-for-Women-2019题解"><span class="post-toc-text">code jam to i/O for Women 2019题解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Grid-Escape"><span class="post-toc-text">Grid Escape</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Problem"><span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Input"><span class="post-toc-text">Input</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Output"><span class="post-toc-text">Output</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Limits"><span class="post-toc-text">Limits</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Time-limit"><span class="post-toc-text">Time limit:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Memory-limit"><span class="post-toc-text">Memory limit:</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sample"><span class="post-toc-text">Sample</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解题思路"><span class="post-toc-text">解题思路</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Parcel-Posts"><span class="post-toc-text">Parcel Posts</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Problem-1"><span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Input-1"><span class="post-toc-text">Input</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Output-1"><span class="post-toc-text">Output</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Limits-1"><span class="post-toc-text">Limits</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Time-limit-1"><span class="post-toc-text">Time limit:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Memory-limit-1"><span class="post-toc-text">Memory limit:</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sample-1"><span class="post-toc-text">Sample</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解题思路-1"><span class="post-toc-text">解题思路</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/27/博弈论初探/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">博弈论初探</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: 'CuteYisin',
+                repo: 'comments.github.io',
+                oauth: {
+                    client_id: 'a43b3583886a5b52cdfb',
+                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div> -->
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Yisin<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yisin.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/解题报告/">解题报告</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
