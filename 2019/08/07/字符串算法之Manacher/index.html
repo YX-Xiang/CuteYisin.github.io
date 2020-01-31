@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>字符串算法之Manacher | 可爱的Yisin呀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Yisin,Yisin's Blog">
+  
+  <meta name="description" content="Manacher算法， 又叫“马拉车”算法， 可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。">
+<meta name="keywords" content="字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串算法之Manacher">
+<meta property="og:url" content="http://yisin.top/2019/08/07/字符串算法之Manacher/index.html">
+<meta property="og:site_name" content="可爱的Yisin呀">
+<meta property="og:description" content="Manacher算法， 又叫“马拉车”算法， 可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-07T02:51:12.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符串算法之Manacher">
+<meta name="twitter:description" content="Manacher算法， 又叫“马拉车”算法， 可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。">
+  
+  
+    <link rel="icon" href="/1.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Yisin&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/1.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Yisin&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        可爱的Yisin呀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Yisin" target="_blank" href="https://yisin.top/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-字符串算法之Manacher" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+  
+    <h1 class="post-title" itemprop="name">
+      字符串算法之Manacher
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/算法/">算法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-08-07
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+            
+        </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+            
+            <p>Manacher算法，</p>
+<p>又叫“马拉车”算法，</p>
+<p>可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。<br><a id="more"></a></p>
+<h1 id="字符串算法之Manacher"><a href="#字符串算法之Manacher" class="headerlink" title="字符串算法之Manacher"></a>字符串算法之Manacher</h1><p>之前一直都在不知所云地套板子。</p>
+<p>直到今天，下定决心，要搞懂Manacher的原理。</p>
+<p>然后，原来不过如此嘛XD</p>
+<p>从最简单的判断回文的方法说起。</p>
+<p>即拉出字符串中的每个子串，判断它们是否回文。</p>
+<p>拉出子串需要O(n^2),判断是否回文需要O(n)，所以这种方法的时间复杂度是O(n^3)。</p>
+<p>那么再精巧一点，我们可以从字符串中的每个字符下手，对于每个字符向两边扩展求回文长度。这样子，时间复杂度降到了O(n^2)。</p>
+<p>我们是否可以找到一种O(n)的算法呢？答案是肯定的。</p>
+<p>不考虑dp的方法，其实我们能从回文串本身得到一些启示。</p>
+<p>例如：</p>
+<p>c a b a d a b a b</p>
+<p>我们运用第二种方法对每个字符进行分析。</p>
+<p>从第二位a开始，b≠c，因此f[2]=1;</p>
+<p>第三位b，c <font color="red">a </font><font color="yellow">b </font><font color="red">a </font>d a b a b，因此，f[3]=3；</p>
+<p>第四位a，b≠d，f[4]=1；</p>
+<p>第五位d，c <font color="red">a b a </font><font color="yellow">d </font><font color="red">a b a </font>b，因此，f[5]=7；</p>
+<p>下面！！！高能！！！</p>
+<p>第六位a，b≠d，f[6]=1。但是！是不是觉得似曾相识？对！由于回文串具有对称性质，所以事实上，因为第四位构不成回文串，所以与此对应的第六位也是不可能有的。</p>
+<p>第七位b，同理，第七位等同于第三位，f[7]=f[3]=3；</p>
+<p>第八位a，是不是要脱口而出f[8]=f[2]=1？等等！我们发现 c a b a d a <font color="red">b </font><font color="yellow">a </font><font color="red">b </font>，因此，f[8]=3。这是为什么呢？由于s[1]≠s[9]，所以f[8]和f[2]是不一定相等的。</p>
+<p>这样一个分析过程，实际上就是Manacher算法所需要做的。</p>
+<ol>
+<li><p>首先，我们要记录下目前已知的回文串能够覆盖到的最右边的地方</p>
+</li>
+<li><p>同时，覆盖到最右边的回文串所对应的回文中心也要记录</p>
+</li>
+<li><p>以每一位为中心的回文串的长度也要记录，后面进行推断的时候能用到</p>
+</li>
+<li><p>对于新的中心，我们判断它是否在右边界内，若在，就计算它相对右边界回文中心的对称位置，从而得到一些信息，同时，如果该中心需要进行扩展，则继续扩展就行。</p>
+</li>
+</ol>
+<p>但是这样会出现一些问题，比如回文长度为偶数的时候，不存在严格意义上的回文中心。所以我们需要对字符串先进行一波预处理。</p>
+<ol>
+<li><p>先对字符串进行预处理，两个字符之间加上特殊符号#</p>
+</li>
+<li><p>然后遍历整个字符串，用一个数组来记录以该字符为中心的回文长度，为了方便计算右边界，我在数组中记录长度的一半（向下取整）</p>
+</li>
+<li><p>每一次遍历的时候，如果该字符在已知回文串最右边界的覆盖下，那么就计算其相对最右边界回文串中心对称的位置，得出已知回文串的长度</p>
+</li>
+<li><p>判断该长度和右边界，如果达到了右边界，那么需要进行中心扩展探索。当然，如果第3步该字符没有在最右边界的“羽翼”下，则直接进行中心扩展探索。进行中心扩展探索的时候，同时又更新右边界</p>
+</li>
+<li><p>最后得到最长回文之后，去掉其中的特殊符号即可</p>
+</li>
+</ol>
+<p>下面放上我觉得比较完美的一个板子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[maxn], sNew[maxn&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> p[maxn&lt;&lt;<span class="number">1</span>], id, mx=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> L, R; <span class="comment">//回文串在原串的左右端点位置</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    sNew[<span class="number">0</span>] = <span class="string">'$'</span>;</span><br><span class="line">    sNew[<span class="number">1</span>] = <span class="string">'#'</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sNew[j++] = s[i];</span><br><span class="line">        sNew[j++] = <span class="string">'#'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sNew[j] = <span class="string">'\0'</span>;</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = Init();</span><br><span class="line">    <span class="keyword">int</span> max_len = <span class="number">-1</span>;</span><br><span class="line">    mx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; mx) p[i] = min(p[<span class="number">2</span> * id - i], mx - i);</span><br><span class="line">        <span class="keyword">else</span> p[i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (sNew[i - p[i]] == sNew[i + p[i]]) p[i]++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mx &lt; i + p[i])</span><br><span class="line">        &#123;</span><br><span class="line">            id = i;</span><br><span class="line">            mx = i + p[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(max_len &lt; p[i])</span><br><span class="line">        &#123; </span><br><span class="line">            max_len = p[i];</span><br><span class="line">            L = (i - p[i])&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            R = (i + p[i] - <span class="number">4</span>)&gt;&gt;<span class="number">1</span>; <span class="comment">///R = (i + p[i])/2 -2;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max_len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年08月07日 10:51</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/07/字符串算法之Manacher/" title="字符串算法之Manacher">http://yisin.top/2019/08/07/字符串算法之Manacher/</a></p>
+        <footer>
+            <a href="http://yisin.top">
+                <img src="/images/1.png" alt="Yisin">
+                Yisin
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+            
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2019/08/07/字符串算法之Manacher/&title=《字符串算法之Manacher》 — 可爱的Yisin呀&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565153704735&di=543a32c8b59803628258d8bceaad11b9&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F14%2F20171214205842_cUjSh.jpeg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2019/08/07/字符串算法之Manacher/&title=《字符串算法之Manacher》 — 可爱的Yisin呀&source=Manacher算法，
+又叫“马拉车”算法，
+可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2019/08/07/字符串算法之Manacher/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《字符串算法之Manacher》 — 可爱的Yisin呀&url=http://yisin.top/2019/08/07/字符串算法之Manacher/&via=http://yisin.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2019/08/07/字符串算法之Manacher/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2019/08/07/字符串算法之Manacher/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/字符串/" class="color4">字符串</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串算法之Manacher"><span class="post-toc-text">字符串算法之Manacher</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/08/11/【2019】【NEUQ-ACM-SUMMER-CAMP】第九次课程作业解题报告/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          【2019】【NEUQ-ACM SUMMER CAMP】第九次课程作业解题报告
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/08/05/2019·8·杂杂杂篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">2019·8·杂杂杂篇</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: 'CuteYisin',
+                repo: 'comments.github.io',
+                oauth: {
+                    client_id: 'a43b3583886a5b52cdfb',
+                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div> -->
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Yisin<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yisin.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/解题报告/">解题报告</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

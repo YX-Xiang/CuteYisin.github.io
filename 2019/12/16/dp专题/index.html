@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>dp专题 | 可爱的Yisin呀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Yisin,Yisin's Blog">
+  
+  <meta name="description" content="这是我非常抗拒的一个算法点QAQ 因为真的很难 一直下意识地逃避不想学。 But最好面对恐惧的办法就是！疯狂刷题！！！ Yisin冲呀~ 感谢awen给我们开的套题。特此鸣谢~">
+<meta name="keywords" content="dp,动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dp专题">
+<meta property="og:url" content="http://yisin.top/2019/12/16/dp专题/index.html">
+<meta property="og:site_name" content="可爱的Yisin呀">
+<meta property="og:description" content="这是我非常抗拒的一个算法点QAQ 因为真的很难 一直下意识地逃避不想学。 But最好面对恐惧的办法就是！疯狂刷题！！！ Yisin冲呀~ 感谢awen给我们开的套题。特此鸣谢~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-16T13:22:47.522Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dp专题">
+<meta name="twitter:description" content="这是我非常抗拒的一个算法点QAQ 因为真的很难 一直下意识地逃避不想学。 But最好面对恐惧的办法就是！疯狂刷题！！！ Yisin冲呀~ 感谢awen给我们开的套题。特此鸣谢~">
+  
+  
+    <link rel="icon" href="/1.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Yisin&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/1.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Yisin&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        可爱的Yisin呀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Yisin" target="_blank" href="https://yisin.top/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-dp专题" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+  
+    <h1 class="post-title" itemprop="name">
+      dp专题
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/算法/">算法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-12-16
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+            
+        </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+            
+            <p>这是我非常抗拒的一个算法点QAQ 因为真的很难 一直下意识地逃避不想学。</p>
+<p>But最好面对恐惧的办法就是！疯狂刷题！！！</p>
+<p>Yisin冲呀~</p>
+<p>感谢awen给我们开的套题。特此鸣谢~<br><a id="more"></a></p>
+<h1 id="dp专题"><a href="#dp专题" class="headerlink" title="dp专题"></a>dp专题</h1><h2 id="A-Sum-of-Different-Primes"><a href="#A-Sum-of-Different-Primes" class="headerlink" title="A - Sum of Different Primes"></a>A - Sum of Different Primes</h2><p><a href="http://poj.org/problem?id=3132" target="_blank" rel="noopener">题目传送门</a></p>
+<p>以我拙劣的英语水平翻译一下是这样的：给你多组n和k，问用k个不同质数加和为n有多少种方案。</p>
+<p>嘿咻！忽略掉质数和不重复两个关键词的话，这道题和《算法竞赛入门到进阶》（今年的一本新书，推荐，作者是华理的竞赛教练）dp入门的一题十分相似。</p>
+<p>原题（hdu2069）如下：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=2069" target="_blank" rel="noopener">题目传送门</a></p>
+<p>有n种硬币，面值分别为v1,v2,…,vn，数量无限。输入非负整数s，选用不多于100个硬币，使其和为s。输出所有可能的硬币组合。</p>
+<p>那么我们可以定义一个矩阵元素dp[i][j]，含义是用j个硬币实现金额i的数量方案。</p>
+<blockquote>
+<ul>
+<li>第一步：只用1分硬币实现<p>初始dp[0][0]=1，其他为0。定义int type[5]={1,5,10,25,50}为5种硬币的面值。</p><p>那么可以推导出来 dp[1][1] = dp[1][1] + dp[0][0] = dp[1][1] + dp[1-1][1-1] = 0 + 1 = 1</p><p>dp[1-1][1-1]是因为从1分金额里减去1分硬币的钱，1个硬币的数量也减少了1个。</p><p> 所以这一步实际上是</p><p>dp[1][1] = dp[1][1] + dp[1-type[0]][1-1]</p></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>第二步：加上5分硬币，继续进行组合<p>dp[i][j]，当i&lt;5时，组合里不可能有5分硬币。</p><p>当i&gt;=5时，金额为i，硬币为j个的组合数量等价于从i中减去五分钱，而且硬币数量也减去1个的情况。</p><p>dp[i][j] = dp[i][j] + dp[i-5][j-1] = dp[i][j] + dp[i-type[1]][j-1]</p></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>第三步：陆续加上10分、25分、50分硬币，同理有以下关系：<p>dp[i][j] = dp[i][j] + dp[i-type[k]][j-1]，k=2,3,4</p></li>
+</ul>
+</blockquote>
+<p>所以代码就是</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> type[<span class="number">5</span>]=&#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">25</span>,<span class="number">30</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">251</span>][<span class="number">101</span>];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="number">101</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=type[i],k&lt;<span class="number">251</span>;k++)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[k][j]+=dp[k-type[i]][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s;<span class="keyword">int</span> ans[<span class="number">251</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    solve();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">251</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">101</span>;j++)</span><br><span class="line">            ans[i]+=dp[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans[s]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>明白了这道硬币题，那么这道题的思路也是一样的。只不过给定的数需要自己求。数据最大是1120，所以打个素数筛轻而易举，将1120前所有质数放进type数组里面。</p>
+<p>所以一开始我是这么写的</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> type[<span class="number">1005</span>],ans=<span class="number">0</span>;</span><br><span class="line">ll dp[<span class="number">2005</span>][<span class="number">20</span>];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">1120</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j*j&lt;=i;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i%j==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">            type[ans++]=i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ans;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> m=type[i];m&lt;=n;m++)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[m][j]+=dp[m-type[i]][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k)==<span class="number">2</span>&amp;&amp;(n||k))</span><br><span class="line">    &#123;</span><br><span class="line">        mem(dp,<span class="number">0</span>);</span><br><span class="line">        solve();</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;dp[n][k]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我发现事情并不简单，因为这个程序连样例也并不能完全通过。于是我开始了漫长的debug之路，最后找到了问题所在！这个程序是有可能取重复素数的，因为取硬币的时候并没有要求每种类型只能取一个，但是这题规定了一个素数只能被加一次。</p>
+<p>辣么，解决方案是什么呢？</p>
+<p>让我们倒着来想。</p>
+<p><font color="red">dp[m][j]+=dp[m-type[i]][j-1]</font>意味着：</p>
+<p>当 <font color="red">type[i]</font> 在 <font color="red">dp[m-type[i]][j-1]</font> 的计算中已经有可能被使用的情况下仍然继续被使用。</p>
+<p>那么，如果我们换成<font color="red">dp[m+type[i]][j]+=dp[m][j-1]</font>，并让之前的加法倒转成一个减法呢？</p>
+<p>也就是如下的循环：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ans;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=k;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> m=n-type[i];m&gt;=<span class="number">0</span>;m--)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[m+type[i]][j]+=dp[m][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>一开始我也不太明白这个循环是怎么回事，后来观察了一下每一步的相加元素，就清楚了。一开始只有到dp[0][0]才能有值，所以只有dp[type[0]][1]才会有值。根据dp[type[0]][1]，所以dp[type[0]+type[1]][2]也会有值；再根据dp[0][0],dp[type[1]][1]也会有值……就完成了每个元素的全排列。已经被用过的值是不可能再被使用的。妙啊！</p>
+<p>所以这道题的最终程序是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> type[<span class="number">1005</span>],ans=<span class="number">0</span>;</span><br><span class="line">ll dp[<span class="number">2005</span>][<span class="number">20</span>];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">1120</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j*j&lt;=i;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i%j==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">            type[ans++]=i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ans;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=k;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> m=n-type[i];m&gt;=<span class="number">0</span>;m--)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[m+type[i]][j]+=dp[m][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k)==<span class="number">2</span>&amp;&amp;(n||k))</span><br><span class="line">    &#123;</span><br><span class="line">        mem(dp,<span class="number">0</span>);</span><br><span class="line">        solve();</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;dp[n][k]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年12月16日 21:22</p>
+        <p>原始链接： <a class="post-url" href="/2019/12/16/dp专题/" title="dp专题">http://yisin.top/2019/12/16/dp专题/</a></p>
+        <footer>
+            <a href="http://yisin.top">
+                <img src="/images/1.png" alt="Yisin">
+                Yisin
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+            
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2019/12/16/dp专题/&title=《dp专题》 — 可爱的Yisin呀&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576507384958&di=0f650ee28fb9308a9ed5385898ee184d&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181102%2F86599846d82542ba8af8c75ed5cb54c8.gif" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2019/12/16/dp专题/&title=《dp专题》 — 可爱的Yisin呀&source=这是我非常抗拒的一个算法点QAQ 因为真的很难 一直下意识地逃避不想学。
+But最好面对恐惧的办法就是！疯狂刷题！！！
+Yisin冲呀~
+感谢awen给我..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2019/12/16/dp专题/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《dp专题》 — 可爱的Yisin呀&url=http://yisin.top/2019/12/16/dp专题/&via=http://yisin.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2019/12/16/dp专题/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2019/12/16/dp专题/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/dp/" class="color3">dp</a>
+      
+    <a href="/tags/动态规划/" class="color5">动态规划</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dp专题"><span class="post-toc-text">dp专题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#A-Sum-of-Different-Primes"><span class="post-toc-text">A - Sum of Different Primes</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/01/18/我的2019/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          我的2019
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/11/18/梦碎石家庄/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">梦碎石家庄</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: 'CuteYisin',
+                repo: 'comments.github.io',
+                oauth: {
+                    client_id: 'a43b3583886a5b52cdfb',
+                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div> -->
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Yisin<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yisin.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/解题报告/">解题报告</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
