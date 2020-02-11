@@ -1,152 +1,408 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title>code jam to i/O for Women 2019题解 | 可爱的Yisin呀</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title itemprop="name">code jam to i/O for Women 2019题解 | Yisin&#39;s Blog</title>
   
-    <meta name="keywords" content="Yisin,Yisin's Blog">
+    <link rel="shortcut icon" href="/1.ico">
   
-  <meta name="description" content="谷歌承诺 “building for everyone”。 Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！ Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！">
-<meta name="keywords" content="题解,谷歌">
-<meta property="og:type" content="article">
-<meta property="og:title" content="code jam to i&#x2F;O for Women 2019题解">
-<meta property="og:url" content="http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/index.html">
-<meta property="og:site_name" content="可爱的Yisin呀">
-<meta property="og:description" content="谷歌承诺 “building for everyone”。 Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！ Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-31T09:04:43.017Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="code jam to i&#x2F;O for Women 2019题解">
-<meta name="twitter:description" content="谷歌承诺 “building for everyone”。 Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！ Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！">
-  
-  
-    <link rel="icon" href="/1.ico">
-  
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/pace.min.js"></script>
-  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "かわいいのYisin";
+  mashiro_option.author_name = "Yisin";
+  mashiro_option.site_url = "https://yisin.top";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
 
-  
-  
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
 
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
 </head>
 </html>
-<body>
-  <div id="container">
-      <header id="header">
-    <div id="banner"></div>
-    <div id="header-outer">
-        <div id="header-menu" class="header-menu-pos animated">
-            <div class="header-menu-container">
-                <a href="/" class="left">
-                    <span class="site-title">Yisin&#39;s Blog</span>
-                </a>
-                <nav id="header-menu-nav" class="right">
-                    
-                    <a href="/">
-                        <i class="fa fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                    
-                    <a href="/archives">
-                        <i class="fa fa-archive"></i>
-                        <span>Archives</span>
-                    </a>
-                    
-                    <a href="/about">
-                        <i class="fa fa-user"></i>
-                        <span>About</span>
-                    </a>
-                    
-                </nav>
-                <a class="mobile-header-menu-button">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-        </div>
-        <div id="header-row">
-            <div id="logo">
-                <a href="/">
-                    <img src="/images/1.png" alt="logo">
-                </a>
-            </div>
-            <div class="header-info">
-                <div id="header-title">
-                    
-                    <h2>
-                        Yisin&#39;s Blog
-                    </h2>
-                    
-                </div>
-                <div id="header-description">
-                    
-                    <h3>
-                        可爱的Yisin呀
-                    </h3>
-                    
-                </div>
-            </div>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a title="Yisin" target="_blank" href="https://yisin.top/">
-                            <i class="fa fa-home fa-2x"></i></a>
-                    
-                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
-                            <i class="fa fa-github fa-2x"></i></a>
-                    
-                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
-                            <i class="fa fa-weibo fa-2x"></i></a>
-                    
-                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
-                            <i class="fa fa-twitter fa-2x"></i></a>
-                    
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-      <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-code-jam-to-i-O-for-Women-2019题解" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        <header class="article-header">
-            
-  
-    <h1 class="post-title" itemprop="name">
-      code jam to i/O for Women 2019题解
-    </h1>
-    <div class="post-title-bar">
-      <ul>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://yisin.top">
+          <img src="images/1.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>虽曰如云，匪我思存</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
           
+            
+              
+                <li>
+                  <a href="http://github.com/honjun" target="_blank" class="social-github" title="github">
+                    <img src="/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="sina">
+                    <img src="/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="zhihu">
+                    <img src="/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="email">
+                    <img src="/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="/img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">かわいいの</span>
+            <span class="shironeko">Yisin</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
               <li>
-                  <i class="fa fa-book"></i>
-                  
-                      <a href="/categories/题解/">题解</a>
-                  
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
               </li>
-          
-        <li>
-          <i class="fa fa-calendar"></i>  2020-01-31
-        </li>
-        <li>
-          <i class="fa fa-eye"></i>
-          <span id="busuanzi_value_page_pv"></span>
-        </li>
-      </ul>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/图集/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/client/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+                    客户端
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
     </div>
-  
+  </div>
+</header>
 
-            
-        </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-        <div class="article-entry post-content" itemprop="articleBody">
-            
-            
-            <p>谷歌承诺 “building for everyone”。</p>
+          <header class="entry-header">
+            <h1 class="entry-title">code jam to i/O for Women 2019题解</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2020-1-31&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p><p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p>谷歌承诺 “building for everyone”。</p>
 <p>Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！</p>
 <p>Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！<br><a id="more"></a></p>
 <h1 id="code-jam-to-i-O-for-Women-2019题解"><a href="#code-jam-to-i-O-for-Women-2019题解" class="headerlink" title="code jam to i/O for Women 2019题解"></a>code jam to i/O for Women 2019题解</h1><h2 id="Grid-Escape"><a href="#Grid-Escape" class="headerlink" title="Grid Escape"></a>Grid Escape</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>You are designing a new “escape” adventure that uses a rectangular grid of rooms (unit cells) with R rows and C columns. Each room has four doors oriented in the four orthogonal directions of the grid: north, south, east, and west. The doors on the border of the grid lead outside, and all of the other doors lead to other rooms.</p>
@@ -166,9 +422,16 @@
 <p>1 ≤ (R × C) ≤ 8.</p>
 <p>Test set 2 (Hidden)</p>
 <p>1 ≤ (R × C) ≤ 100.</p>
-<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><p>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2 3 2</span><br><span class="line">1 1 0</span><br></pre></td></tr></table></figure></p>
-<p>Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: POSSIBLE</span><br><span class="line">SES</span><br><span class="line">SNW</span><br><span class="line">Case #2: IMPOSSIBLE</span><br></pre></td></tr></table></figure></p>
-<p>In our solution for Sample Case #1, the two players who start in the westernmost two rooms will go south until they escape, whereas the four players who start in the other four rooms will travel between those rooms in an endless clockwise circle and cannot escape.</p>
+<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><p>Input </p>
+<pre><code>2
+2 3 2
+1 1 0
+</code></pre><p>Output   </p>
+<pre><code>Case #1: POSSIBLE
+SES
+SNW
+Case #2: IMPOSSIBLE
+</code></pre><p>In our solution for Sample Case #1, the two players who start in the westernmost two rooms will go south until they escape, whereas the four players who start in the other four rooms will travel between those rooms in an endless clockwise circle and cannot escape.</p>
 <p>In Sample Case #2, there is only one room, so the player can definitely escape regardless of which particular door can be opened.</p>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这是一道构造题。每个人构造方式必然不尽相同，分享一下我的思路吧。</p>
 <p>首先我们需要明确什么时候直接输出IMPOSSIBLE。一开始我以为只有1 1 0才满足这个条件。但是后来在写构造的过程中我发现只要满足条件<font color="pink">C*W-k==1</font>的，都是不能够构造出来的。</p>
@@ -177,7 +440,104 @@
 <p>如果我们选取两个相邻格子，让他们可以开启同一扇门（即相邻边），则这两个格子都无法逃脱，陷入死循环。因此剩余偶数个格子时随意搜索应该都可以配对成功。</p>
 <p>如果剩余奇数格子时，则只需要将最后三个格子配对，也可以形成死循环。</p>
 <p>代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for(int x=a;x&lt;b;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>),<span class="built_in">cin</span>.tie(<span class="number">0</span>),<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=t;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> r,c,k;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;r&gt;&gt;c&gt;&gt;k;</span><br><span class="line">        <span class="keyword">if</span>(r*c-k==<span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;i&lt;&lt;<span class="string">": IMPOSSIBLE"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x=r*c;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;i&lt;&lt;<span class="string">": POSSIBLE"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=r;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;=c;m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[j][m]=<span class="string">' '</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>((x<span class="number">-1</span>)/c==r<span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[r][x%c==<span class="number">0</span>?c:x%c]=<span class="string">'E'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    a[(x<span class="number">-1</span>)/c+<span class="number">1</span>][x%c==<span class="number">0</span>?c:x%c]=<span class="string">'S'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                x--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=r;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;=c;m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(a[j][m]==<span class="string">' '</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(a[j+<span class="number">1</span>][m]==<span class="string">' '</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            a[j][m]=<span class="string">'S'</span>;</span><br><span class="line">                            a[j+<span class="number">1</span>][m]=<span class="string">'N'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(a[j][m+<span class="number">1</span>]==<span class="string">' '</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            a[j][m]=<span class="string">'E'</span>;</span><br><span class="line">                            a[j][m+<span class="number">1</span>]=<span class="string">'W'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">if</span>(j&gt;<span class="number">1</span>) a[j][m]=<span class="string">'N'</span>;</span><br><span class="line">                            <span class="keyword">else</span> <span class="keyword">if</span>(m&gt;<span class="number">1</span>) a[j][m]=<span class="string">'W'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=r;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;=c;m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">cout</span>&lt;&lt;a[j][m];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+#define U unsigned
+#define sqr(x) ((x)*(x))
+#define mem(x,y) memset(x,y,sizeof(x))
+#define scd(x) scanf(&quot;%d&quot;,&amp;x)
+#define scs(x) scanf(&quot;%s&quot;,&amp;x)
+#define prd(x) printf(&quot;%d&quot;,x)
+#define prs(x) printf(&quot;%s&quot;,x)
+#define rep(x,a,b) for(int x=a;x&lt;b;x++)
+#define rep0(x,n) for(int x=0;x&lt;n;x++)
+#define rep1(x,n) for(int x=1;x&lt;=n;x++)
+#define per(x,a,b) for(int x=a;x&gt;=b;x--)
+#define ls rt&lt;&lt;1
+#define rs rt&lt;&lt;1|1
+#define lson l,m,ls
+#define rson m+1,r,rs
+using namespace std;
+const double eps=1e-8;
+const double pi=acos(-1.0);
+const int INF=0x3f3f3f3f;
+ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a/gcd(a,b)*b;}
+ll powmod(ll a,ll b,ll MOD){ll ans=1;while(b){if(b%2)ans=ans*a%MOD;a=a*a%MOD;b/=2;}return ans;}
+
+char a[105][105];
+
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    int t;
+    cin&gt;&gt;t;
+    for(int i=1;i&lt;=t;i++)
+    {
+        int r,c,k;
+        cin&gt;&gt;r&gt;&gt;c&gt;&gt;k;
+        if(r*c-k==1)
+            cout&lt;&lt;&quot;Case #&quot;&lt;&lt;i&lt;&lt;&quot;: IMPOSSIBLE&quot;&lt;&lt;endl;
+        else
+        {
+            int x=r*c;
+            cout&lt;&lt;&quot;Case #&quot;&lt;&lt;i&lt;&lt;&quot;: POSSIBLE&quot;&lt;&lt;endl;
+            for(int j=1;j&lt;=r;j++)
+            {
+                for(int m=1;m&lt;=c;m++)
+                {
+                    a[j][m]=&#39; &#39;;
+                }
+            }
+            for(int j=0;j&lt;k;j++)
+            {
+                if((x-1)/c==r-1)
+                {
+                    a[r][x%c==0?c:x%c]=&#39;E&#39;;
+                }
+                else
+                {
+                    a[(x-1)/c+1][x%c==0?c:x%c]=&#39;S&#39;;
+                }
+                x--;
+            }
+            for(int j=1;j&lt;=r;j++)
+            {
+                for(int m=1;m&lt;=c;m++)
+                {
+                    if(a[j][m]==&#39; &#39;)
+                    {
+                        if(a[j+1][m]==&#39; &#39;)
+                        {
+                            a[j][m]=&#39;S&#39;;
+                            a[j+1][m]=&#39;N&#39;;
+                        }
+                        else if(a[j][m+1]==&#39; &#39;)
+                        {
+                            a[j][m]=&#39;E&#39;;
+                            a[j][m+1]=&#39;W&#39;;
+                        }
+                        else
+                        {
+                            if(j&gt;1) a[j][m]=&#39;N&#39;;
+                            else if(m&gt;1) a[j][m]=&#39;W&#39;;
+                        }
+                    }
+                }
+            }
+            for(int j=1;j&lt;=r;j++)
+            {
+                for(int m=1;m&lt;=c;m++)
+                {
+                    cout&lt;&lt;a[j][m];
+                }
+                cout&lt;&lt;endl;
+            }
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h2 id="Parcel-Posts"><a href="#Parcel-Posts" class="headerlink" title="Parcel Posts"></a>Parcel Posts</h2><h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h3><p>You just bought a parcel of land that is K kilometers long; it is so narrow that, for the purposes of this problem, we will consider it to be a polyline that runs from west to east, varying in elevation. You know the elevations of the land (in meters) at K + 1 regularly spaced measurement marks M0, M1, …, MK. These marks are 0, 1, …, K km, respectively, from the western end.</p>
 <p>In this region, a wooden post denotes the boundary between two adjacent parcels of land. Wooden posts can only be placed at measurement marks, and there can be at most one post at each mark. Right now, there are two posts: one at the 0 km mark, and one at the K km mark. A measurement mark with a post is considered to be part of both of the parcels it demarcates, so your parcel of land includes all measurement marks between 0 and K km, inclusive.</p>
 <p>A parcel is considered desirable if it contains three measurement marks such that the west-most and east-most of those three marks are both strictly higher than the remaining one of the three marks, or both strictly lower than the remaining one of the three marks. People like some variation in their landscapes! Notice that these three marks are not necessarily consecutive, and the west-most and east-most of the three marks are not necessarily the west-most and east-most marks of the parcel.</p>
@@ -195,314 +555,571 @@
 <p>Test set 2 (Hidden)</p>
 <p>4 ≤ K ≤ 1000.</p>
 <h3 id="Sample-1"><a href="#Sample-1" class="headerlink" title="Sample"></a>Sample</h3><p>Input </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4</span><br><span class="line">4 8 7 3 5</span><br><span class="line">4</span><br><span class="line">4 8 7 7 5</span><br><span class="line">7</span><br><span class="line">1 2 2 1 2 1 2 1</span><br><span class="line">6</span><br><span class="line">2 1 3 10 9 12 20</span><br></pre></td></tr></table></figure>
-<p>Output   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 1</span><br><span class="line">Case #2: 0</span><br><span class="line">Case #3: 2</span><br><span class="line">Case #4: 1</span><br></pre></td></tr></table></figure>
-<p>In Sample Case #1, you can add one post at 2 km to get a total of two desirable parcels. The parcel from 0 to 2 km is desirable because 4 &lt; 8 and 8 &gt; 7. The parcel from 2 to 4 km is desirable because 7 &gt; 3 and 3 &lt; 5.</p>
+<pre><code>4
+4
+4 8 7 3 5
+4
+4 8 7 7 5
+7
+1 2 2 1 2 1 2 1
+6
+2 1 3 10 9 12 20
+</code></pre><p>Output   </p>
+<pre><code>Case #1: 1
+Case #2: 0
+Case #3: 2
+Case #4: 1
+</code></pre><p>In Sample Case #1, you can add one post at 2 km to get a total of two desirable parcels. The parcel from 0 to 2 km is desirable because 4 &lt; 8 and 8 &gt; 7. The parcel from 2 to 4 km is desirable because 7 &gt; 3 and 3 &lt; 5.</p>
 <p>In Sample Case #2, there is no way to add another post. If you added one at 1 km or 3 km, one of the parcels would include only two measurement marks and could not be desirable. If you added one at 2 km, the parcel between 0 and 2 km would be desirable, but the parcel between 2 and 4 km would not.</p>
 <p>In Sample Case #3, posts can be added at 3 km and 5 km.</p>
 <p>In Sample Case #4, a post can be added at 2 km. Notice that the parcel from 2 km to 6 km is desirable because 10 &gt; 9 and 9 &lt; 12. However, there is no way to add a second post.</p>
 <h3 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3><p>我真的没想到……就是个暴力（努力想了半天发现数据小，而且！给了20s！！！绝了。这大概也是跟codeforces最大的不同吧，无法想象codeforces给20s是一种怎样的体验。）</p>
 <p>首先我们要明确题意（这题目真的非常绕），实质是问你最多能将数组w划定多少个区间，使得每个区间内存在i&lt;j&lt;k，且w[i]&lt;w[j],w[k]&lt;w[j],或者w[i]&gt;w[j],w[k]&gt;w[j]。</p>
 <p>那么我们可以通过枚举区间的右端点，极端暴力是O(n^3)，二分优化可以做到O(n^2logn)。但是题目时限非常宽，所以就直接暴力了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> U unsigned</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scd(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> scs(x) scanf(<span class="meta-string">"%s"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prd(x) printf(<span class="meta-string">"%d"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prs(x) printf(<span class="meta-string">"%s"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for(int x=a;x&lt;b;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep0(x,n) for(int x=0;x&lt;n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(x,n) for(int x=1;x&lt;=n;x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(x,a,b) for(int x=a;x&gt;=b;x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l,m,ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1,r,rs</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> a/gcd(a,b)*b;&#125;</span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;ll ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b%<span class="number">2</span>)ans=ans*a%MOD;a=a*a%MOD;b/=<span class="number">2</span>;&#125;<span class="keyword">return</span> ans;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>),<span class="built_in">cin</span>.tie(<span class="number">0</span>),<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> temp=<span class="number">1</span>;temp&lt;=t;temp++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=k;i++) <span class="built_in">cin</span>&gt;&gt;m[i];</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>,i,j;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=k;i=j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(j=i+<span class="number">2</span>;j&lt;=k;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> x=i+<span class="number">1</span>;x&lt;j;x++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>((m[x]&gt;m[i]&amp;&amp;m[x]&gt;m[j])||(m[x]&lt;m[i]&amp;&amp;m[x]&lt;m[j]))</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                        flag=<span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(flag) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;temp&lt;&lt;<span class="string">": "</span>&lt;&lt;ans<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+#define U unsigned
+#define sqr(x) ((x)*(x))
+#define mem(x,y) memset(x,y,sizeof(x))
+#define scd(x) scanf(&quot;%d&quot;,&amp;x)
+#define scs(x) scanf(&quot;%s&quot;,&amp;x)
+#define prd(x) printf(&quot;%d&quot;,x)
+#define prs(x) printf(&quot;%s&quot;,x)
+#define rep(x,a,b) for(int x=a;x&lt;b;x++)
+#define rep0(x,n) for(int x=0;x&lt;n;x++)
+#define rep1(x,n) for(int x=1;x&lt;=n;x++)
+#define per(x,a,b) for(int x=a;x&gt;=b;x--)
+#define ls rt&lt;&lt;1
+#define rs rt&lt;&lt;1|1
+#define lson l,m,ls
+#define rson m+1,r,rs
+using namespace std;
+const double eps=1e-8;
+const double pi=acos(-1.0);
+const int INF=0x3f3f3f3f;
+ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a/gcd(a,b)*b;}
+ll powmod(ll a,ll b,ll MOD){ll ans=1;while(b){if(b%2)ans=ans*a%MOD;a=a*a%MOD;b/=2;}return ans;}
 
-            <div class="post-copyright">
-    <div class="content">
-        <p>最后更新： 2020年01月31日 17:04</p>
-        <p>原始链接： <a class="post-url" href="/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" title="code jam to i/O for Women 2019题解">http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/</a></p>
-        <footer>
-            <a href="http://yisin.top">
-                <img src="/images/1.png" alt="Yisin">
-                Yisin
-            </a>
-        </footer>
-    </div>
-</div>
+int m[1005];
 
-            
-            
-            
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;">赏</a>
-</div>
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    int t;
+    cin&gt;&gt;t;
+    for(int temp=1;temp&lt;=t;temp++)
+    {
+        int k;
+        cin&gt;&gt;k;
+        for(int i=0;i&lt;=k;i++) cin&gt;&gt;m[i];
+        int ans=0,i,j;
+        for(i=0;i&lt;=k;i=j)
+        {
+            for(j=i+2;j&lt;=k;j++)
+            {
+                int flag=0;
+                for(int x=i+1;x&lt;j;x++)
+                {
+                    if((m[x]&gt;m[i]&amp;&amp;m[x]&gt;m[j])||(m[x]&lt;m[i]&amp;&amp;m[x]&lt;m[j]))
+                    {
+                        ans++;
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag) break;
+            }
+        }
+        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;temp&lt;&lt;&quot;: &quot;&lt;&lt;ans-1&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="Sheepwalking"><a href="#Sheepwalking" class="headerlink" title="Sheepwalking"></a>Sheepwalking</h2><h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem"></a>Problem</h3><p>Bleatrix Trotter is a sheep who lives in a two-dimensional field that is an infinite grid of unit cells. Her home is in a unit cell that we denote as (0, 0) — that is, all coordinates are given relative to Bleatrix’s home cell. However, because she has been sleepwalking, she is currently in the unit cell at the coordinates (X, Y) — that is, in a cell X columns east of, and Y rows north of, her home cell. The two sheepdogs who have been assigned to protect Bleatrix have just noticed that she is missing, and now they want to herd her back to her home cell.</p>
+<p>Before each of Bleatrix’s moves, the two sheepdogs can move to any grid cells that they want, except that they cannot both move to the same cell, and neither one can move to Bleatrix’s current cell. Once the sheepdogs are in place, Bleatrix, who is sleepwalking, will make a random unit move in a direction that would not take her into a cell with a sheepdog. That is, she takes the set of four possible unit moves (north, south, west, east), discards any that would move her into a cell with a sheepdog, and then chooses uniformly at random from the remaining moves. Then the sheepdogs can position themselves again, and so on (notice that, unlike Bleatrix, the sheepdogs do not have to make unit moves).</p>
+<p>Once Bleatrix arrives at her home at (0, 0), she stops sleepwalking, wakes up, and grazes peacefully, and does not make any more moves thereafter.</p>
+<p>If the sheepdogs coordinate their movements to minimize the expected number of Bleatrix’s moves to reach her home, what is that expected number?</p>
+<h3 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input gives the number of test cases, T. T test cases follow. Each case consists of one line with two integers X and Y, representing the coordinates of Bleatrix’s starting cell, as described above.</p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the expected number of Bleatrix’s moves, as described above. y will be considered correct if it is within an absolute or relative error of 10-6 of the correct answer. See the Competing section of the FAQ for an explanation of what that means, and what formats of real numbers we accept.</p>
+<h3 id="Limits-2"><a href="#Limits-2" class="headerlink" title="Limits"></a>Limits</h3><h4 id="Time-limit-2"><a href="#Time-limit-2" class="headerlink" title="Time limit:"></a>Time limit:</h4><p>20 seconds per test set. (10 seconds per test run.)</p>
+<h4 id="Memory-limit-2"><a href="#Memory-limit-2" class="headerlink" title="Memory limit:"></a>Memory limit:</h4><p>1GB.</p>
+<p>(X, Y) ≠ (0, 0).</p>
+<p>Test set 1 (Visible)</p>
+<p>1 ≤ T ≤ 48.</p>
+<p>-3 ≤ X ≤ 3.</p>
+<p>-3 ≤ Y ≤ 3.</p>
+<p>Test set 2 (Hidden)</p>
+<p>1 ≤ T ≤ 100.</p>
+<p>-500 ≤ X ≤ 500.</p>
+<p>-500 ≤ Y ≤ 500.</p>
+<h3 id="Sample-2"><a href="#Sample-2" class="headerlink" title="Sample"></a>Sample</h3><p>Input </p>
+<pre><code>1
+-1 1
+</code></pre><p>Output </p>
+<pre><code>Case #1: 4.000000
+</code></pre><p>Notice that the values of X and/or Y may be negative. An X value of -1, for example, means that the cell is one unit west of Bleatrix’s home cell. (Similarly, a negative value of Y means the cell is south of Bleatrix’s home cell.)</p>
+<p>In the sample case, Bleatrix starts off one cell to the north of, and one cell to the west of, her home. Before she makes her first move, the two sheepdogs could position themselves in cells (-2, 1) and (-1, 2). Then, whichever direction she might choose, she would end up only one step away from her home… but the sheepdogs could not guarantee that she would go there on her next move! The remaining details are left for you to discover.</p>
 
-<div id="reward" class="post-modal reward-lay">
-    <a class="close" href="javascript:;" id="reward-close">×</a>
-    <span class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        请我吃糖~
-        <i class="icon icon-quote-right"></i>
-    </span>
-    <div class="reward-content">
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
         
-        <div class="reward-code">
-            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
-        </div>
-        <div class="reward-select">
-            
-            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
-                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
-            </label>
-            
-            
-            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
-                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
-            </label>
-            
-        </div>
-    </div>
-</div>
-
-
-            
-        </div>
-        <footer class="article-footer">
-            
-            
-<div class="post-share">
-    <a href="javascript:;" id="share-sub" class="post-share-fab">
-        <i class="fa fa-share-alt"></i>
-    </a>
-    <div class="post-share-list" id="share-list">
-        <ul class="share-icons">
-          <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/&title=《code jam to i/O for Women 2019题解》 — 可爱的Yisin呀&pic=http://p0.ifengimg.com/pmop/2018/1026/D5C79DB2F64153D42569538C268F3E12DE0C88FF_size634_w356_h200.gif" data-title="微博">
-              <i class="fa fa-weibo"></i>
-            </a>
-          </li>
-          <li>
-            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
-              <i class="fa fa-weixin"></i>
-            </a>
-          </li>
-          <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/&title=《code jam to i/O for Women 2019题解》 — 可爱的Yisin呀&source=谷歌承诺 “building for everyone”。
-Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程..." data-title="QQ">
-              <i class="fa fa-qq"></i>
-            </a>
-          </li>
-          <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" data-title="Facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《code jam to i/O for Women 2019题解》 — 可爱的Yisin呀&url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/&via=http://yisin.top" data-title="Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" data-title="Google+">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        </ul>
-     </div>
-</div>
-<div class="post-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;" id="wxShare-close">×</a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2020/01/31/code-jam-to-i-O-for-Women-2019题解/" alt="微信分享二维码">
-</div>
-
-<div class="mask"></div>
-
-            
-            <ul class="article-footer-menu">
-                
-                
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/题解/" class="color3">题解</a>
-      
-    <a href="/tags/谷歌/" class="color3">谷歌</a>
-      
-  </li>
-
-            </ul>
-            
-        </footer>
-    </div>
-</article>
-
-
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#code-jam-to-i-O-for-Women-2019题解"><span class="post-toc-text">code jam to i/O for Women 2019题解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Grid-Escape"><span class="post-toc-text">Grid Escape</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Problem"><span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Input"><span class="post-toc-text">Input</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Output"><span class="post-toc-text">Output</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Limits"><span class="post-toc-text">Limits</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Time-limit"><span class="post-toc-text">Time limit:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Memory-limit"><span class="post-toc-text">Memory limit:</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sample"><span class="post-toc-text">Sample</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解题思路"><span class="post-toc-text">解题思路</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Parcel-Posts"><span class="post-toc-text">Parcel Posts</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Problem-1"><span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Input-1"><span class="post-toc-text">Input</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Output-1"><span class="post-toc-text">Output</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Limits-1"><span class="post-toc-text">Limits</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Time-limit-1"><span class="post-toc-text">Time limit:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Memory-limit-1"><span class="post-toc-text">Memory limit:</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sample-1"><span class="post-toc-text">Sample</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解题思路-1"><span class="post-toc-text">解题思路</span></a></li></ol></li></ol></li></ol>
-        </nav>
-    </aside>
-    
-
-<nav id="article-nav">
-  
-  
-    <a href="/2020/01/27/博弈论初探/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">博弈论初探</span>
-      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-    </a>
-  
-</nav>
-
-
-
-
-<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
-    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
-    <div id="comments">
-        <script>
-            var gitment = new Gitment({
-                owner: 'CuteYisin',
-                repo: 'comments.github.io',
-                oauth: {
-                    client_id: 'a43b3583886a5b52cdfb',
-                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
-                },
-            })
-            gitment.render('comments')
-        </script>
-    </div> -->
-
-</section>
         
-      </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info" class="inner">
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/01/27/博弈论初探/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                博弈论初探</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-<p>
-    <span id="busuanzi_container_site_uv" style="display:none">
-        总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
-        总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-      <p>
-        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
-        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
-      &copy; 2020 Yisin<br>
-      </p>
-    </div>
-  </div>
-</footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<div id="vcomments"></div>
 <script>
-  var mihoConfig = {
-      root: "http://yisin.top",
-      animate: true,
-      isHome: false,
-      share: true,
-      reward: 1
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
   }
 </script>
-<div class="sidebar">
-    <div id="sidebar-search" title="Search">
-        <i class="fa fa-search"></i>
-    </div>
-    <div id="sidebar-category" title="Categories">
-        <i class="fa fa-book"></i>
-    </div>
-    <div id="sidebar-tag" title="Tags">
-        <i class="fa fa-tags"></i>
-    </div>
-    <div id="sidebar-top">
-        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
-    </div>
-</div>
-<div class="sidebar-menu-box" id="sidebar-menu-box">
-    <div class="sidebar-menu-box-container">
-        <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/解题报告/">解题报告</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author"></a>
+            </h3>
+          </div>
         </div>
-        <div id="sidebar-menu-box-tags">
-            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
-        </div>
-    </div>
-    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
-<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
-    <div class="mobile-header-menu-container">
-        <span class="title">Menus</span>
-        <ul class="mobile-header-menu-navbar">
-            
-            <li>
-                <a href="/">
-                    <i class="fa fa-home"></i><span>Home</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/archives">
-                    <i class="fa fa-archive"></i><span>Archives</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/about">
-                    <i class="fa fa-user"></i><span>About</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    <div class="mobile-header-tag-container">
-        <span class="title">Tags</span>
-        <div id="mobile-header-container-tags">
-            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
         </div>
     </div>
 </div>
-<div class="search-wrap">
-    <span class="search-close">&times;</span>
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-            <i class="icon icon-lg icon-chevron-left"></i>
-        </a>
-        <input class="search-field" placeholder="Search..." id="keywords">
-        <a id="search-submit" href="javascript:;">
-            <i class="fa fa-search"></i>
-        </a>
-    <div class="search-container" id="search-container">
-        <ul class="search-result" id="search-result">
-        </ul>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Yisin<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-</div>
-
-<div id="search-tpl">
-    <li class="search-result-item">
-        <a href="{url}" class="search-item-li">
-            <span class="search-item-li-title" title="{title}">{title}</span>
-        </a>
-    </li>
-</div>
-<script src="/js/search.js"></script>
-<script src="/js/main.js"></script>
-
-
-  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
-  <div id="particles"></div>
-  <script src="/js/particles.js"></script>
-
-
-
-
-
-
-
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
-  <script src="/js/animate.js"></script>
-
-
-  <script src="/js/pop-img.js"></script>
-  <script>
-     $(".article-entry p img").popImg();
-  </script>
-
   </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="images/1.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">かわいいのYisin</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/图集/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/client/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+            客户端
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js id="2660651585" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.7" mutex="true" < meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script></meting-js>
 </body>
 </html>

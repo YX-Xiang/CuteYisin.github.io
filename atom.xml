@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yisin&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="/"/>
+  <updated>2020-02-11T03:10:43.962Z</updated>
+  <id>/</id>
+  
+  <author>
+    <name>Yisin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>code jam to i/O for Women 2019题解</title>
+    <link href="/2020/01/31/code-jam-to-i-O-for-Women-2019%E9%A2%98%E8%A7%A3/"/>
+    <id>/2020/01/31/code-jam-to-i-O-for-Women-2019题解/</id>
+    <published>2020-01-31T03:59:17.000Z</published>
+    <updated>2020-02-11T03:10:43.962Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;谷歌承诺 “building for everyone”。&lt;/p&gt;
+&lt;p&gt;Code Jam to I/O for Women 是谷歌提供的一个平台和机会，让全球顶尖的程序媛们华山论剑！&lt;/p&gt;
+&lt;p&gt;Code Jam to I/O for Women 是一个单轮的在线算法挑战！全球排名前 150 名的参与者，就有机会获得一张年度 Google I/O 大会的门票（包差旅）哦！！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+      <category term="谷歌" scheme="/tags/%E8%B0%B7%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论初探</title>
+    <link href="/2020/01/27/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%9D%E6%8E%A2/"/>
+    <id>/2020/01/27/博弈论初探/</id>
+    <published>2020-01-27T06:17:36.000Z</published>
+    <updated>2020-01-28T06:20:07.141Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们把动物利用大自然移动的瘾魂，&lt;/p&gt;
+&lt;p&gt;在决策人期待的空间里，&lt;/p&gt;
+&lt;p&gt;形成三维均衡的学术理论，&lt;/p&gt;
+&lt;p&gt;称为博弈论。&lt;/p&gt;
+&lt;p&gt;社会学领域非常经典的博弈论问题就是囚徒困境，&lt;/p&gt;
+&lt;p&gt;在算法竞赛领域的博弈论往往归纳为ICG（公平组合游戏），典型表现为取石子游戏。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="博弈论" scheme="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="石子游戏" scheme="/tags/%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的2019</title>
+    <link href="/2020/01/18/%E6%88%91%E7%9A%842019/"/>
+    <id>/2020/01/18/我的2019/</id>
+    <published>2020-01-18T08:05:20.000Z</published>
+    <updated>2020-01-18T08:32:22.391Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虎头蛇尾。&lt;/p&gt;
+&lt;p&gt;开启无限可能。&lt;/p&gt;
+&lt;p&gt;这是我的2019。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="新年" scheme="/tags/%E6%96%B0%E5%B9%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dp专题</title>
+    <link href="/2019/12/16/dp%E4%B8%93%E9%A2%98/"/>
+    <id>/2019/12/16/dp专题/</id>
+    <published>2019-12-16T11:51:38.000Z</published>
+    <updated>2019-12-16T13:22:47.522Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是我非常抗拒的一个算法点QAQ 因为真的很难 一直下意识地逃避不想学。&lt;/p&gt;
+&lt;p&gt;But最好面对恐惧的办法就是！疯狂刷题！！！&lt;/p&gt;
+&lt;p&gt;Yisin冲呀~&lt;/p&gt;
+&lt;p&gt;感谢awen给我们开的套题。特此鸣谢~&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="dp" scheme="/tags/dp/"/>
+    
+      <category term="动态规划" scheme="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>梦碎石家庄</title>
+    <link href="/2019/11/18/%E6%A2%A6%E7%A2%8E%E7%9F%B3%E5%AE%B6%E5%BA%84/"/>
+    <id>/2019/11/18/梦碎石家庄/</id>
+    <published>2019-11-18T11:35:26.000Z</published>
+    <updated>2019-12-15T08:11:55.011Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;渭城朝雨浥轻尘 客舍青青柳色新 &lt;/p&gt;
+&lt;p&gt;劝君更尽一杯酒 西出阳关无故人 &lt;/p&gt;
+&lt;p&gt;低吟白雪逢阳春 送君别去无知音 &lt;/p&gt;
+&lt;p&gt;高台孤矗昂首望 穹凄尽兮宙宇敞 &lt;/p&gt;
+&lt;p&gt;车马纵兮雁飞翔 春复秋往世无常 &lt;/p&gt;
+&lt;p&gt;幽清默兮落暗乡 何年何月蹉跎降 &lt;/p&gt;
+&lt;p&gt;莫问莫观你莫惆怅 山石林木无易样&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="心情" scheme="/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>十月末の小记</title>
+    <link href="/2019/10/29/%E5%8D%81%E6%9C%88%E6%9C%AB%E3%81%AE%E5%B0%8F%E8%AE%B0/"/>
+    <id>/2019/10/29/十月末の小记/</id>
+    <published>2019-10-29T12:46:06.000Z</published>
+    <updated>2019-10-31T12:25:47.930Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;十月十月十月，&lt;/p&gt;
+&lt;p&gt;好像又陷入了悲伤的漩涡。&lt;/p&gt;
+&lt;p&gt;觉得自己一事无成，&lt;/p&gt;
+&lt;p&gt;觉得自己资质平庸。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="心情" scheme="/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CCPC厦门站团队赛后总结</title>
+    <link href="/2019/10/27/CCPC%E5%8E%A6%E9%97%A8%E7%AB%99%E5%9B%A2%E9%98%9F%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"/>
+    <id>/2019/10/27/CCPC厦门站团队赛后总结/</id>
+    <published>2019-10-27T09:24:32.000Z</published>
+    <updated>2019-10-27T09:29:19.848Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;人生如逆旅&lt;/p&gt;
+&lt;p&gt;我亦是行人&lt;br&gt;
+    
+    </summary>
+    
+      <category term="比赛总结" scheme="/categories/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="比赛总结" scheme="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Coloring a Tree</title>
+    <link href="/2019/09/26/Coloring-a-Tree/"/>
+    <id>/2019/09/26/Coloring-a-Tree/</id>
+    <published>2019-09-26T11:25:52.000Z</published>
+    <updated>2019-09-26T12:26:57.581Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://codeforces.com/contest/902/problem/B&quot; target=&quot;_blank&quot;&gt;题目链接&amp;lt;–点这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这段时间写了好多dfs，感觉这题比较有挑战？看了眼题解才想到思路，然后代码实现感觉也不太简单……&lt;br&gt;
+    
+    </summary>
+    
+      <category term="DFS" scheme="/categories/DFS/"/>
+    
+    
+      <category term="搜索" scheme="/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="DFS" scheme="/tags/DFS/"/>
+    
+      <category term="dsu" scheme="/tags/dsu/"/>
+    
+      <category term="贪心" scheme="/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>走出舒适圈</title>
+    <link href="/2019/08/21/%E8%B5%B0%E5%87%BA%E8%88%92%E9%80%82%E5%9C%88/"/>
+    <id>/2019/08/21/走出舒适圈/</id>
+    <published>2019-08-21T02:55:27.000Z</published>
+    <updated>2019-08-21T03:40:16.844Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我本身还是一个挺喜欢安逸的人，也从来厌恶自己不了解的领域，发自内心的害怕。&lt;/p&gt;
+&lt;p&gt;记得金学长曾经的签名是，走出舒适圈，远离垃圾人。或许挺对的吧。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="生活记录" scheme="/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【2019】【NEUQ-ACM SUMMER CAMP】第九次课程作业解题报告</title>
+    <link href="/2019/08/11/%E3%80%902019%E3%80%91%E3%80%90NEUQ-ACM-SUMMER-CAMP%E3%80%91%E7%AC%AC%E4%B9%9D%E6%AC%A1%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
+    <id>/2019/08/11/【2019】【NEUQ-ACM-SUMMER-CAMP】第九次课程作业解题报告/</id>
+    <published>2019-08-11T09:12:36.000Z</published>
+    <updated>2019-08-11T10:43:05.373Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我出题比较喜欢安一个&lt;del&gt;有趣&lt;/del&gt;冗长的背景，考查思维的题目。&lt;/p&gt;
+&lt;p&gt;所以可能很多小盆友都自闭了。&lt;/p&gt;
+&lt;p&gt;下面奉上题解，请食用。求轻喷。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="解题报告" scheme="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
+    
+    
+      <category term="解题报告" scheme="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串算法之Manacher</title>
+    <link href="/2019/08/07/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E4%B9%8BManacher/"/>
+    <id>/2019/08/07/字符串算法之Manacher/</id>
+    <published>2019-08-07T02:06:01.000Z</published>
+    <updated>2019-08-07T02:51:12.128Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Manacher算法，&lt;/p&gt;
+&lt;p&gt;又叫“马拉车”算法，&lt;/p&gt;
+&lt;p&gt;可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="字符串" scheme="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019·8·杂杂杂篇</title>
+    <link href="/2019/08/05/2019%C2%B78%C2%B7%E6%9D%82%E6%9D%82%E6%9D%82%E7%AF%87/"/>
+    <id>/2019/08/05/2019·8·杂杂杂篇/</id>
+    <published>2019-08-05T01:53:16.000Z</published>
+    <updated>2019-08-05T02:09:08.287Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;七月悲喜交加 麦浪翻滚连同草地 直到天涯&lt;/p&gt;
+&lt;p&gt;八月就是八月 八月我守口如瓶&lt;/p&gt;
+&lt;p&gt;八月里我是瓶中的水 你是青天的云&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="生活记录" scheme="/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串算法之hash</title>
+    <link href="/2019/08/05/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E4%B9%8Bhash/"/>
+    <id>/2019/08/05/字符串算法之hash/</id>
+    <published>2019-08-05T01:36:58.000Z</published>
+    <updated>2019-08-07T01:27:16.868Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hash，一般翻译做”散列”，也有直接音译为”哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="字符串" scheme="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>戊戌变法剧本</title>
+    <link href="/2019/05/30/%E6%88%8A%E6%88%8C%E5%8F%98%E6%B3%95%E5%89%A7%E6%9C%AC/"/>
+    <id>/2019/05/30/戊戌变法剧本/</id>
+    <published>2019-05-29T16:58:03.000Z</published>
+    <updated>2019-05-29T17:05:12.947Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;高三时候看了一丢丢《北京法源寺》。&lt;/p&gt;
+&lt;p&gt;实在是令人拍案叫绝。&lt;/p&gt;
+&lt;p&gt;谨以此篇致敬李敖先生。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="文学" scheme="/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="文学" scheme="/tags/%E6%96%87%E5%AD%A6/"/>
+    
+      <category term="剧本" scheme="/tags/%E5%89%A7%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HBCPC河北省赛解题报告</title>
+    <link href="/2019/05/27/HBCPC%E6%B2%B3%E5%8C%97%E7%9C%81%E8%B5%9B%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
+    <id>/2019/05/27/HBCPC河北省赛解题报告/</id>
+    <published>2019-05-27T07:20:12.000Z</published>
+    <updated>2019-08-05T01:51:34.242Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前的游记过于花里胡哨，省赛题解的话另开一个好了  :-）&lt;/p&gt;
+&lt;p&gt;不知道什么时候能写完以及会写到哪里。&lt;/p&gt;
+&lt;p&gt;佛系小仙女（其实真相是太菜了，难题是既会写又不会写的~&lt;br&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HDU1426 Sudoku Killer（DFS）</title>
+    <link href="/2019/04/02/HDU1426-Sudoku-Killer%EF%BC%88DFS%EF%BC%89/"/>
+    <id>/2019/04/02/HDU1426-Sudoku-Killer（DFS）/</id>
+    <published>2019-04-02T12:25:50.000Z</published>
+    <updated>2019-04-02T13:20:03.774Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;和数独的不解之缘:D&lt;/p&gt;
+&lt;p&gt;初三的时候有段时间特别喜欢解数独，大概玩了一个星期就已经能把书里最难的数独题在十分钟以内破解。我觉得数独纯粹是一个推理+解方程的游戏，把所有能明确推理出来的空填上，剩下的只要设一个x就可以解出来，并没有什么奇技淫巧。&lt;/p&gt;
+&lt;p&gt;回到这道题，我还是有点害怕DFS。不怕不怕，多写写Yisin你一定可以的！吼= =&lt;br&gt;
+    
+    </summary>
+    
+      <category term="DFS" scheme="/categories/DFS/"/>
+    
+    
+      <category term="搜索" scheme="/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="DFS" scheme="/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HDU1584 蜘蛛牌（DFS）</title>
+    <link href="/2019/04/02/HDU1584-%E8%9C%98%E8%9B%9B%E7%89%8C%EF%BC%88DFS%EF%BC%89/"/>
+    <id>/2019/04/02/HDU1584-蜘蛛牌（DFS）/</id>
+    <published>2019-04-02T10:54:57.000Z</published>
+    <updated>2019-04-02T11:38:58.532Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;听说此题做不出深搜就还没到功夫QAQ&lt;/p&gt;
+&lt;p&gt;说的可能就是我&lt;/p&gt;
+&lt;p&gt;这一题乍一看是dp（可以用dp做，但是是数位dp……),还是好好想想DFS怎么做叭，嘤~&lt;br&gt;
+    
+    </summary>
+    
+      <category term="DFS" scheme="/categories/DFS/"/>
+    
+    
+      <category term="搜索" scheme="/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="DFS" scheme="/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学之数论基础</title>
+    <link href="/2019/04/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E6%95%B0%E8%AE%BA%E5%9F%BA%E7%A1%80/"/>
+    <id>/2019/04/01/密码学之数论基础/</id>
+    <published>2019-04-01T05:03:06.000Z</published>
+    <updated>2019-04-01T08:58:27.442Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我爱数学！&lt;/p&gt;
+&lt;p&gt;数论是计算机领域的基础，包括ACM、CTF都会用到。我的数学底子一般，曾经参加过数竞培训，但是已经荒废了很久。应用能力比证明能力强。但是我想做踏踏实实走攻数论这条路的人，因为我坚信数学的威力是无穷的。&lt;s&gt;毕竟经济基础决定上层建筑。（大雾）&lt;/s&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法基础" scheme="/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="数论" scheme="/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图论入门</title>
+    <link href="/2019/03/29/%E5%9B%BE%E8%AE%BA%E5%85%A5%E9%97%A8/"/>
+    <id>/2019/03/29/图论入门/</id>
+    <published>2019-03-29T11:40:52.000Z</published>
+    <updated>2019-03-30T10:55:42.895Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从今儿起，我就正儿八经地开始更新学习算法的一些心得惹，图论主要参考的是张新华老师的《算法竞赛宝典》。到时候离散数学学到这里以后，我再进行补充吧。现在只能拿着张老师的书照本宣科。&lt;/p&gt;
+&lt;p&gt;以下绝对是新手友好系列。因为我自己就是一个菜鸡QAQ，走到哪里都是全队最菜。&lt;s&gt;我检讨。&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;入门内容包括图的基本概念、图的存储结构（邻接数组、邻接表）、深度优先法、广度优先法。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="图论" scheme="/categories/%E5%9B%BE%E8%AE%BA/"/>
+    
+    
+      <category term="图论" scheme="/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>蓝桥杯总结</title>
+    <link href="/2019/03/28/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%80%BB%E7%BB%93/"/>
+    <id>/2019/03/28/蓝桥杯总结/</id>
+    <published>2019-03-28T10:42:34.000Z</published>
+    <updated>2019-08-05T01:46:04.910Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;年轻人要多刷题，少水群，才能进Final。&lt;/p&gt;
+&lt;p&gt;by Kuangbin&lt;/p&gt;
+&lt;p&gt;其实如果可以的话，我特别不想面对这个结果。省二都排到了中游的位置，这已经不单纯是运气背的问题了……&lt;br&gt;
+    
+    </summary>
+    
+      <category term="比赛总结" scheme="/categories/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="比赛总结" scheme="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+</feed>

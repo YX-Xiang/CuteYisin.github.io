@@ -1,155 +1,408 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title>天梯赛选拔Day1 | 可爱的Yisin呀</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title itemprop="name">天梯赛选拔Day1 | Yisin&#39;s Blog</title>
   
-    <meta name="keywords" content="Yisin,Yisin's Blog">
+    <link rel="shortcut icon" href="/1.ico">
   
-  <meta name="description" content="心之所向，素履以往；生如逆旅，一苇以航 3月15日接到16、17两天连续选拔赛的消息的时候整个人是慌的，因为从开学到现在都没有怎么写过代码。那晚连散人直播《最强大~脑》都不看了，在宿舍里焦躁地徘徊，一直跟小姐姐说我不行的。最后熬夜又刷了PAT上几道题试图平复心情。 3月16日上午我整理了《All Things About STL》这篇博文，来复习STL基础的操作类型。时间有限，也没能好好看完。 和">
-<meta name="keywords" content="比赛总结,题解">
-<meta property="og:type" content="article">
-<meta property="og:title" content="天梯赛选拔Day1">
-<meta property="og:url" content="http://yisin.top/2019/03/18/天梯赛选拔Day1/index.html">
-<meta property="og:site_name" content="可爱的Yisin呀">
-<meta property="og:description" content="心之所向，素履以往；生如逆旅，一苇以航 3月15日接到16、17两天连续选拔赛的消息的时候整个人是慌的，因为从开学到现在都没有怎么写过代码。那晚连散人直播《最强大~脑》都不看了，在宿舍里焦躁地徘徊，一直跟小姐姐说我不行的。最后熬夜又刷了PAT上几道题试图平复心情。 3月16日上午我整理了《All Things About STL》这篇博文，来复习STL基础的操作类型。时间有限，也没能好好看完。 和">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://bmob-cdn-24429.b0.upaiyun.com/2019/03/25/764cb98c40e5d84180277d8f4b415576.PNG">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-1032632/nr2vmr98lr.png?imageView2/2/w/1620">
-<meta property="og:updated_time" content="2019-08-05T01:47:52.795Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天梯赛选拔Day1">
-<meta name="twitter:description" content="心之所向，素履以往；生如逆旅，一苇以航 3月15日接到16、17两天连续选拔赛的消息的时候整个人是慌的，因为从开学到现在都没有怎么写过代码。那晚连散人直播《最强大~脑》都不看了，在宿舍里焦躁地徘徊，一直跟小姐姐说我不行的。最后熬夜又刷了PAT上几道题试图平复心情。 3月16日上午我整理了《All Things About STL》这篇博文，来复习STL基础的操作类型。时间有限，也没能好好看完。 和">
-<meta name="twitter:image" content="http://bmob-cdn-24429.b0.upaiyun.com/2019/03/25/764cb98c40e5d84180277d8f4b415576.PNG">
-  
-  
-    <link rel="icon" href="/1.ico">
-  
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/pace.min.js"></script>
-  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "かわいいのYisin";
+  mashiro_option.author_name = "Yisin";
+  mashiro_option.site_url = "https://yisin.top";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
 
-  
-  
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
 
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
 </head>
 </html>
-<body>
-  <div id="container">
-      <header id="header">
-    <div id="banner"></div>
-    <div id="header-outer">
-        <div id="header-menu" class="header-menu-pos animated">
-            <div class="header-menu-container">
-                <a href="/" class="left">
-                    <span class="site-title">Yisin&#39;s Blog</span>
-                </a>
-                <nav id="header-menu-nav" class="right">
-                    
-                    <a href="/">
-                        <i class="fa fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                    
-                    <a href="/archives">
-                        <i class="fa fa-archive"></i>
-                        <span>Archives</span>
-                    </a>
-                    
-                    <a href="/about">
-                        <i class="fa fa-user"></i>
-                        <span>About</span>
-                    </a>
-                    
-                </nav>
-                <a class="mobile-header-menu-button">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-        </div>
-        <div id="header-row">
-            <div id="logo">
-                <a href="/">
-                    <img src="/images/1.png" alt="logo">
-                </a>
-            </div>
-            <div class="header-info">
-                <div id="header-title">
-                    
-                    <h2>
-                        Yisin&#39;s Blog
-                    </h2>
-                    
-                </div>
-                <div id="header-description">
-                    
-                    <h3>
-                        可爱的Yisin呀
-                    </h3>
-                    
-                </div>
-            </div>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a title="Yisin" target="_blank" href="https://yisin.top/">
-                            <i class="fa fa-home fa-2x"></i></a>
-                    
-                        <a title="Github" target="_blank" href="https://github.com/CuteYisin">
-                            <i class="fa fa-github fa-2x"></i></a>
-                    
-                        <a title="Weibo" target="_blank" href="https://weibo.com/2789757415/">
-                            <i class="fa fa-weibo fa-2x"></i></a>
-                    
-                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
-                            <i class="fa fa-twitter fa-2x"></i></a>
-                    
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-      <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-天梯赛选拔Day1" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        <header class="article-header">
-            
-  
-    <h1 class="post-title" itemprop="name">
-      天梯赛选拔Day1
-    </h1>
-    <div class="post-title-bar">
-      <ul>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://yisin.top">
+          <img src="images/1.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>虽曰如云，匪我思存</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
           
+            
+              
+                <li>
+                  <a href="http://github.com/honjun" target="_blank" class="social-github" title="github">
+                    <img src="/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="sina">
+                    <img src="/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="zhihu">
+                    <img src="/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="email">
+                    <img src="/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="/img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">かわいいの</span>
+            <span class="shironeko">Yisin</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
               <li>
-                  <i class="fa fa-book"></i>
-                  
-                      <a href="/categories/比赛总结/">比赛总结</a>
-                  
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
               </li>
-          
-        <li>
-          <i class="fa fa-calendar"></i>  2019-03-18
-        </li>
-        <li>
-          <i class="fa fa-eye"></i>
-          <span id="busuanzi_value_page_pv"></span>
-        </li>
-      </ul>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/图集/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/client/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+                    客户端
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
     </div>
-  
+  </div>
+</header>
 
-            
-        </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-        <div class="article-entry post-content" itemprop="articleBody">
-            
-            
-            <p><em>心之所向，素履以往；生如逆旅，一苇以航</em></p>
+          <header class="entry-header">
+            <h1 class="entry-title">天梯赛选拔Day1</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2019-3-18&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p><p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p><em>心之所向，素履以往；生如逆旅，一苇以航</em></p>
 <p>3月15日接到16、17两天连续选拔赛的消息的时候整个人是慌的，因为从开学到现在都没有怎么写过代码。那晚连散人直播《最强大~脑》都不看了，在宿舍里焦躁地徘徊，一直跟小姐姐说我不行的。最后熬夜又刷了PAT上几道题试图平复心情。</p>
 <p>3月16日上午我整理了《All Things About STL》这篇博文，来复习STL基础的操作类型。时间有限，也没能好好看完。</p>
 <p>和学姐一起走到科技楼的时候，我一遍又一遍想不要害怕，得之我幸，失之我命，水平决定一切。但比赛开始的时候我还是手忙脚乱，不断出错，而且浏览器似乎有些奇奇怪怪的问题，动不动就崩。等我写完第一题的时候，已经排到了三四十名的位置。换在平时训练赛，这是完全不可能的事情。好在PAT机制下不算错误率和时间，所以一开始的失利并没有太影响到我。之后每写完一题就前进一些，到第八题写完，已经回到第五差不多的位置了。</p>
@@ -169,7 +422,42 @@
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
 <p>先阐明一个小学数学老师经常强调的点：x增加0.5倍 == x <em> 1.5；x增加1倍 == x </em> 2（well，这里应该也不会有人错）。</p>
 <p>单纯找2的话只需要把数据当成字符串读入，寻找2的个数；由于题目同时要求判断是否负数和偶数，还需要对字符串首位和末位进行判断。</p>
-<p>窝的代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(false);</span></span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>,flag1=<span class="number">0</span>,flag2=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n=s.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'-'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            flag1=<span class="number">1</span>;</span><br><span class="line">            n--;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'2'</span>)</span><br><span class="line">            ans++;</span><br><span class="line">        <span class="keyword">if</span>(i==s.size()<span class="number">-1</span>&amp;&amp;(s[i]-<span class="string">'0'</span>)%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">            flag2=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;ans&lt;&lt;" "&lt;&lt;n&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">double</span> m=ans*<span class="number">100.0</span>/n;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">if</span>(flag1==<span class="number">1</span>)</span><br><span class="line">        m*=<span class="number">1.5</span>;</span><br><span class="line">    <span class="keyword">if</span>(flag2==<span class="number">1</span>)</span><br><span class="line">        m*=<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f"</span>,m);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"%"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>窝的代码如下：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int main()
+{
+    //ios::sync_with_stdio(false);
+    string s;
+    cin&gt;&gt;s;
+    int ans=0,flag1=0,flag2=0;
+    int n=s.size();
+    for(int i=0;i&lt;s.size();i++)
+    {
+        if(s[i]==&#39;-&#39;)
+        {
+            flag1=1;
+            n--;
+            continue;
+        }
+        if(s[i]==&#39;2&#39;)
+            ans++;
+        if(i==s.size()-1&amp;&amp;(s[i]-&#39;0&#39;)%2==0)
+            flag2=1;
+    }
+    //cout&lt;&lt;ans&lt;&lt;&quot; &quot;&lt;&lt;n&lt;&lt;endl;
+    double m=ans*100.0/n;
+    //cout&lt;&lt;m&lt;&lt;endl;
+    if(flag1==1)
+        m*=1.5;
+    if(flag2==1)
+        m*=2;
+    printf(&quot;%.2f&quot;,m);
+    cout&lt;&lt;&quot;%&quot;&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
 <p>有一点需要额外注意，如果取消流同步（ios::sync_with_stdio(false)）了以后输出千万不能cout和printf混用，不然……答案全部错误。刚开始吓傻窝了，还好从前遇到过，还请教过学长萌QWQ</p>
 <h2 id="7-2-大笨钟-（10-分"><a href="#7-2-大笨钟-（10-分" class="headerlink" title="7-2 大笨钟 （10 分)"></a><b><font color="orange">7-2 大笨钟 （10 分)</font></b></h2><p>微博上有个自称“大笨钟V”的家伙，每天敲钟催促码农们爱惜身体早点睡觉。不过由于笨钟自己作息也不是很规律，所以敲钟并不定时。一般敲钟的点数是根据敲钟时间而定的，如果正好在某个整点敲，那么“当”数就等于那个整点数；如果过了整点，就敲下一个整点数。另外，虽然一天有24小时，钟却是只在后半天敲1~12下。例如在23:00敲钟，就是“当当当当当当当当当当当”，而到了23:01就会是“当当当当当当当当当当当当”。在午夜00:00到中午12:00期间（端点时间包括在内），笨钟是不敲的。</p>
 <p>下面就请你写个程序，根据当前时间替大笨钟敲钟。</p>
@@ -191,7 +479,37 @@
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
 <p>水题~分类讨论就行</p>
-<p>代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    <span class="keyword">int</span> h=(s[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+(s[<span class="number">1</span>]-<span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">int</span> m=(s[<span class="number">3</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+(s[<span class="number">4</span>]-<span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">if</span>(h&lt;<span class="number">12</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Only "</span>&lt;&lt;s&lt;&lt;<span class="string">".  Too early to Dang."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(h==<span class="number">12</span>&amp;&amp;m==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Only "</span>&lt;&lt;s&lt;&lt;<span class="string">".  Too early to Dang."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;h<span class="number">-12</span>;i++)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"Dang"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=h<span class="number">-12</span>;i++)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"Dang"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>代码：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    string s;
+    cin&gt;&gt;s;
+    int h=(s[0]-&#39;0&#39;)*10+(s[1]-&#39;0&#39;);
+    int m=(s[3]-&#39;0&#39;)*10+(s[4]-&#39;0&#39;);
+    if(h&lt;12)
+        cout&lt;&lt;&quot;Only &quot;&lt;&lt;s&lt;&lt;&quot;.  Too early to Dang.&quot;&lt;&lt;endl;
+    else if(h==12&amp;&amp;m==0)
+        cout&lt;&lt;&quot;Only &quot;&lt;&lt;s&lt;&lt;&quot;.  Too early to Dang.&quot;&lt;&lt;endl;
+    else
+    {
+        if(m==0)
+        {
+            for(int i=0;i&lt;h-12;i++)
+                cout&lt;&lt;&quot;Dang&quot;;
+        }
+        else
+        {
+            for(int i=0;i&lt;=h-12;i++)
+                cout&lt;&lt;&quot;Dang&quot;;
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h2 id="7-3-谁先倒-（15-分"><a href="#7-3-谁先倒-（15-分" class="headerlink" title="7-3 谁先倒 （15 分)"></a><b><font color="orange">7-3 谁先倒 （15 分)</font></b></h2><p>划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就输了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。</p>
 <p>下面给出甲、乙两人的酒量（最多能喝多少杯不倒）和划拳记录，请你判断两个人谁先倒。</p>
 <p><b><font color="pink">输入格式：</font></b></p>
@@ -200,17 +518,89 @@
 <p>其中喊是喊出的数字，划是划出的数字，均为不超过100的正整数（两只手一起划）。</p>
 <p><b><font color="pink">输出格式：</font></b></p>
 <p>在第一行中输出先倒下的那个人：A代表甲，B代表乙。第二行中输出没倒的那个人喝了多少杯。题目保证有一个人倒下。注意程序处理到有人倒下就终止，后面的数据不必处理。</p>
-<p><b><font color="pink">输入样例：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 1</span><br><span class="line">6</span><br><span class="line">8 10 9 12</span><br><span class="line">5 10 5 10</span><br><span class="line">3 8 5 12</span><br><span class="line">12 18 1 13</span><br><span class="line">4 16 12 15</span><br><span class="line">15 1 1 16</span><br></pre></td></tr></table></figure></b></p>
-<p><b><font color="pink">输出样例：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A</span><br><span class="line">1</span><br></pre></td></tr></table></figure></b></p>
-<p><b><font color="pink">时间限制:</font> 400 ms</b></p>
+<p><b><font color="pink">输入样例：</font></b></p>
+<pre><code>1 1
+6
+8 10 9 12
+5 10 5 10
+3 8 5 12
+12 18 1 13
+4 16 12 15
+15 1 1 16
+</code></pre><p><b><font color="pink">输出样例：</font></b></p>
+<pre><code>A
+1
+</code></pre><p><b><font color="pink">时间限制:</font> 400 ms</b></p>
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
-<p>我先提供一份最开始只得了4分的错误代码，泥萌找找哪里有问题<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a1[<span class="number">105</span>],a2[<span class="number">105</span>],b1[<span class="number">105</span>],b2[<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> a,b,n,ans1=<span class="number">0</span>,ans2=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ans1==a||ans2==b)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a1[i]&gt;&gt;a2[i]&gt;&gt;b1[i]&gt;&gt;b2[i];</span><br><span class="line">        <span class="keyword">int</span> m=a1[i]+b1[i];</span><br><span class="line">        <span class="keyword">if</span>(a2[i]==m)</span><br><span class="line">            ans1++;</span><br><span class="line">        <span class="keyword">if</span>(b2[i]==m)</span><br><span class="line">            ans2++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans1==a)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">'A'</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;ans2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">'B'</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;ans1&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我先提供一份最开始只得了4分的错误代码，泥萌找找哪里有问题</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int a1[105],a2[105],b1[105],b2[105];
+int main()
+{
+    ios::sync_with_stdio(false);
+    int a,b,n,ans1=0,ans2=0;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+    {
+        if(ans1==a||ans2==b)
+            break;
+        cin&gt;&gt;a1[i]&gt;&gt;a2[i]&gt;&gt;b1[i]&gt;&gt;b2[i];
+        int m=a1[i]+b1[i];
+        if(a2[i]==m)
+            ans1++;
+        if(b2[i]==m)
+            ans2++;
+    }
+    if(ans1==a)
+        cout&lt;&lt;&#39;A&#39;&lt;&lt;endl&lt;&lt;ans2&lt;&lt;endl;
+    else
+        cout&lt;&lt;&#39;B&#39;&lt;&lt;endl&lt;&lt;ans1&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
 <p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/03/25/764cb98c40e5d84180277d8f4b415576.PNG" alt><br>相信（jia she）泥萌已经发现了，理解题意的重要性。</p>
-<p>问题出在下面这几行<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a2[i]==m)</span><br><span class="line">     ans1++;</span><br><span class="line"><span class="keyword">if</span>(b2[i]==m)</span><br><span class="line">     ans2++;</span><br></pre></td></tr></table></figure></p>
+<p>问题出在下面这几行</p>
+<pre><code class="c++">if(a2[i]==m)
+     ans1++;
+if(b2[i]==m)
+     ans2++;
+</code></pre>
 <p>而题目中说：<b><font color="red">谁就输了，输家罚一杯酒。两人同赢或两人同输则继续下一轮</font></b></p>
 <p>也就是说，不仅需要满足一人输，还需要满足另一个人嬴。</p>
-<p>AC代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a1[<span class="number">105</span>],a2[<span class="number">105</span>],b1[<span class="number">105</span>],b2[<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> a,b,n,ans1=<span class="number">0</span>,ans2=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a1[i]&gt;&gt;a2[i]&gt;&gt;b1[i]&gt;&gt;b2[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ans1&gt;a||ans2&gt;b)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">int</span> m=a1[i]+b1[i];</span><br><span class="line">        <span class="keyword">if</span>(a2[i]==m&amp;&amp;b2[i]!=m)</span><br><span class="line">            ans1++;</span><br><span class="line">        <span class="keyword">if</span>(b2[i]==m&amp;&amp;a2[i]!=m)</span><br><span class="line">            ans2++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans1&gt;a)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">'A'</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;ans2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">'B'</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;ans1&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>AC代码如下：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int a1[105],a2[105],b1[105],b2[105];
+int main()
+{
+    ios::sync_with_stdio(false);
+    int a,b,n,ans1=0,ans2=0;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+    {
+        cin&gt;&gt;a1[i]&gt;&gt;a2[i]&gt;&gt;b1[i]&gt;&gt;b2[i];
+    }
+    for(int i=0;i&lt;n;i++)
+    {
+        if(ans1&gt;a||ans2&gt;b)
+            break;
+        int m=a1[i]+b1[i];
+        if(a2[i]==m&amp;&amp;b2[i]!=m)
+            ans1++;
+        if(b2[i]==m&amp;&amp;a2[i]!=m)
+            ans2++;
+    }
+    if(ans1&gt;a)
+        cout&lt;&lt;&#39;A&#39;&lt;&lt;endl&lt;&lt;ans2&lt;&lt;endl;
+    else
+        cout&lt;&lt;&#39;B&#39;&lt;&lt;endl&lt;&lt;ans1&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
 <h2 id="7-4-帅到没朋友-（20-分"><a href="#7-4-帅到没朋友-（20-分" class="headerlink" title="7-4 帅到没朋友 （20 分)"></a><b><font color="orange">7-4 帅到没朋友 （20 分)</font></b></h2><p>当芸芸众生忙着在朋友圈中发照片的时候，总有一些人因为太帅而没有朋友。本题就要求你找出那些帅到没有朋友的人。</p>
 <p><b><font color="pink">输入格式：</font></b></p>
 <p>输入第一行给出一个正整数N（≤100），是已知朋友圈的个数；随后N行，每行首先给出一个正整数K（≤1000），为朋友圈中的人数，然后列出一个朋友圈内的所有人——为方便起见，每人对应一个ID号，为5位数字（从00000到99999），ID间以空格分隔；之后给出一个正整数M（≤10000），为待查询的人数；随后一行中列出M个待查询的ID，以空格分隔。</p>
@@ -219,21 +609,132 @@
 <p>按输入的顺序输出那些帅到没朋友的人。ID间用1个空格分隔，行的首尾不得有多余空格。如果没有人太帅，则输出No one is handsome。</p>
 <p>注意：同一个人可以被查询多次，但只输出一次。</p>
 <p><b><font color="pink">输入样例1：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3 11111 22222 55555</span><br><span class="line">2 33333 44444</span><br><span class="line">4 55555 66666 99999 77777</span><br><span class="line">8</span><br><span class="line">55555 44444 10000 88888 22222 11111 23333 88888</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">输出样例1：</font></b></p>
+<pre><code>3
+3 11111 22222 55555
+2 33333 44444
+4 55555 66666 99999 77777
+8
+55555 44444 10000 88888 22222 11111 23333 88888
+</code></pre><p><b><font color="pink">输出样例1：</font></b></p>
 <p>10000 88888 23333</p>
 <p><b><font color="pink">输入样例2：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3 11111 22222 55555</span><br><span class="line">2 33333 44444</span><br><span class="line">4 55555 66666 99999 77777</span><br><span class="line">4</span><br><span class="line">55555 44444 22222 11111</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">输出样例2：</font></b></p>
+<pre><code>3
+3 11111 22222 55555
+2 33333 44444
+4 55555 66666 99999 77777
+4
+55555 44444 22222 11111
+</code></pre><p><b><font color="pink">输出样例2：</font></b></p>
 <p>No one is handsome</p>
 <p><b><font color="pink">时间限制:</font> 250 ms</b></p>
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
-<p>照例先放错误代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;mp,mp2;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="built_in">string</span>&gt;q;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">        <span class="keyword">while</span>(m--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> s;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">            mp[s]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;p;</span><br><span class="line">    <span class="keyword">while</span>(p--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">        <span class="keyword">if</span>(mp2[s]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(mp[s]==<span class="number">0</span>)</span><br><span class="line">                q.push(s);</span><br><span class="line">        &#125;</span><br><span class="line">        mp2[s]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(q.empty())</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"No one is handsome"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(q.size()==<span class="number">1</span>)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;q.front()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;q.front()&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>照例先放错误代码：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    map&lt;string,int&gt;mp,mp2;
+    queue&lt;string&gt;q;
+    int n;
+    cin&gt;&gt;n;
+    while(n--)
+    {
+        int m;
+        cin&gt;&gt;m;
+        while(m--)
+        {
+            string s;
+            cin&gt;&gt;s;
+            mp[s]++;
+        }
+    }
+    int p;
+    cin&gt;&gt;p;
+    while(p--)
+    {
+        string s;
+        cin&gt;&gt;s;
+        if(mp2[s]==0)
+        {
+            if(mp[s]==0)
+                q.push(s);
+        }
+        mp2[s]++;
+    }
+    if(q.empty())
+        cout&lt;&lt;&quot;No one is handsome&quot;&lt;&lt;endl;
+    else
+    {
+        while(!q.empty())
+        {
+            if(q.size()==1)
+                cout&lt;&lt;q.front()&lt;&lt;endl;
+            else
+                cout&lt;&lt;q.front()&lt;&lt;&quot; &quot;;
+            q.pop();
+        }
+    }
+    return 0;
+}
+</code></pre>
 <p>又是没好好读题的锅~</p>
 <p><b><font color="red">没有朋友的人可以是根本没安装“朋友圈”，也可以是只有自己一个人在朋友圈的人。</font>也就是说，k=1的时候和没有k的时候没区别啊。wsl~</b></p>
 <p>这道题我用了queue+map（其实可以不用queue，直接在线查询就行）。map的思路就是：当k&gt;1时，把后面所有编号纳入map，之后查询的时候只要看看map的值是否为0就行。还要注意：同一个人可以被查询多次，但只输出一次。所以要再用一个map记录是否已经被查询过。当然这道题的编号并不大，用数组也ok，就是注意输出要把前导0补全。</p>
-<p>AC代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;mp,mp2;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="built_in">string</span>&gt;q;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> s;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">            <span class="keyword">if</span>(m&gt;<span class="number">1</span>)</span><br><span class="line">                mp[s]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;p;</span><br><span class="line">    <span class="keyword">while</span>(p--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">        <span class="keyword">if</span>(mp2[s]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(mp[s]==<span class="number">0</span>)</span><br><span class="line">                q.push(s);</span><br><span class="line">        &#125;</span><br><span class="line">        mp2[s]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(q.empty())</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"No one is handsome"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(q.size()==<span class="number">1</span>)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;q.front()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;q.front()&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>AC代码：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    map&lt;string,int&gt;mp,mp2;
+    queue&lt;string&gt;q;
+    int n;
+    cin&gt;&gt;n;
+    while(n--)
+    {
+        int m;
+        cin&gt;&gt;m;
+        for(int i=0;i&lt;m;i++)
+        {
+            string s;
+            cin&gt;&gt;s;
+            if(m&gt;1)
+                mp[s]++;
+        }
+    }
+    int p;
+    cin&gt;&gt;p;
+    while(p--)
+    {
+        string s;
+        cin&gt;&gt;s;
+        if(mp2[s]==0)
+        {
+            if(mp[s]==0)
+                q.push(s);
+        }
+        mp2[s]++;
+    }
+    if(q.empty())
+        cout&lt;&lt;&quot;No one is handsome&quot;&lt;&lt;endl;
+    else
+    {
+        while(!q.empty())
+        {
+            if(q.size()==1)
+                cout&lt;&lt;q.front()&lt;&lt;endl;
+            else
+                cout&lt;&lt;q.front()&lt;&lt;&quot; &quot;;
+            q.pop();
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h2 id="7-5-重要的话说三遍-（5-分"><a href="#7-5-重要的话说三遍-（5-分" class="headerlink" title="7-5 重要的话说三遍 （5 分)"></a><b><font color="orange">7-5 重要的话说三遍 （5 分)</font></b></h2><h2 id="7-6-奇偶分家-（10-分"><a href="#7-6-奇偶分家-（10-分" class="headerlink" title="7-6 奇偶分家 （10 分)"></a><b><font color="orange">7-6 奇偶分家 （10 分)</font></b></h2><p>//5、6两道zz题窝就直接跳了= =</p>
 <h2 id="7-7-输出GPLT-（20-分"><a href="#7-7-输出GPLT-（20-分" class="headerlink" title="7-7 输出GPLT （20 分)"></a><b><font color="orange">7-7 输出GPLT （20 分)</font></b></h2><p>给定一个长度不超过10000的、仅由英文字母构成的字符串。请将字符重新调整顺序，按GPLTGPLT….这样的顺序输出，并忽略其它字符。当然，四种字符（不区分大小写）的个数不一定是一样多的，若某种字符已经输出完，则余下的字符仍按GPLT的顺序打印，直到所有字符都被输出。</p>
 <p><b><font color="pink">输入格式：</font></b></p>
@@ -248,7 +749,54 @@
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
 <p>这道题纯暴力。本来想看看网上有没有什么大佬的巧妙解法，发现只能模拟。这道题题意可以转换到分别统计GPLT个数，然后依次输出。</p>
-<p>AC代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    <span class="keyword">int</span> ans1=<span class="number">0</span>,ans2=<span class="number">0</span>,ans3=<span class="number">0</span>,ans4=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'G'</span>||s[i]==<span class="string">'g'</span>)</span><br><span class="line">            ans1++;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'P'</span>||s[i]==<span class="string">'p'</span>)</span><br><span class="line">            ans2++;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'L'</span>||s[i]==<span class="string">'l'</span>)</span><br><span class="line">            ans3++;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'T'</span>||s[i]==<span class="string">'t'</span>)</span><br><span class="line">            ans4++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> m=max(max(ans1,ans2),max(ans3,ans4));</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ans1&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'G'</span>;</span><br><span class="line">            ans1--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ans2&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'P'</span>;</span><br><span class="line">            ans2--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ans3&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'L'</span>;</span><br><span class="line">            ans3--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ans4&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'T'</span>;</span><br><span class="line">            ans4--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>AC代码如下：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    string s;
+    cin&gt;&gt;s;
+    int ans1=0,ans2=0,ans3=0,ans4=0;
+    for(int i=0;i&lt;s.size();i++)
+    {
+        if(s[i]==&#39;G&#39;||s[i]==&#39;g&#39;)
+            ans1++;
+        if(s[i]==&#39;P&#39;||s[i]==&#39;p&#39;)
+            ans2++;
+        if(s[i]==&#39;L&#39;||s[i]==&#39;l&#39;)
+            ans3++;
+        if(s[i]==&#39;T&#39;||s[i]==&#39;t&#39;)
+            ans4++;
+    }
+    int m=max(max(ans1,ans2),max(ans3,ans4));
+    while(m--)
+    {
+        if(ans1&gt;0)
+        {
+            cout&lt;&lt;&#39;G&#39;;
+            ans1--;
+        }
+        if(ans2&gt;0)
+        {
+            cout&lt;&lt;&#39;P&#39;;
+            ans2--;
+        }
+        if(ans3&gt;0)
+        {
+            cout&lt;&lt;&#39;L&#39;;
+            ans3--;
+        }
+        if(ans4&gt;0)
+        {
+            cout&lt;&lt;&#39;T&#39;;
+            ans4--;
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h2 id="7-8-后天-（5-分"><a href="#7-8-后天-（5-分" class="headerlink" title="7-8 后天 （5 分)"></a><b><font color="orange">7-8 后天 （5 分)</font></b></h2><p>//又是水题~跳鸭</p>
 <h2 id="7-9-抢红包-（25-分"><a href="#7-9-抢红包-（25-分" class="headerlink" title="7-9 抢红包 （25 分)"></a><b><font color="orange">7-9 抢红包 （25 分)</font></b></h2><p>没有人没抢过红包吧…… 这里给出N个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。</p>
 <p><b><font color="pink">输入格式：</font></b></p>
@@ -258,13 +806,78 @@
 <p><b><font color="pink">输出格式：</font></b></p>
 <p>按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。</p>
 <p><b><font color="pink">输入样例：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">3 2 22 10 58 8 125</span><br><span class="line">5 1 345 3 211 5 233 7 13 8 101</span><br><span class="line">1 7 8800</span><br><span class="line">2 1 1000 2 1000</span><br><span class="line">2 4 250 10 320</span><br><span class="line">6 5 11 9 22 8 33 7 44 10 55 4 2</span><br><span class="line">1 3 8800</span><br><span class="line">2 1 23 2 123</span><br><span class="line">1 8 250</span><br><span class="line">4 2 121 4 516 7 112 9 10</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">输出样例：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1 11.63</span><br><span class="line">2 3.63</span><br><span class="line">8 3.63</span><br><span class="line">3 2.11</span><br><span class="line">7 1.69</span><br><span class="line">6 -1.67</span><br><span class="line">9 -2.18</span><br><span class="line">10 -3.26</span><br><span class="line">5 -3.26</span><br><span class="line">4 -12.32</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">时间限制:</font> 400 ms</b></p>
+<pre><code>10
+3 2 22 10 58 8 125
+5 1 345 3 211 5 233 7 13 8 101
+1 7 8800
+2 1 1000 2 1000
+2 4 250 10 320
+6 5 11 9 22 8 33 7 44 10 55 4 2
+1 3 8800
+2 1 23 2 123
+1 8 250
+4 2 121 4 516 7 112 9 10
+</code></pre><p><b><font color="pink">输出样例：</font></b></p>
+<pre><code>1 11.63
+2 3.63
+8 3.63
+3 2.11
+7 1.69
+6 -1.67
+9 -2.18
+10 -3.26
+5 -3.26
+4 -12.32
+</code></pre><p><b><font color="pink">时间限制:</font> 400 ms</b></p>
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
-<p>用个结构体排序就好惹，不多说，直接上代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">p</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> num,money,n;</span><br><span class="line">&#125;s[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(p a,p b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.money==b.money)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a.n==b.n)</span><br><span class="line">            <span class="keyword">return</span> a.num&lt;b.num;</span><br><span class="line">        <span class="keyword">return</span> a.n&gt;b.n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a.money&gt;b.money;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(false);</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        s[i].num=i;</span><br><span class="line">        <span class="keyword">int</span> m,sum=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">        <span class="keyword">while</span>(m--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> c,d;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;c&gt;&gt;d;</span><br><span class="line">            s[c].n++;</span><br><span class="line">            s[c].money+=d;</span><br><span class="line">            sum+=d;</span><br><span class="line">        &#125;</span><br><span class="line">        s[i].money-=sum;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(s+<span class="number">1</span>,s+n+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s[i].num&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>,s[i].money/<span class="number">100.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用个结构体排序就好惹，不多说，直接上代码：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+struct p
+{
+    int num,money,n;
+}s[100005];
+bool cmp(p a,p b)
+{
+    if(a.money==b.money)
+    {
+        if(a.n==b.n)
+            return a.num&lt;b.num;
+        return a.n&gt;b.n;
+    }
+    return a.money&gt;b.money;
+}
+int main()
+{
+    //ios::sync_with_stdio(false);
+    int n;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++)
+    {
+        s[i].num=i;
+        int m,sum=0;
+        cin&gt;&gt;m;
+        while(m--)
+        {
+            int c,d;
+            cin&gt;&gt;c&gt;&gt;d;
+            s[c].n++;
+            s[c].money+=d;
+            sum+=d;
+        }
+        s[i].money-=sum;
+    }
+    sort(s+1,s+n+1,cmp);
+    for(int i=1;i&lt;=n;i++)
+    {
+        cout&lt;&lt;s[i].num&lt;&lt;&quot; &quot;;
+        printf(&quot;%.2f\n&quot;,s[i].money/100.0);
+    }
+    return 0;
+}
+</code></pre>
 <h2 id="7-10-排座位-（25-分"><a href="#7-10-排座位-（25-分" class="headerlink" title="7-10 排座位 （25 分)"></a><b><font color="orange">7-10 排座位 （25 分)</font></b></h2><p>布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。</p>
 <p><b><font color="pink">输入格式：</font></b></p>
 <p>输入第一行给出3个正整数：N（≤100），即前来参宴的宾客总人数，则这些人从1到N编号；M为已知两两宾客之间的关系数；K为查询的条数。随后M行，每行给出一对宾客之间的关系，格式为：宾客1 宾客2 关系，其中关系为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后K行，每行给出一对需要查询的宾客编号。</p>
@@ -272,27 +885,191 @@
 <p><b><font color="pink">输出格式：</font></b></p>
 <p>对每个查询输出一行结果：如果两位宾客之间是朋友，且没有敌对关系，则输出No problem；如果他们之间并不是朋友，但也不敌对，则输出OK；如果他们之间有敌对，然而也有共同的朋友，则输出OK but…；如果他们之间只有敌对关系，则输出No way。</p>
 <p><b><font color="pink">输入样例：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">7 8 4</span><br><span class="line">5 6 1</span><br><span class="line">2 7 -1</span><br><span class="line">1 3 1</span><br><span class="line">3 4 1</span><br><span class="line">6 7 -1</span><br><span class="line">1 2 1</span><br><span class="line">1 4 1</span><br><span class="line">2 3 -1</span><br><span class="line">3 4</span><br><span class="line">5 7</span><br><span class="line">2 3</span><br><span class="line">7 2</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">输出样例：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">No problem</span><br><span class="line">OK</span><br><span class="line">OK but...</span><br><span class="line">No way</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">时间限制:</font> 150 ms</b></p>
+<pre><code>7 8 4
+5 6 1
+2 7 -1
+1 3 1
+3 4 1
+6 7 -1
+1 2 1
+1 4 1
+2 3 -1
+3 4
+5 7
+2 3
+7 2
+</code></pre><p><b><font color="pink">输出样例：</font></b></p>
+<pre><code>No problem
+OK
+OK but...
+No way
+</code></pre><p><b><font color="pink">时间限制:</font> 150 ms</b></p>
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
 <p>其实我拿到这题的第一反应是并——查——集——！！！？？？！！！</p>
 <p>寒假虽然练过并查集的题目，但是没有板子的话就不知道能不能写了。但是并查集的算法原理我是知道的，所以抱着那一丝丝希望，而且如果我写不出来必然会从排行榜跌下去，窝就果断开始写。</p>
 <p>首先我们可以把判读敌人和朋友的方法区别开。朋友我采用的是并查集（因为涉及朋友的朋友也是朋友）；敌人我采用的是结构体内部嵌套数组，标记是否直接敌对（只有单纯直接的敌对关系才是绝对不能同席的）。</p>
-<p>我的AC代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> father[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">diren</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> s[<span class="number">105</span>];</span><br><span class="line">&#125;q[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        father[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_father</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(father[n]==n)</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> find_father(father[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a&gt;b)</span><br><span class="line">        swap(a,b);</span><br><span class="line">    father[b]=a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n,m,k;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;k;</span><br><span class="line">    init(n);</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">        <span class="keyword">if</span>(c==<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Union(a,b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            q[a].s[b]=<span class="number">1</span>;</span><br><span class="line">            q[b].s[a]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(k--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        <span class="keyword">if</span>(q[a].s[b]==<span class="number">1</span> &amp;&amp; find_father(a)!=find_father(b))</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"No way"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(q[a].s[b]==<span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"OK but..."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(find_father(a)==find_father(b))</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"No problem"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"OK"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>但是由于我的并查集是自己靠着理解瞎想的，并不标准，所以接下来推荐大佬代码（所以我为啥不用二维数组要用结构体内嵌数组……我傻了)。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> pre[<span class="number">101</span>];  </span><br><span class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">101</span>][<span class="number">101</span>]; <span class="comment">//邻接矩阵存储两者的直接关系，1朋友 -1敌对 </span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="comment">//寻找 </span></span><br><span class="line">	<span class="keyword">int</span> r = x;</span><br><span class="line">	<span class="keyword">while</span>(pre[r]!=r)&#123;</span><br><span class="line">		r = pre[r];</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">int</span> i=x ,j;			</span><br><span class="line">	<span class="keyword">while</span>(pre[i]!=r)&#123; <span class="comment">//路径压缩 </span></span><br><span class="line">		j = pre[i];</span><br><span class="line">		pre[i] = r;</span><br><span class="line">		i = j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">join</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123; <span class="comment">//将两个集合合并 </span></span><br><span class="line">	<span class="keyword">int</span> fx = find(x);</span><br><span class="line">	<span class="keyword">int</span> fy = find(y);</span><br><span class="line">	<span class="keyword">if</span>(fx!=fy)&#123;</span><br><span class="line">		pre[fx] = fy;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">same</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123; <span class="comment">//判断两个元素是否在同一个集合中 </span></span><br><span class="line">	<span class="keyword">if</span>(find(x)==find(y))&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,a,b,c,t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;t;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ;i&lt;=n ;i++)&#123;</span><br><span class="line">		pre[i] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ;i&lt;=m ;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		<span class="built_in">map</span>[a][b] = c; <span class="comment">//记录直接的对应关系 </span></span><br><span class="line">		<span class="built_in">map</span>[b][a] = c;</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="number">1</span>)&#123;</span><br><span class="line">			join(a,b); <span class="comment">//间接的朋友关系 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ;i&lt;=t; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">map</span>[a][b]==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"No problem\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">map</span>[a][b]==<span class="number">-1</span>&amp;&amp;find(a)==find(b))&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"OK but...\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">map</span>[a][b]==<span class="number">-1</span>&amp;&amp;find(a)!=find(b))&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"No way\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">map</span>[a][b]!=<span class="number">-1</span>&amp;&amp;<span class="built_in">map</span>[a][b]!=<span class="number">1</span>&amp;&amp;find(a)!=find(b))&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"OK\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我的AC代码：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+using namespace std;
+int father[105];
+
+
+struct diren
+{
+    int s[105];
+}q[105];
+
+void init(int n)
+{
+    for(int i=1;i&lt;=n;i++)
+    {
+        father[i]=i;
+    }
+}
+
+int find_father(int n)
+{
+    if(father[n]==n)
+        return n;
+    else
+    {
+        return find_father(father[n]);
+    }
+}
+
+void Union(int a,int b)
+{
+    if(a&gt;b)
+        swap(a,b);
+    father[b]=a;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    int n,m,k;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;
+    init(n);
+    while(m--)
+    {
+        int a,b,c;
+        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        if(c==1)
+        {
+            Union(a,b);
+        }
+        else
+        {
+            q[a].s[b]=1;
+            q[b].s[a]=1;
+        }
+    }
+    while(k--)
+    {
+        int a,b;
+        cin&gt;&gt;a&gt;&gt;b;
+        if(q[a].s[b]==1 &amp;&amp; find_father(a)!=find_father(b))
+            cout&lt;&lt;&quot;No way&quot;&lt;&lt;endl;
+        else if(q[a].s[b]==1)
+            cout&lt;&lt;&quot;OK but...&quot;&lt;&lt;endl;
+        else if(find_father(a)==find_father(b))
+            cout&lt;&lt;&quot;No problem&quot;&lt;&lt;endl;
+        else
+            cout&lt;&lt;&quot;OK&quot;&lt;&lt;endl;
+
+    }
+    return 0;
+}
+</code></pre>
+<p>但是由于我的并查集是自己靠着理解瞎想的，并不标准，所以接下来推荐大佬代码（所以我为啥不用二维数组要用结构体内嵌数组……我傻了)。</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int pre[101];  
+int map[101][101]; //邻接矩阵存储两者的直接关系，1朋友 -1敌对 
+
+
+int find(int x){ //寻找 
+    int r = x;
+    while(pre[r]!=r){
+        r = pre[r];
+    }    
+    int i=x ,j;            
+    while(pre[i]!=r){ //路径压缩 
+        j = pre[i];
+        pre[i] = r;
+        i = j;
+    }
+    return r;
+}
+
+
+
+void join(int x,int y){ //将两个集合合并 
+    int fx = find(x);
+    int fy = find(y);
+    if(fx!=fy){
+        pre[fx] = fy;
+    }
+}
+
+bool same(int x,int y){ //判断两个元素是否在同一个集合中 
+    if(find(x)==find(y)){
+        return true;
+    }else{
+        return false;
+    }
+}
+int main(){
+    int n,m,a,b,c,t;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;t;
+    for(int i=1 ;i&lt;=n ;i++){
+        pre[i] = i;
+    }
+
+    for(int i=1 ;i&lt;=m ;i++){
+        scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+        map[a][b] = c; //记录直接的对应关系 
+        map[b][a] = c;
+        if(c==1){
+            join(a,b); //间接的朋友关系 
+        }
+    }
+
+    for(int i=1 ;i&lt;=t; i++){
+        scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+        if(map[a][b]==1){
+            printf(&quot;No problem\n&quot;);
+        }
+        else if(map[a][b]==-1&amp;&amp;find(a)==find(b)){
+            printf(&quot;OK but...\n&quot;);
+        }
+        else if(map[a][b]==-1&amp;&amp;find(a)!=find(b)){
+            printf(&quot;No way\n&quot;);
+        }
+        else if(map[a][b]!=-1&amp;&amp;map[a][b]!=1&amp;&amp;find(a)!=find(b)){
+            printf(&quot;OK\n&quot;);
+        }
+    }
+
+
+    return 0;
+} 
+</code></pre>
 <h2 id="7-11-玩转二叉树-（25-分"><a href="#7-11-玩转二叉树-（25-分" class="headerlink" title="7-11 玩转二叉树 （25 分)"></a><b><font color="orange">7-11 玩转二叉树 （25 分)</font></b></h2><p>给定一棵二叉树的中序遍历和前序遍历，请你先将树做个镜面反转，再输出反转后的层序遍历的序列。所谓镜面反转，是指将所有非叶结点的左右孩子对换。这里假设键值都是互不相等的正整数。</p>
 <p><b><font color="pink">输入格式：</font></b></p>
 <p>输入第一行给出一个正整数N（≤30），是二叉树中结点的个数。第二行给出其中序遍历序列。第三行给出其前序遍历序列。数字间以空格分隔。</p>
 <p><b><font color="pink">输出格式：</font></b></p>
 <p>在一行中输出该树反转后的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。</p>
 <p><b><font color="pink">输入样例：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">1 2 3 4 5 6 7</span><br><span class="line">4 1 3 2 6 5 7</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">输出样例：</font></b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 6 1 7 5 3 2</span><br></pre></td></tr></table></figure>
-<p><b><font color="pink">时间限制:</font> 400 ms</b></p>
+<pre><code>7
+1 2 3 4 5 6 7
+4 1 3 2 6 5 7
+</code></pre><p><b><font color="pink">输出样例：</font></b></p>
+<pre><code>4 6 1 7 5 3 2
+</code></pre><p><b><font color="pink">时间限制:</font> 400 ms</b></p>
 <p><b><font color="pink">内存限制:</font> 64 MB</b></p>
 <p><b><font color="pink">代码长度限制:</font> 16 KB</b></p>
 <p>作为一个二叉树盲，大致扫了一下网上题解发现非常不适合入门级别选手。所以额外找了二叉树的知识点整理一下。(转自指点的专栏)</p>
@@ -304,321 +1081,647 @@
 <p>3、后续遍历二叉树顺序：左子树 –&gt; 右子树 –&gt; 根节点，即先访问左子树，然后是右子树，最后是根节点。<br> 上图中二叉树的后序遍历结果为：3 -&gt; 4 -&gt; 1 -&gt; 5 -&gt; 6 -&gt; 2 -&gt; 0</p>
 <p>4、层序遍历二叉树顺序：从最顶层的节点开始，从左往右依次遍历，之后转到第二层，继续从左往右遍历，持续循环，直到所有节点都遍历完成<br> 上图中二叉树的层序遍历结果为：0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6</p>
 <p>下面给出这四种算法思想的伪代码：</p>
-<p>前序遍历：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">preOrderParse(<span class="keyword">int</span> n)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[n] == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> ; <span class="comment">// 如果这个节点不存在，那么结束 </span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; tree[n].w ; <span class="comment">// 输出当前节点内容     </span></span><br><span class="line">    preOrderParse(tree[n].leftChild); <span class="comment">// 递归输出左子树 </span></span><br><span class="line">    preOrderParse(tree[n].rightChild); <span class="comment">// 递归输出右子树 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>中序遍历：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">inOrderParse(<span class="keyword">int</span> n) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[n] == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> ; <span class="comment">// 如果这个节点不存在，那么结束 </span></span><br><span class="line"></span><br><span class="line">    inOrderParse(tree[n].leftChild); <span class="comment">// 递归输出左子树 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; tree[n].w ; <span class="comment">// 输出当前节点内容 </span></span><br><span class="line">    inOrderParse(tree[n].rightChild); <span class="comment">// 递归输出右子树 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>后续遍历：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pastOrderParse(<span class="keyword">int</span> n) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[n] == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> ; <span class="comment">// 如果这个节点不存在，那么结束 </span></span><br><span class="line"></span><br><span class="line">    pastOrderParse(tree[n].leftChild); <span class="comment">// 递归输出左子树 </span></span><br><span class="line">    pastOrderParse(tree[n].rightChild); <span class="comment">// 递归输出右子树 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; tree[n].w ; <span class="comment">// 输出当前节点内容     </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前序遍历：</p>
+<pre><code class="c++">preOrderParse(int n)
+{
+    if(tree[n] == NULL)
+        return ; // 如果这个节点不存在，那么结束 
+
+    cout &lt;&lt; tree[n].w ; // 输出当前节点内容     
+    preOrderParse(tree[n].leftChild); // 递归输出左子树 
+    preOrderParse(tree[n].rightChild); // 递归输出右子树 
+} 
+</code></pre>
+<p>中序遍历：</p>
+<pre><code class="c++">inOrderParse(int n) 
+{
+    if(tree[n] == NULL)
+        return ; // 如果这个节点不存在，那么结束 
+
+    inOrderParse(tree[n].leftChild); // 递归输出左子树 
+    cout &lt;&lt; tree[n].w ; // 输出当前节点内容 
+    inOrderParse(tree[n].rightChild); // 递归输出右子树 
+} 
+</code></pre>
+<p>后续遍历：</p>
+<pre><code class="c++">pastOrderParse(int n) 
+{
+    if(tree[n] == NULL)
+        return ; // 如果这个节点不存在，那么结束 
+
+    pastOrderParse(tree[n].leftChild); // 递归输出左子树 
+    pastOrderParse(tree[n].rightChild); // 递归输出右子树 
+    cout &lt;&lt; tree[n].w ; // 输出当前节点内容     
+} 
+</code></pre>
 <p>可以看到前三种遍历都是直接通过递归来完成，用递归遍历二叉树简答方便而且好理解，接下来层序遍历就需要动点脑筋了，我们如何将二叉树一层一层的遍历输出？其实在这里我们要借助一种数据结构来完成：队列。</p>
 <p>我们都知道，队列是一种先进先出的数据结构，我们可以先将整颗二叉树的根节点加入队尾，然后循环出队，每次读取队头元素输出并且将队头元素出队，然后将这个输出的元素节点的的左右子树分别依次加入队尾，重复这个循环，知道队列为空的时候结束输出。那么整个二叉树就被我们采用层序遍历的思想输出来了。下面我们看一下上图的二叉树用层序遍历思想的遍历步骤：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(!que.empty())  </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> n = que.front(); <span class="comment">// 得到队头元素</span></span><br><span class="line">    que.pop();  <span class="comment">// 队头元素出队列 </span></span><br><span class="line">    <span class="comment">// 如果当前节点不为空，那么输出节点的数值，并且在队尾插入左右子节点</span></span><br><span class="line">    <span class="keyword">if</span>(tree[n] != <span class="literal">NULL</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; tree[n].w;</span><br><span class="line">        que.push(tree[n].leftChild); </span><br><span class="line">        que.push(tree[n].rightChild); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Ok，下面来看一下这几个遍历算法的最终代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 二叉树的四种遍历方式，这里没有采用真实的指针去做，</span></span><br><span class="line"><span class="comment"> * 而是采用数组下标去模拟指针，是一种更加方便快速的方法 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt; </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">-1</span>; <span class="comment">//我们用一个常数来表示当前二叉树节点为空的情况 </span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> w; <span class="comment">// 当前树节点的值 </span></span><br><span class="line">    <span class="keyword">int</span> p; <span class="comment">// 当前树节点的双亲所在数组下标 </span></span><br><span class="line">    <span class="keyword">int</span> l; <span class="comment">// 当前树节点的左子节点所在数组下标 </span></span><br><span class="line">    <span class="keyword">int</span> r; <span class="comment">// 当前树节点的右子节点所在数组下标 </span></span><br><span class="line">&#125;; </span><br><span class="line">Node node[N];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按照前序遍历二叉树的顺序输入树节点 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; node[n].w;</span><br><span class="line">    <span class="keyword">if</span>(node[n].w == INF) <span class="comment">//输入-1代表当前节点所在子二叉树停止输入 </span></span><br><span class="line">    &#123; </span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    node[n].p = n / <span class="number">2</span>;</span><br><span class="line">    node[n].l = n * <span class="number">2</span>;</span><br><span class="line">    node[n].r = n * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    input(n*<span class="number">2</span>);</span><br><span class="line">    input(n*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 前序遍历二叉树 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrderParse</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node[n].w == INF) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; node[n].w &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    preOrderParse(node[n].l);</span><br><span class="line">    preOrderParse(node[n].r);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 中序遍历二叉树 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrderParse</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node[n].w == INF) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    inOrderParse(n*<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; node[n].w &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    inOrderParse(n*<span class="number">2</span>+<span class="number">1</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后续遍历二叉树 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrderParse</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node[n].w == INF) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    postOrderParse(n*<span class="number">2</span>);</span><br><span class="line">    postOrderParse(n*<span class="number">2</span>+<span class="number">1</span>); </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; node[n].w &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * 层序遍历二叉树，这里采用的是 C++ STL 模板的提供的队列(queue)，</span></span><br><span class="line"><span class="comment"> * 并没有自己去实现一个队列</span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sequenceParse</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">1</span>;</span><br><span class="line">    que.push(<span class="number">1</span>); <span class="comment">// 插入根节点所在数组下标 </span></span><br><span class="line">    <span class="keyword">while</span>(!que.empty()) </span><br><span class="line">    &#123;</span><br><span class="line">        n = que.front();</span><br><span class="line">        que.pop(); <span class="comment">// 得到队头元素并且将队头元素出队列 </span></span><br><span class="line">        <span class="comment">// 如果当前节点不为空，那么输出该节点，并且将该节点的左右子节点插入队尾 </span></span><br><span class="line">        <span class="keyword">if</span>(node[n].w != INF) </span><br><span class="line">        &#123; </span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; node[n].w &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            que.push(node[n].l);</span><br><span class="line">            que.push(node[n].r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请以前序遍历的顺序输入二叉树，空节点输入 -1 ："</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">    input(<span class="number">1</span>); <span class="comment">// 从下标为 1 开始前序输入二叉树 </span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"前序遍历："</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">    preOrderParse(<span class="number">1</span>); </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"中序遍历："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    inOrderParse(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"后序遍历："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    postOrderParse(<span class="number">1</span>); </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"层序遍历："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    sequenceParse();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code class="c++">while(!que.empty())  
+{
+    int n = que.front(); // 得到队头元素
+    que.pop();  // 队头元素出队列 
+    // 如果当前节点不为空，那么输出节点的数值，并且在队尾插入左右子节点
+    if(tree[n] != NULL) 
+    {
+        cout &lt;&lt; tree[n].w;
+        que.push(tree[n].leftChild); 
+        que.push(tree[n].rightChild); 
+    }
+}
+</code></pre>
+<p>Ok，下面来看一下这几个遍历算法的最终代码：</p>
+<pre><code class="c++">/*
+ * 二叉树的四种遍历方式，这里没有采用真实的指针去做，
+ * 而是采用数组下标去模拟指针，是一种更加方便快速的方法 
+ */
+#include &lt;iostream&gt;
+#include &lt;queue&gt; 
+using namespace std;
+const int N = 10010;
+const int INF = -1; //我们用一个常数来表示当前二叉树节点为空的情况 
+
+struct Node 
+{
+    int w; // 当前树节点的值 
+    int p; // 当前树节点的双亲所在数组下标 
+    int l; // 当前树节点的左子节点所在数组下标 
+    int r; // 当前树节点的右子节点所在数组下标 
+}; 
+Node node[N];
+
+// 按照前序遍历二叉树的顺序输入树节点 
+void input(int n) 
+{
+    cin &gt;&gt; node[n].w;
+    if(node[n].w == INF) //输入-1代表当前节点所在子二叉树停止输入 
+    { 
+        return ;
+    }
+    node[n].p = n / 2;
+    node[n].l = n * 2;
+    node[n].r = n * 2 + 1;
+
+    input(n*2);
+    input(n*2+1);
+}
+
+// 前序遍历二叉树 
+void preOrderParse(int n) 
+{
+    if(node[n].w == INF) 
+    {
+        return ;
+    }
+
+    cout &lt;&lt; node[n].w &lt;&lt; &quot; &quot;;
+    preOrderParse(node[n].l);
+    preOrderParse(node[n].r);
+} 
+
+// 中序遍历二叉树 
+void inOrderParse(int n) 
+{
+    if(node[n].w == INF) 
+    {
+        return ;
+    }
+
+    inOrderParse(n*2);
+    cout &lt;&lt; node[n].w &lt;&lt; &quot; &quot;;
+    inOrderParse(n*2+1); 
+}
+
+// 后续遍历二叉树 
+void postOrderParse(int n) 
+{
+    if(node[n].w == INF) 
+    {
+        return ;
+    }
+
+    postOrderParse(n*2);
+    postOrderParse(n*2+1); 
+    cout &lt;&lt; node[n].w &lt;&lt; &quot; &quot;;
+} 
+
+/* 
+ * 层序遍历二叉树，这里采用的是 C++ STL 模板的提供的队列(queue)，
+ * 并没有自己去实现一个队列
+ */ 
+void sequenceParse() 
+{
+    queue&lt;int&gt; que;
+    int n = 1;
+    que.push(1); // 插入根节点所在数组下标 
+    while(!que.empty()) 
+    {
+        n = que.front();
+        que.pop(); // 得到队头元素并且将队头元素出队列 
+        // 如果当前节点不为空，那么输出该节点，并且将该节点的左右子节点插入队尾 
+        if(node[n].w != INF) 
+        { 
+            cout &lt;&lt; node[n].w &lt;&lt; &quot; &quot;;
+            que.push(node[n].l);
+            que.push(node[n].r);
+        }
+    }
+}
+
+int main() 
+{
+    cout &lt;&lt; &quot;请以前序遍历的顺序输入二叉树，空节点输入 -1 ：&quot; &lt;&lt; endl; 
+    input(1); // 从下标为 1 开始前序输入二叉树 
+
+    cout &lt;&lt; &quot;前序遍历：&quot; &lt;&lt; endl; 
+    preOrderParse(1); 
+    cout &lt;&lt; endl &lt;&lt; &quot;中序遍历：&quot; &lt;&lt; endl;
+    inOrderParse(1);
+    cout &lt;&lt; endl &lt;&lt; &quot;后序遍历：&quot; &lt;&lt; endl;
+    postOrderParse(1); 
+    cout &lt;&lt; endl &lt;&lt; &quot;层序遍历：&quot; &lt;&lt; endl;
+    sequenceParse();
+
+    return 0;
+} 
+</code></pre>
 <p>然后回到原题，大体思路就是根据前序、中序序列还原建树，然后镜面反转，就是将非叶子节点的左右孩子互换，最后层序遍历输出这棵树。</p>
 
-            <div class="post-copyright">
-    <div class="content">
-        <p>最后更新： 2019年08月05日 09:47</p>
-        <p>原始链接： <a class="post-url" href="/2019/03/18/天梯赛选拔Day1/" title="天梯赛选拔Day1">http://yisin.top/2019/03/18/天梯赛选拔Day1/</a></p>
-        <footer>
-            <a href="http://yisin.top">
-                <img src="/images/1.png" alt="Yisin">
-                Yisin
-            </a>
-        </footer>
-    </div>
-</div>
-
-            
-            
-            
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;">赏</a>
-</div>
-
-<div id="reward" class="post-modal reward-lay">
-    <a class="close" href="javascript:;" id="reward-close">×</a>
-    <span class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        请我吃糖~
-        <i class="icon icon-quote-right"></i>
-    </span>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
         </div>
-        <div class="reward-select">
-            
-            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
-                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
-            </label>
-            
-            
-            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
-                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
-            </label>
-            
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
-
-
-            
-        </div>
-        <footer class="article-footer">
-            
-            
-<div class="post-share">
-    <a href="javascript:;" id="share-sub" class="post-share-fab">
-        <i class="fa fa-share-alt"></i>
-    </a>
-    <div class="post-share-list" id="share-list">
-        <ul class="share-icons">
-          <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yisin.top/2019/03/18/天梯赛选拔Day1/&title=《天梯赛选拔Day1》 — 可爱的Yisin呀&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564979729097&di=7645f59af6a5a02be5793bc378c4cb2e&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201802%2F14%2F20180214154058_ZiAmU.jpeg" data-title="微博">
-              <i class="fa fa-weibo"></i>
-            </a>
-          </li>
-          <li>
-            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
-              <i class="fa fa-weixin"></i>
-            </a>
-          </li>
-          <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yisin.top/2019/03/18/天梯赛选拔Day1/&title=《天梯赛选拔Day1》 — 可爱的Yisin呀&source=心之所向，素履以往；生如逆旅，一苇以航
-3月15日接到16、17两天连续选拔赛的消息的时候整个人是慌的，因为从开学到现在都没有怎么写过代码。那晚连散人直播..." data-title="QQ">
-              <i class="fa fa-qq"></i>
-            </a>
-          </li>
-          <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yisin.top/2019/03/18/天梯赛选拔Day1/" data-title="Facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《天梯赛选拔Day1》 — 可爱的Yisin呀&url=http://yisin.top/2019/03/18/天梯赛选拔Day1/&via=http://yisin.top" data-title="Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yisin.top/2019/03/18/天梯赛选拔Day1/" data-title="Google+">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        </ul>
-     </div>
-</div>
-<div class="post-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;" id="wxShare-close">×</a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yisin.top/2019/03/18/天梯赛选拔Day1/" alt="微信分享二维码">
-</div>
-
-<div class="mask"></div>
-
-            
-            <ul class="article-footer-menu">
-                
-                
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/比赛总结/" class="color5">比赛总结</a>
-      
-    <a href="/tags/题解/" class="color3">题解</a>
-      
-  </li>
-
-            </ul>
-            
-        </footer>
-    </div>
-</article>
-
-
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#天梯赛选拔Day1"><span class="post-toc-text">天梯赛选拔Day1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-1-到底有多二-（15-分"><span class="post-toc-text">7-1 到底有多二 （15 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-2-大笨钟-（10-分"><span class="post-toc-text">7-2 大笨钟 （10 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-3-谁先倒-（15-分"><span class="post-toc-text">7-3 谁先倒 （15 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-4-帅到没朋友-（20-分"><span class="post-toc-text">7-4 帅到没朋友 （20 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-5-重要的话说三遍-（5-分"><span class="post-toc-text">7-5 重要的话说三遍 （5 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-6-奇偶分家-（10-分"><span class="post-toc-text">7-6 奇偶分家 （10 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-7-输出GPLT-（20-分"><span class="post-toc-text">7-7 输出GPLT （20 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-8-后天-（5-分"><span class="post-toc-text">7-8 后天 （5 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-9-抢红包-（25-分"><span class="post-toc-text">7-9 抢红包 （25 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-10-排座位-（25-分"><span class="post-toc-text">7-10 排座位 （25 分)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-11-玩转二叉树-（25-分"><span class="post-toc-text">7-11 玩转二叉树 （25 分)</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-    
-
-<nav id="article-nav">
-  
-    <a href="/2019/03/28/蓝桥杯总结/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
         
-          蓝桥杯总结
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/03/28/蓝桥杯总结/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                蓝桥杯总结</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
         
-      </span>
-    </a>
-  
-  
-    <a href="/2019/03/16/All-Things-About-STL/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">All Things About STL</span>
-      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-    </a>
-  
-</nav>
-
-
-
-
-<!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
-    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
-    <div id="comments">
-        <script>
-            var gitment = new Gitment({
-                owner: 'CuteYisin',
-                repo: 'comments.github.io',
-                oauth: {
-                    client_id: 'a43b3583886a5b52cdfb',
-                    client_secret: 'b7c84620efcf18224e988911bbf34c5da0dc955a',
-                },
-            })
-            gitment.render('comments')
-        </script>
-    </div> -->
-
-</section>
         
-      </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info" class="inner">
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/03/16/All-Things-About-STL/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                All Things About STL</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-<p>
-    <span id="busuanzi_container_site_uv" style="display:none">
-        总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
-        总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-      <p>
-        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
-        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
-      &copy; 2020 Yisin<br>
-      </p>
-    </div>
-  </div>
-</footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<div id="vcomments"></div>
 <script>
-  var mihoConfig = {
-      root: "http://yisin.top",
-      animate: true,
-      isHome: false,
-      share: true,
-      reward: 1
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
   }
 </script>
-<div class="sidebar">
-    <div id="sidebar-search" title="Search">
-        <i class="fa fa-search"></i>
-    </div>
-    <div id="sidebar-category" title="Categories">
-        <i class="fa fa-book"></i>
-    </div>
-    <div id="sidebar-tag" title="Tags">
-        <i class="fa fa-tags"></i>
-    </div>
-    <div id="sidebar-top">
-        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
-    </div>
-</div>
-<div class="sidebar-menu-box" id="sidebar-menu-box">
-    <div class="sidebar-menu-box-container">
-        <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/DFS/">DFS</a><a class="category-link" href="/categories/图论/">图论</a><a class="category-link" href="/categories/总结/">总结</a><a class="category-link" href="/categories/文学/">文学</a><a class="category-link" href="/categories/比赛总结/">比赛总结</a><a class="category-link" href="/categories/算法/">算法</a><a class="category-link" href="/categories/算法基础/">算法基础</a><a class="category-link" href="/categories/算法模板/">算法模板</a><a class="category-link" href="/categories/解题报告/">解题报告</a><a class="category-link" href="/categories/随笔/">随笔</a><a class="category-link" href="/categories/题解/">题解</a>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author"></a>
+            </h3>
+          </div>
         </div>
-        <div id="sidebar-menu-box-tags">
-            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
-        </div>
-    </div>
-    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
-<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
-    <div class="mobile-header-menu-container">
-        <span class="title">Menus</span>
-        <ul class="mobile-header-menu-navbar">
-            
-            <li>
-                <a href="/">
-                    <i class="fa fa-home"></i><span>Home</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/archives">
-                    <i class="fa fa-archive"></i><span>Archives</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/about">
-                    <i class="fa fa-user"></i><span>About</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    <div class="mobile-header-tag-container">
-        <span class="title">Tags</span>
-        <div id="mobile-header-container-tags">
-            <a href="/tags/DFS/" style="font-size: 16.67px;">DFS</a> <a href="/tags/camp/" style="font-size: 10px;">camp</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/dsu/" style="font-size: 10px;">dsu</a> <a href="/tags/wls/" style="font-size: 10px;">wls</a> <a href="/tags/剧本/" style="font-size: 10px;">剧本</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/字符串/" style="font-size: 13.33px;">字符串</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/搜索/" style="font-size: 16.67px;">搜索</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/文学/" style="font-size: 10px;">文学</a> <a href="/tags/新年/" style="font-size: 13.33px;">新年</a> <a href="/tags/板子/" style="font-size: 10px;">板子</a> <a href="/tags/比赛总结/" style="font-size: 20px;">比赛总结</a> <a href="/tags/生活记录/" style="font-size: 13.33px;">生活记录</a> <a href="/tags/石子游戏/" style="font-size: 10px;">石子游戏</a> <a href="/tags/自闭/" style="font-size: 10px;">自闭</a> <a href="/tags/解题报告/" style="font-size: 10px;">解题报告</a> <a href="/tags/谷歌/" style="font-size: 10px;">谷歌</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/随笔/" style="font-size: 13.33px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
         </div>
     </div>
 </div>
-<div class="search-wrap">
-    <span class="search-close">&times;</span>
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-            <i class="icon icon-lg icon-chevron-left"></i>
-        </a>
-        <input class="search-field" placeholder="Search..." id="keywords">
-        <a id="search-submit" href="javascript:;">
-            <i class="fa fa-search"></i>
-        </a>
-    <div class="search-container" id="search-container">
-        <ul class="search-result" id="search-result">
-        </ul>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Yisin<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-</div>
-
-<div id="search-tpl">
-    <li class="search-result-item">
-        <a href="{url}" class="search-item-li">
-            <span class="search-item-li-title" title="{title}">{title}</span>
-        </a>
-    </li>
-</div>
-<script src="/js/search.js"></script>
-<script src="/js/main.js"></script>
-
-
-  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
-  <div id="particles"></div>
-  <script src="/js/particles.js"></script>
-
-
-
-
-
-
-
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
-  <script src="/js/animate.js"></script>
-
-
-  <script src="/js/pop-img.js"></script>
-  <script>
-     $(".article-entry p img").popImg();
-  </script>
-
   </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="images/1.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">かわいいのYisin</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/图集/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/client/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+            客户端
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js id="2660651585" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.7" mutex="true" < meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script></meting-js>
 </body>
 </html>
