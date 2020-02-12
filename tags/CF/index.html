@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">字符串算法之Manacher | Yisin&#39;s Blog</title>
+  <title itemprop="name">Tag: CF | Yisin&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/1.ico">
   
@@ -380,242 +380,97 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      字符串算法之Manacher</h1>
-      <p class="entry-census">
-        <span>
-          <a href="https://yisin.top">
-            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2610041158,3661673196&fm=26&gp=0.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="https://yisin.top">Yisin</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2019-8-7<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="CF.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-
+  <header class="pattern-header ">
+    <h1 class="cat-title">CF</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <p>Manacher算法，</p>
-<p>又叫“马拉车”算法，</p>
-<p>可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。<br><a id="more"></a></p>
-<h1 id="字符串算法之Manacher"><a href="#字符串算法之Manacher" class="headerlink" title="字符串算法之Manacher"></a>字符串算法之Manacher</h1><p>之前一直都在不知所云地套板子。</p>
-<p>直到今天，下定决心，要搞懂Manacher的原理。</p>
-<p>然后，原来不过如此嘛XD</p>
-<p>从最简单的判断回文的方法说起。</p>
-<p>即拉出字符串中的每个子串，判断它们是否回文。</p>
-<p>拉出子串需要O(n^2),判断是否回文需要O(n)，所以这种方法的时间复杂度是O(n^3)。</p>
-<p>那么再精巧一点，我们可以从字符串中的每个字符下手，对于每个字符向两边扩展求回文长度。这样子，时间复杂度降到了O(n^2)。</p>
-<p>我们是否可以找到一种O(n)的算法呢？答案是肯定的。</p>
-<p>不考虑dp的方法，其实我们能从回文串本身得到一些启示。</p>
-<p>例如：</p>
-<p>c a b a d a b a b</p>
-<p>我们运用第二种方法对每个字符进行分析。</p>
-<p>从第二位a开始，b≠c，因此f[2]=1;</p>
-<p>第三位b，c <font color="red">a </font><font color="yellow">b </font><font color="red">a </font>d a b a b，因此，f[3]=3；</p>
-<p>第四位a，b≠d，f[4]=1；</p>
-<p>第五位d，c <font color="red">a b a </font><font color="yellow">d </font><font color="red">a b a </font>b，因此，f[5]=7；</p>
-<p>下面！！！高能！！！</p>
-<p>第六位a，b≠d，f[6]=1。但是！是不是觉得似曾相识？对！由于回文串具有对称性质，所以事实上，因为第四位构不成回文串，所以与此对应的第六位也是不可能有的。</p>
-<p>第七位b，同理，第七位等同于第三位，f[7]=f[3]=3；</p>
-<p>第八位a，是不是要脱口而出f[8]=f[2]=1？等等！我们发现 c a b a d a <font color="red">b </font><font color="yellow">a </font><font color="red">b </font>，因此，f[8]=3。这是为什么呢？由于s[1]≠s[9]，所以f[8]和f[2]是不一定相等的。</p>
-<p>这样一个分析过程，实际上就是Manacher算法所需要做的。</p>
-<ol>
-<li><p>首先，我们要记录下目前已知的回文串能够覆盖到的最右边的地方</p>
-</li>
-<li><p>同时，覆盖到最右边的回文串所对应的回文中心也要记录</p>
-</li>
-<li><p>以每一位为中心的回文串的长度也要记录，后面进行推断的时候能用到</p>
-</li>
-<li><p>对于新的中心，我们判断它是否在右边界内，若在，就计算它相对右边界回文中心的对称位置，从而得到一些信息，同时，如果该中心需要进行扩展，则继续扩展就行。</p>
-</li>
-</ol>
-<p>但是这样会出现一些问题，比如回文长度为偶数的时候，不存在严格意义上的回文中心。所以我们需要对字符串先进行一波预处理。</p>
-<ol>
-<li><p>先对字符串进行预处理，两个字符之间加上特殊符号#</p>
-</li>
-<li><p>然后遍历整个字符串，用一个数组来记录以该字符为中心的回文长度，为了方便计算右边界，我在数组中记录长度的一半（向下取整）</p>
-</li>
-<li><p>每一次遍历的时候，如果该字符在已知回文串最右边界的覆盖下，那么就计算其相对最右边界回文串中心对称的位置，得出已知回文串的长度</p>
-</li>
-<li><p>判断该长度和右边界，如果达到了右边界，那么需要进行中心扩展探索。当然，如果第3步该字符没有在最右边界的“羽翼”下，则直接进行中心扩展探索。进行中心扩展探索的时候，同时又更新右边界</p>
-</li>
-<li><p>最后得到最长回文之后，去掉其中的特殊符号即可</p>
-</li>
-</ol>
-<p>下面放上我觉得比较完美的一个板子</p>
-<pre><code class="c++">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;algorithm&gt;
-#include&lt;map&gt;
-using namespace std;
-const int maxn = 2e5 + 10;
-char s[maxn], sNew[maxn&lt;&lt;1];
-int p[maxn&lt;&lt;1], id, mx=0;
-int L, R; //回文串在原串的左右端点位置
-
-int Init()
-{
-    int len = strlen(s);
-    sNew[0] = &#39;$&#39;;
-    sNew[1] = &#39;#&#39;;
-    int j = 2;
-    for (int i = 0; i &lt; len; i++)
-    {
-        sNew[j++] = s[i];
-        sNew[j++] = &#39;#&#39;;
-    }
-    sNew[j] = &#39;\0&#39;;
-    return j;
-}
-
-int Manacher()
-{
-    int len = Init();
-    int max_len = -1;
-    mx = 0;
-    for (int i = 1; i &lt; len; i++)
-    {
-        if (i &lt; mx) p[i] = min(p[2 * id - i], mx - i);
-        else p[i] = 1;
-
-        while (sNew[i - p[i]] == sNew[i + p[i]]) p[i]++;
-
-        if (mx &lt; i + p[i])
-        {
-            id = i;
-            mx = i + p[i];
-        }
-
-        if(max_len &lt; p[i])
-        { 
-            max_len = p[i];
-            L = (i - p[i])&gt;&gt;1;
-            R = (i + p[i] - 4)&gt;&gt;1; ///R = (i + p[i])/2 -2;
-        }
-
-    }
-    return max_len;
-}
-</code></pre>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://s2.ax1x.com/2020/02/11/1oLXeP.jpg"></li>
-                <li class="wechat-code"><img src="https://s2.ax1x.com/2020/02/11/1oOSJg.png"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/08/11/【2019】【NEUQ-ACM-SUMMER-CAMP】第九次课程作业解题报告/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180507/191804-1525691884617f.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                【2019】【NEUQ-ACM SUMMER CAMP】第九次课程作业解题报告</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2019/08/05/字符串算法之hash/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180406/222007-1523024407aeea.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                字符串算法之hash</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
       
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "CzgPOtlgW4BOkXOCLpICSFIS-gzGzoHsz",
-        appKey: "VOcvpXw3KkWllYpSS76f5wnA",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a href="https://yisin.top" class="profile gravatar"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2610041158,3661673196&fm=26&gp=0.jpg" itemprop="image" alt="Yisin" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="https://yisin.top" itemprop="url" rel="author">Yisin</a>
-            </h3>
-          </div>
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/05/15/Codeforces-Round-560-Div-3/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i>小仙女</p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        <img width="150" height="150" src="http://pic.netbian.com/uploads/allimg/180407/100758-1523066878080a.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/05/15/Codeforces-Round-560-Div-3/">
+    Codeforces Round #560 (Div. 3)</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-5-15</div>
+    <p>
+    </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/05/15/Codeforces-Round-560-Div-3/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2018/12/05/Codeforces-Round-525-Div-2/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="http://pic.netbian.com/uploads/allimg/180407/100109-1523066469d230.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2018/12/05/Codeforces-Round-525-Div-2/">
+    Codeforces Round #525 (Div. 2)</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2018-12-5</div>
+    <p>
+    </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2018/12/05/Codeforces-Round-525-Div-2/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

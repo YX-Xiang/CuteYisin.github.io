@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">字符串算法之Manacher | Yisin&#39;s Blog</title>
+  <title itemprop="name">四五月小记（2050团聚+HBCPC省赛） | Yisin&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/1.ico">
   
@@ -386,11 +386,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180407/193517-15231009172d35.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180407/193517-15231009172d35.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      字符串算法之Manacher</h1>
+      四五月小记（2050团聚+HBCPC省赛）</h1>
       <p class="entry-census">
         <span>
           <a href="https://yisin.top">
@@ -402,7 +402,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-8-7<span class="bull">
+        2019-5-12<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -416,108 +416,33 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>Manacher算法，</p>
-<p>又叫“马拉车”算法，</p>
-<p>可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。<br><a id="more"></a></p>
-<h1 id="字符串算法之Manacher"><a href="#字符串算法之Manacher" class="headerlink" title="字符串算法之Manacher"></a>字符串算法之Manacher</h1><p>之前一直都在不知所云地套板子。</p>
-<p>直到今天，下定决心，要搞懂Manacher的原理。</p>
-<p>然后，原来不过如此嘛XD</p>
-<p>从最简单的判断回文的方法说起。</p>
-<p>即拉出字符串中的每个子串，判断它们是否回文。</p>
-<p>拉出子串需要O(n^2),判断是否回文需要O(n)，所以这种方法的时间复杂度是O(n^3)。</p>
-<p>那么再精巧一点，我们可以从字符串中的每个字符下手，对于每个字符向两边扩展求回文长度。这样子，时间复杂度降到了O(n^2)。</p>
-<p>我们是否可以找到一种O(n)的算法呢？答案是肯定的。</p>
-<p>不考虑dp的方法，其实我们能从回文串本身得到一些启示。</p>
-<p>例如：</p>
-<p>c a b a d a b a b</p>
-<p>我们运用第二种方法对每个字符进行分析。</p>
-<p>从第二位a开始，b≠c，因此f[2]=1;</p>
-<p>第三位b，c <font color="red">a </font><font color="yellow">b </font><font color="red">a </font>d a b a b，因此，f[3]=3；</p>
-<p>第四位a，b≠d，f[4]=1；</p>
-<p>第五位d，c <font color="red">a b a </font><font color="yellow">d </font><font color="red">a b a </font>b，因此，f[5]=7；</p>
-<p>下面！！！高能！！！</p>
-<p>第六位a，b≠d，f[6]=1。但是！是不是觉得似曾相识？对！由于回文串具有对称性质，所以事实上，因为第四位构不成回文串，所以与此对应的第六位也是不可能有的。</p>
-<p>第七位b，同理，第七位等同于第三位，f[7]=f[3]=3；</p>
-<p>第八位a，是不是要脱口而出f[8]=f[2]=1？等等！我们发现 c a b a d a <font color="red">b </font><font color="yellow">a </font><font color="red">b </font>，因此，f[8]=3。这是为什么呢？由于s[1]≠s[9]，所以f[8]和f[2]是不一定相等的。</p>
-<p>这样一个分析过程，实际上就是Manacher算法所需要做的。</p>
-<ol>
-<li><p>首先，我们要记录下目前已知的回文串能够覆盖到的最右边的地方</p>
-</li>
-<li><p>同时，覆盖到最右边的回文串所对应的回文中心也要记录</p>
-</li>
-<li><p>以每一位为中心的回文串的长度也要记录，后面进行推断的时候能用到</p>
-</li>
-<li><p>对于新的中心，我们判断它是否在右边界内，若在，就计算它相对右边界回文中心的对称位置，从而得到一些信息，同时，如果该中心需要进行扩展，则继续扩展就行。</p>
-</li>
-</ol>
-<p>但是这样会出现一些问题，比如回文长度为偶数的时候，不存在严格意义上的回文中心。所以我们需要对字符串先进行一波预处理。</p>
-<ol>
-<li><p>先对字符串进行预处理，两个字符之间加上特殊符号#</p>
-</li>
-<li><p>然后遍历整个字符串，用一个数组来记录以该字符为中心的回文长度，为了方便计算右边界，我在数组中记录长度的一半（向下取整）</p>
-</li>
-<li><p>每一次遍历的时候，如果该字符在已知回文串最右边界的覆盖下，那么就计算其相对最右边界回文串中心对称的位置，得出已知回文串的长度</p>
-</li>
-<li><p>判断该长度和右边界，如果达到了右边界，那么需要进行中心扩展探索。当然，如果第3步该字符没有在最右边界的“羽翼”下，则直接进行中心扩展探索。进行中心扩展探索的时候，同时又更新右边界</p>
-</li>
-<li><p>最后得到最长回文之后，去掉其中的特殊符号即可</p>
-</li>
-</ol>
-<p>下面放上我觉得比较完美的一个板子</p>
-<pre><code class="c++">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;algorithm&gt;
-#include&lt;map&gt;
-using namespace std;
-const int maxn = 2e5 + 10;
-char s[maxn], sNew[maxn&lt;&lt;1];
-int p[maxn&lt;&lt;1], id, mx=0;
-int L, R; //回文串在原串的左右端点位置
-
-int Init()
-{
-    int len = strlen(s);
-    sNew[0] = &#39;$&#39;;
-    sNew[1] = &#39;#&#39;;
-    int j = 2;
-    for (int i = 0; i &lt; len; i++)
-    {
-        sNew[j++] = s[i];
-        sNew[j++] = &#39;#&#39;;
-    }
-    sNew[j] = &#39;\0&#39;;
-    return j;
-}
-
-int Manacher()
-{
-    int len = Init();
-    int max_len = -1;
-    mx = 0;
-    for (int i = 1; i &lt; len; i++)
-    {
-        if (i &lt; mx) p[i] = min(p[2 * id - i], mx - i);
-        else p[i] = 1;
-
-        while (sNew[i - p[i]] == sNew[i + p[i]]) p[i]++;
-
-        if (mx &lt; i + p[i])
-        {
-            id = i;
-            mx = i + p[i];
-        }
-
-        if(max_len &lt; p[i])
-        { 
-            max_len = p[i];
-            L = (i - p[i])&gt;&gt;1;
-            R = (i + p[i] - 4)&gt;&gt;1; ///R = (i + p[i])/2 -2;
-        }
-
-    }
-    return max_len;
-}
-</code></pre>
+          <p>江东弟子多才俊</p>
+<p>卷土重来未可知<br><a id="more"></a></p>
+<h1 id="四五月小记（2050团聚-HBCPC省赛）"><a href="#四五月小记（2050团聚-HBCPC省赛）" class="headerlink" title="四五月小记（2050团聚+HBCPC省赛）"></a>四五月小记（2050团聚+HBCPC省赛）</h1><p>这段时间都很忙，各种事情全都堆过来。加上自己比较穷，很多时候身不由己，难受极了。现在才来更博，主要是记录一下四月末五月初这段时间的一些日常。最主要的是回杭州参加2050团聚和刚刚结束的HBCPC省赛。</p>
+<h2 id="2050——预见更美好的自己"><a href="#2050——预见更美好的自己" class="headerlink" title="2050——预见更美好的自己"></a>2050——预见更美好的自己</h2><p>如果申请不下来travel award，我应该就去不了2050，但是通过王老师的“py一下”，我的申请其实批得很早。（王老师后来还问我咋不多报一点）</p>
+<p>当时肝了一晚肝出了一篇申请，自己写得都有些难受。想着以情动人，当时每当回首过去，总是有很多不甘。</p>
+<p>申请的主体大概长这样子（被王老师放作范文了QAQ）</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/ba9f0cdb40a729398006eededf7a6b8b.PNG" alt><br><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/76db074940a46aca80e0e5091f8cb32d.PNG" alt></p>
+<p>抱着想见见世面+见wls+回家+逃掉运动会的心态，很开心地踏上了回杭州的旅程。</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/540e21984048f8b280713bb66f9c1ec9.jpg" alt></p>
+<p>见到你们很开心~</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/bfd44eb3403e324580e51c6c0e053712.jpg" alt></p>
+<p>第一次看到活的zjt小哥哥，和想象中差不多嘿嘿嘿。向小哥哥道歉，我们赖床太严重了，咕咕咕了两个早上。希望以后能继续一起加油，一起进步~The most important，一起cf开黑呀！</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/8250e05940c2a97180fcf882db505596.jpeg" alt></p>
+<p>wls!就是他对小迷妹好冷淡呀www亲亲抱抱举高高都不敢，只能要合照啦。希望未来能和他一样厉害，看到一样的风景，然后一览众山小。</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/e572226340adbfe08062415abe09834f.jpg" alt></p>
+<p>那晚一起恰饭饭。wls又抢着买单了。嘤总是觉得他和小天使一样善良，对世界充满善意。然后，一个重大发现，一桌子人只有我和他吃火锅不蘸任何蘸料的。大概浙江人的口味高度一致~</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/1a71dbfe40f032d98059b49b758b5f40.jpg" alt></p>
+<p>还有感谢小姐姐的夸奖，女生赛再见呀！</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/f44585ad400634be80b25b3ee3f8b24d.jpg" alt><br><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/5596f17d407d53e880c1583fa9ef7232.jpg" alt><br><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/e3b354d3404c31f7800871f5dc903e4e.jpg" alt></p>
+<p>附：回家吃喝玩乐都很开心~最最最重要的是，wls问候我啦~超级爆炸无敌开心~</p>
+<h2 id="HBCPC——Know-nothing-but-WA-的滑铁卢"><a href="#HBCPC——Know-nothing-but-WA-的滑铁卢" class="headerlink" title="HBCPC——Know nothing but WA 的滑铁卢"></a>HBCPC——Know nothing but WA 的滑铁卢</h2><p>比赛开始前被一众大佬毒奶就感觉要凉~</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/05/12/c4e4e8db4017894c80502834c046e386.jpg" alt></p>
+<p>热身那天出题基本问题不大，T了七八次的那题评测姬背锅。主要是罚时爆炸，出题数还过得去吧。</p>
+<p>今天不算打星57……省二吊车尾（居然吊住了）。三个人都要背锅。学长的锅主要是签到手滑WA两次，我的锅是模拟半天没时间修了，泽铭主要是键盘根本没碰着。</p>
+<p>上个星期放弃复习大物打了三场训练赛，得到这个结果其实很气。选拔赛第三出线的，今天？？？我们在梦游吗？</p>
+<p>题解等官方题解出来再补。</p>
+<p>这几天趁着好好反思一波。</p>
 
         </div>
         <!-- .entry-content -->
@@ -549,15 +474,15 @@ int Manacher()
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/08/11/【2019】【NEUQ-ACM-SUMMER-CAMP】第九次课程作业解题报告/" rel="prev">
+            <a href="/2019/05/15/Codeforces-Round-560-Div-3/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180507/191804-1525691884617f.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180407/100758-1523066878080a.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                【2019】【NEUQ-ACM SUMMER CAMP】第九次课程作业解题报告</h3>
+                Codeforces Round #560 (Div. 3)</h3>
                 <hr>
               </div>
             </a>
@@ -567,15 +492,15 @@ int Manacher()
           
             <div class="post-nepre half next">
           
-            <a href="/2019/08/05/字符串算法之hash/" rel="next">
+            <a href="/2019/04/02/HDU1426-Sudoku-Killer（DFS）/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180406/222007-1523024407aeea.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180809/172839-1533806919d1f7.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                字符串算法之hash</h3>
+                HDU1426 Sudoku Killer（DFS）</h3>
                 <hr>
               </div>
             </a>

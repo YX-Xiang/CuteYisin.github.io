@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">字符串算法之Manacher | Yisin&#39;s Blog</title>
+  <title itemprop="name">Codeforces Round #560 (Div. 3) | Yisin&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/1.ico">
   
@@ -386,11 +386,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180407/100758-1523066878080a.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180407/100758-1523066878080a.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      字符串算法之Manacher</h1>
+      Codeforces Round #560 (Div. 3)</h1>
       <p class="entry-census">
         <span>
           <a href="https://yisin.top">
@@ -402,7 +402,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-8-7<span class="bull">
+        2019-5-15<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -416,108 +416,82 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>Manacher算法，</p>
-<p>又叫“马拉车”算法，</p>
-<p>可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。<br><a id="more"></a></p>
-<h1 id="字符串算法之Manacher"><a href="#字符串算法之Manacher" class="headerlink" title="字符串算法之Manacher"></a>字符串算法之Manacher</h1><p>之前一直都在不知所云地套板子。</p>
-<p>直到今天，下定决心，要搞懂Manacher的原理。</p>
-<p>然后，原来不过如此嘛XD</p>
-<p>从最简单的判断回文的方法说起。</p>
-<p>即拉出字符串中的每个子串，判断它们是否回文。</p>
-<p>拉出子串需要O(n^2),判断是否回文需要O(n)，所以这种方法的时间复杂度是O(n^3)。</p>
-<p>那么再精巧一点，我们可以从字符串中的每个字符下手，对于每个字符向两边扩展求回文长度。这样子，时间复杂度降到了O(n^2)。</p>
-<p>我们是否可以找到一种O(n)的算法呢？答案是肯定的。</p>
-<p>不考虑dp的方法，其实我们能从回文串本身得到一些启示。</p>
-<p>例如：</p>
-<p>c a b a d a b a b</p>
-<p>我们运用第二种方法对每个字符进行分析。</p>
-<p>从第二位a开始，b≠c，因此f[2]=1;</p>
-<p>第三位b，c <font color="red">a </font><font color="yellow">b </font><font color="red">a </font>d a b a b，因此，f[3]=3；</p>
-<p>第四位a，b≠d，f[4]=1；</p>
-<p>第五位d，c <font color="red">a b a </font><font color="yellow">d </font><font color="red">a b a </font>b，因此，f[5]=7；</p>
-<p>下面！！！高能！！！</p>
-<p>第六位a，b≠d，f[6]=1。但是！是不是觉得似曾相识？对！由于回文串具有对称性质，所以事实上，因为第四位构不成回文串，所以与此对应的第六位也是不可能有的。</p>
-<p>第七位b，同理，第七位等同于第三位，f[7]=f[3]=3；</p>
-<p>第八位a，是不是要脱口而出f[8]=f[2]=1？等等！我们发现 c a b a d a <font color="red">b </font><font color="yellow">a </font><font color="red">b </font>，因此，f[8]=3。这是为什么呢？由于s[1]≠s[9]，所以f[8]和f[2]是不一定相等的。</p>
-<p>这样一个分析过程，实际上就是Manacher算法所需要做的。</p>
-<ol>
-<li><p>首先，我们要记录下目前已知的回文串能够覆盖到的最右边的地方</p>
-</li>
-<li><p>同时，覆盖到最右边的回文串所对应的回文中心也要记录</p>
-</li>
-<li><p>以每一位为中心的回文串的长度也要记录，后面进行推断的时候能用到</p>
-</li>
-<li><p>对于新的中心，我们判断它是否在右边界内，若在，就计算它相对右边界回文中心的对称位置，从而得到一些信息，同时，如果该中心需要进行扩展，则继续扩展就行。</p>
-</li>
-</ol>
-<p>但是这样会出现一些问题，比如回文长度为偶数的时候，不存在严格意义上的回文中心。所以我们需要对字符串先进行一波预处理。</p>
-<ol>
-<li><p>先对字符串进行预处理，两个字符之间加上特殊符号#</p>
-</li>
-<li><p>然后遍历整个字符串，用一个数组来记录以该字符为中心的回文长度，为了方便计算右边界，我在数组中记录长度的一半（向下取整）</p>
-</li>
-<li><p>每一次遍历的时候，如果该字符在已知回文串最右边界的覆盖下，那么就计算其相对最右边界回文串中心对称的位置，得出已知回文串的长度</p>
-</li>
-<li><p>判断该长度和右边界，如果达到了右边界，那么需要进行中心扩展探索。当然，如果第3步该字符没有在最右边界的“羽翼”下，则直接进行中心扩展探索。进行中心扩展探索的时候，同时又更新右边界</p>
-</li>
-<li><p>最后得到最长回文之后，去掉其中的特殊符号即可</p>
-</li>
-</ol>
-<p>下面放上我觉得比较完美的一个板子</p>
-<pre><code class="c++">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;algorithm&gt;
-#include&lt;map&gt;
+          <p>想哭，觉得没有意义</p>
+<p>想睡，根本没有心情</p>
+<p>cf头一次打得这么烂</p>
+<p>然后又是大片大片的回忆</p>
+<p>被保护着宠爱着成长的开始</p>
+<p>吃不了太多苦的一路</p>
+<p>总是对算法一曝十寒</p>
+<p>一向觉得自己的思维能力出类拔萃</p>
+<p>原来不过尔尔</p>
+<p>可不就是个平凡么</p>
+<p>又是哪来的自信来说</p>
+<p>江东子弟多才俊的呢？</p>
+<p>抑郁少女唯一的光</p>
+<p>只剩下你了<br><a id="more"></a></p>
+<h1 id="Codeforces-Round-560-Div-3"><a href="#Codeforces-Round-560-Div-3" class="headerlink" title="Codeforces Round #560 (Div. 3)"></a>Codeforces Round #560 (Div. 3)</h1><p>恍若梦游。</p>
+<p>这几天又是那种浓稠的，深深把自己嵌进去的那种绝望。特别是打完这场cf，发现自己睡不着了。想了很多事情，包括一开始的时候意气风发，结果还不是要承认现实，承认平庸。</p>
+<p>想热爱这个世界。却有些无能为力。最近单曲循环的一首歌唱得好哇：“有人会爱上我吗？这样忐忑懵懂的。这个人和那个人都沉默。他们不喜欢我，他们都不喜欢我。不是完美的我，只在意你的我。我知道你会是那一个，那个会擦干我泪水的，那个会永远不离开的，那个在墓地前种下栀子花掩埋我的，那个和我一起挣脱的，那个和我一起被俘的，那个为我阻挡全世界，我会付出生命的。”</p>
+<p>欸，偏了偏了。不应该说这些的，下面还是正经一点来题解叭。</p>
+<h2 id="A-Remainder"><a href="#A-Remainder" class="headerlink" title="A.Remainder"></a>A.Remainder</h2><p>题意为给出一个非常大的十进制数字（只由0和1构成，首位一定为0）。问最少需要对几位数位的进行改变，使这个数对10^x取模的值等于10^y。</p>
+<p>我读了好久的题目。读懂已经是好久后的事情了……</p>
+<p>我的想法很简单，直接从字符串后数x位，1只能出现在里面的后数y+1位置，只需要顺序查找就好了。</p>
+<p>As we can see, last x digits of the resulting number will be zeros except the n−y-th. So we need to change all ones to zeros (if needed) among last x digits, if the position of the digit is not n−y, and change zero to one (if needed) otherwise. It can be done with simple cycle.</p>
+<p>贴代码</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define ll long long
+#define U unsigned
+#define sqr(x) ((x)*(x))
+#define mem(x,y) memset(x,y,sizeof(x))
+#define scd(x) scanf(&quot;%d&quot;,&amp;x)
+#define scs(x) scanf(&quot;%s&quot;,&amp;x)
+#define prd(x) printf(&quot;%d&quot;,x)
+#define prs(x) printf(&quot;%s&quot;,x)
+#define rep0(x,n) for(int x=0;x&lt;n;x++)
+#define rep1(x,n) for(int x=1;x&lt;=n;x++)
+#define per(x,a,b) for(int x=a;x&gt;=b;x--)
+#define ls rt&lt;&lt;1
+#define rs rt&lt;&lt;1|1
+#define lson l,m,ls
+#define rson m+1,r,rs
 using namespace std;
-const int maxn = 2e5 + 10;
-char s[maxn], sNew[maxn&lt;&lt;1];
-int p[maxn&lt;&lt;1], id, mx=0;
-int L, R; //回文串在原串的左右端点位置
+const double eps=1e-8;
+const double pi=acos(-1.0);
+const int INF=0x3f3f3f3f;
+ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a/gcd(a,b)*b;}
+ll powmod(ll a,ll b,ll MOD){ll ans=1;while(b){if(b%2)ans=ans*a%MOD;a=a*a%MOD;b/=2;}return ans;}
 
-int Init()
+
+int main()
 {
-    int len = strlen(s);
-    sNew[0] = &#39;$&#39;;
-    sNew[1] = &#39;#&#39;;
-    int j = 2;
-    for (int i = 0; i &lt; len; i++)
+    ios::sync_with_stdio(false);
+    int n,x,y;
+    cin&gt;&gt;n&gt;&gt;x&gt;&gt;y;
+    string s;
+    cin&gt;&gt;s;
+    int ans=0,ans1=0;
+    for(int i=n-x;i&lt;n;i++)
     {
-        sNew[j++] = s[i];
-        sNew[j++] = &#39;#&#39;;
-    }
-    sNew[j] = &#39;\0&#39;;
-    return j;
-}
-
-int Manacher()
-{
-    int len = Init();
-    int max_len = -1;
-    mx = 0;
-    for (int i = 1; i &lt; len; i++)
-    {
-        if (i &lt; mx) p[i] = min(p[2 * id - i], mx - i);
-        else p[i] = 1;
-
-        while (sNew[i - p[i]] == sNew[i + p[i]]) p[i]++;
-
-        if (mx &lt; i + p[i])
+        if(i==n-1-y)
         {
-            id = i;
-            mx = i + p[i];
+            if(s[i]==&#39;0&#39;)
+                ans1++;
         }
-
-        if(max_len &lt; p[i])
-        { 
-            max_len = p[i];
-            L = (i - p[i])&gt;&gt;1;
-            R = (i + p[i] - 4)&gt;&gt;1; ///R = (i + p[i])/2 -2;
+        else
+        {
+            if(s[i]==&#39;1&#39;)
+                ans1++;
         }
-
+        //cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;ans1&lt;&lt;endl;
     }
-    return max_len;
+    cout&lt;&lt;ans1&lt;&lt;endl;
+    return 0;
 }
 </code></pre>
+<h2 id="B-Polycarp-Training"><a href="#B-Polycarp-Training" class="headerlink" title="B. Polycarp Training"></a>B. Polycarp Training</h2><p>读题一时爽，一直读错一直爽……</p>
+<p>这题题意就是给出每种类型书的数量，有个变态，要求自己第i天一定要读i本相同类型的书，并且读完以后相同类型的书不能再读。</p>
 
         </div>
         <!-- .entry-content -->
@@ -549,15 +523,15 @@ int Manacher()
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/08/11/【2019】【NEUQ-ACM-SUMMER-CAMP】第九次课程作业解题报告/" rel="prev">
+            <a href="/2019/05/27/HBCPC河北省赛解题报告/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180507/191804-1525691884617f.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180420/153500-1524209700608c.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                【2019】【NEUQ-ACM SUMMER CAMP】第九次课程作业解题报告</h3>
+                HBCPC河北省赛解题报告</h3>
                 <hr>
               </div>
             </a>
@@ -567,15 +541,15 @@ int Manacher()
           
             <div class="post-nepre half next">
           
-            <a href="/2019/08/05/字符串算法之hash/" rel="next">
+            <a href="/2019/05/12/四五月小记（2050团聚-HBCPC省赛）/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180406/222007-1523024407aeea.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180407/193517-15231009172d35.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                字符串算法之hash</h3>
+                四五月小记（2050团聚+HBCPC省赛）</h3>
                 <hr>
               </div>
             </a>

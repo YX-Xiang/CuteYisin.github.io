@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">字符串算法之Manacher | Yisin&#39;s Blog</title>
+  <title itemprop="name">冬日即事 | Yisin&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/1.ico">
   
@@ -386,11 +386,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180430/114059-1525059659d0c7.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180408/200330-15231890104af0.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180408/200330-15231890104af0.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      字符串算法之Manacher</h1>
+      冬日即事</h1>
       <p class="entry-census">
         <span>
           <a href="https://yisin.top">
@@ -402,7 +402,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-8-7<span class="bull">
+        2019-2-11<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -416,108 +416,34 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>Manacher算法，</p>
-<p>又叫“马拉车”算法，</p>
-<p>可以在时间复杂度为O(n)的情况下求解一个字符串的最长回文子串长度的问题。<br><a id="more"></a></p>
-<h1 id="字符串算法之Manacher"><a href="#字符串算法之Manacher" class="headerlink" title="字符串算法之Manacher"></a>字符串算法之Manacher</h1><p>之前一直都在不知所云地套板子。</p>
-<p>直到今天，下定决心，要搞懂Manacher的原理。</p>
-<p>然后，原来不过如此嘛XD</p>
-<p>从最简单的判断回文的方法说起。</p>
-<p>即拉出字符串中的每个子串，判断它们是否回文。</p>
-<p>拉出子串需要O(n^2),判断是否回文需要O(n)，所以这种方法的时间复杂度是O(n^3)。</p>
-<p>那么再精巧一点，我们可以从字符串中的每个字符下手，对于每个字符向两边扩展求回文长度。这样子，时间复杂度降到了O(n^2)。</p>
-<p>我们是否可以找到一种O(n)的算法呢？答案是肯定的。</p>
-<p>不考虑dp的方法，其实我们能从回文串本身得到一些启示。</p>
-<p>例如：</p>
-<p>c a b a d a b a b</p>
-<p>我们运用第二种方法对每个字符进行分析。</p>
-<p>从第二位a开始，b≠c，因此f[2]=1;</p>
-<p>第三位b，c <font color="red">a </font><font color="yellow">b </font><font color="red">a </font>d a b a b，因此，f[3]=3；</p>
-<p>第四位a，b≠d，f[4]=1；</p>
-<p>第五位d，c <font color="red">a b a </font><font color="yellow">d </font><font color="red">a b a </font>b，因此，f[5]=7；</p>
-<p>下面！！！高能！！！</p>
-<p>第六位a，b≠d，f[6]=1。但是！是不是觉得似曾相识？对！由于回文串具有对称性质，所以事实上，因为第四位构不成回文串，所以与此对应的第六位也是不可能有的。</p>
-<p>第七位b，同理，第七位等同于第三位，f[7]=f[3]=3；</p>
-<p>第八位a，是不是要脱口而出f[8]=f[2]=1？等等！我们发现 c a b a d a <font color="red">b </font><font color="yellow">a </font><font color="red">b </font>，因此，f[8]=3。这是为什么呢？由于s[1]≠s[9]，所以f[8]和f[2]是不一定相等的。</p>
-<p>这样一个分析过程，实际上就是Manacher算法所需要做的。</p>
-<ol>
-<li><p>首先，我们要记录下目前已知的回文串能够覆盖到的最右边的地方</p>
-</li>
-<li><p>同时，覆盖到最右边的回文串所对应的回文中心也要记录</p>
-</li>
-<li><p>以每一位为中心的回文串的长度也要记录，后面进行推断的时候能用到</p>
-</li>
-<li><p>对于新的中心，我们判断它是否在右边界内，若在，就计算它相对右边界回文中心的对称位置，从而得到一些信息，同时，如果该中心需要进行扩展，则继续扩展就行。</p>
-</li>
-</ol>
-<p>但是这样会出现一些问题，比如回文长度为偶数的时候，不存在严格意义上的回文中心。所以我们需要对字符串先进行一波预处理。</p>
-<ol>
-<li><p>先对字符串进行预处理，两个字符之间加上特殊符号#</p>
-</li>
-<li><p>然后遍历整个字符串，用一个数组来记录以该字符为中心的回文长度，为了方便计算右边界，我在数组中记录长度的一半（向下取整）</p>
-</li>
-<li><p>每一次遍历的时候，如果该字符在已知回文串最右边界的覆盖下，那么就计算其相对最右边界回文串中心对称的位置，得出已知回文串的长度</p>
-</li>
-<li><p>判断该长度和右边界，如果达到了右边界，那么需要进行中心扩展探索。当然，如果第3步该字符没有在最右边界的“羽翼”下，则直接进行中心扩展探索。进行中心扩展探索的时候，同时又更新右边界</p>
-</li>
-<li><p>最后得到最长回文之后，去掉其中的特殊符号即可</p>
-</li>
-</ol>
-<p>下面放上我觉得比较完美的一个板子</p>
-<pre><code class="c++">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;algorithm&gt;
-#include&lt;map&gt;
-using namespace std;
-const int maxn = 2e5 + 10;
-char s[maxn], sNew[maxn&lt;&lt;1];
-int p[maxn&lt;&lt;1], id, mx=0;
-int L, R; //回文串在原串的左右端点位置
-
-int Init()
-{
-    int len = strlen(s);
-    sNew[0] = &#39;$&#39;;
-    sNew[1] = &#39;#&#39;;
-    int j = 2;
-    for (int i = 0; i &lt; len; i++)
-    {
-        sNew[j++] = s[i];
-        sNew[j++] = &#39;#&#39;;
-    }
-    sNew[j] = &#39;\0&#39;;
-    return j;
-}
-
-int Manacher()
-{
-    int len = Init();
-    int max_len = -1;
-    mx = 0;
-    for (int i = 1; i &lt; len; i++)
-    {
-        if (i &lt; mx) p[i] = min(p[2 * id - i], mx - i);
-        else p[i] = 1;
-
-        while (sNew[i - p[i]] == sNew[i + p[i]]) p[i]++;
-
-        if (mx &lt; i + p[i])
-        {
-            id = i;
-            mx = i + p[i];
-        }
-
-        if(max_len &lt; p[i])
-        { 
-            max_len = p[i];
-            L = (i - p[i])&gt;&gt;1;
-            R = (i + p[i] - 4)&gt;&gt;1; ///R = (i + p[i])/2 -2;
-        }
-
-    }
-    return max_len;
-}
-</code></pre>
+          <p>似乎……很久没有写过正儿八经的文章了。<br><a id="more"></a></p>
+<h1 id="冬日即事"><a href="#冬日即事" class="headerlink" title="冬日即事"></a>冬日即事</h1><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>从北方回来的列车上，对南方的想念，越来越浓。窗外的景色，由北至南的，色调变换着。旁边的学姐睡得很香，只能看起了昨晚下载的《人间世》，两集而已，一直在流泪。</p>
+<p>学姐在临海站提前下了。再过一站便是台州站。拎起行李，出了检票口，父母已经等在外面。没有想象中的热泪盈眶，那些太假。一切的想念已经融在自然接过行李的一举一动里。</p>
+<p>刚回来的几天，只见了来找我的盈盈一面。我们一起吃了顿午饭，还放了风筝。和盈盈的感情不言而喻，不需要太多的文字交流，却能在每次见面的时候还保持高中时候的感觉。大概平平淡淡才是真吧。</p>
+<p>然后有天我和钰莹说，我想好怎么给他新年祝福啦，最后的一句一定是“友谊地久天长”。她很惊异，似乎过了好一会儿才接受了这个我已做好的决定。大概知道的人都会好奇原因吧。</p>
+<p>——觉得我性子张扬的人，怕是没见过我在学生会换届选举的时候，紧张到把一句感谢上届部长的话陆陆续续说了七遍；觉得我安静内敛的人，也怕是没见过我和学妹们打打闹闹，话特别多。我是一个很矛盾的人，所以同时，感性和理性相互交错，也就没什么奇怪的了吧。我会因为一件很小很小的事感动很久，很容易产生对他人的好感；我也会清楚自己的底线，自己的原则：我愿意走五十一步来等你的四十九步，但是不可能再多一步。九十九步换一步这种事情，我也不愿意。</p>
+<p>所以就这样吧。不能说他对我来说已经成为一个陌生人，恰恰相反，我还是把他当成很好很好的朋友，而且他会是我一直感谢着的人，我会真诚地祝他幸福。最后写给他的新年祝福写了很久，字斟句酌，还问了钰莹和紫闻的意见。点了发送以后知道自己不能再回头，其实挺好的，不想再因为自己的任性自私伤害别人了。</p>
+<p>由于时间原因，新年祝福只准备了特别的两份，一份给了钰莹，一份给了紫闻，感谢他们在新的开始给我的温暖。钰莹是那个会在回家的火车上还想着给穷困潦倒的我寄些水果来的善良女孩，而紫闻是接到我的求助电话会专门从综合楼跑过来帮忙搬东西的宝藏男孩。没有他们的话，大抵又穷又饿又绝望的我会在这个冬天慢慢枯萎吧（大雾~</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>新年来的很快。</p>
+<p>其实感觉已经丧失了过年的仪式感。吃的也差不多，穿的也差不多，连日常都还是敲代码。这个假期学会了数据结构、并查集，其实感觉已经差不多了，对于stack、queue、priority queue、map、vector的使用已经比较熟练了。cf的得分也差不多稳定在了1450左右，三题差不多的水平。</p>
+<p>关于抑郁症的说明。大概有了亲身体会，会明白ACM这个圈子是多么容易患抑郁症的一个群体。心情的慢慢变化大概就在新年以后发生的。疑心自己有这个倾向以后，去找了一个相对专业的测试，结果也差不多：中度抑郁。引用测试报告里的话：“情绪抑郁时，你可能会告诉自己，你天生就没用或者就是‘一无是处’。你越来越肯定你就是个坏胚子，一点好处都没用。你对这种想法深信不疑，于是，你产生了严重的情绪反应，你开始感到绝望，越来越憎恨自己。你甚至会觉得不如死了算了，因为你把自己贬的太低，觉得活着太痛苦了。你还可能会自闭封锁自己，既害怕也不愿意投入正常的生活。”</p>
+<p>不过我不想死。很明白地知道，我不想死，不会自杀。大概属于第二种吧。这不是camp时挂在嘴边的那种意义上的自闭，自黑自嘲而已，而是，真的觉得自己菜，不想去祸害别人，去打扰别人。</p>
+<p>这件事我告诉的人很少，包括我的父母，我没有说过一个字，让他们心中的女儿一直健康美好地存在着，挺好的。第一个说的人还是他，鬼使神差地，只是想起之前失眠时候他给的建议，就跟他提了，不过没有说的这么严重。没有想得到有用的建议，只是单纯地，想找个人倾诉。但是，似乎，没有得到相应的释然的感觉。</p>
+<p>盈盈，钰莹，紫闻差不多是同一时间说的。大概紫闻以为我在开玩笑吧QWQ，但是盈宝和钰莹都挺担心我这种状态的，让我不妨松一松。再之后是表弟突然和我说他有自杀倾向的时候，因为我自己的情况吧，所以很担心他，拼命地打字希望他看进去，不要冲动。</p>
+<p>感觉到了自己的异样以后，我基本就把训练慢下来了，cf也不是场场都打。调整了一段时间以后感觉恢复得差不多，就答应了西北大学学长那边组队cf的邀请。但是那场平常带飞的学长鸽了，所以我从一开始就紧张的要命，是那种比第一场还紧张的感觉。最后B果然在WA的道路上越走越远，虽说抢救回来了，但是浪费了很多时间。最后这场xj变蓝了——那种内心压抑很久的抑郁，终于喷涌而出。</p>
+<p>脑海里只剩下一个字，菜。jp学长刚好在和我聊天，就感觉到了不对劲，也很担心我这个样子，疯狂劝我换一个地方大展身手。可是怎么能离开呢？我兢兢业业打了一学期的ACM呀，我遇到了很多志同道合的小伙伴的ACM呀，最最最好玩的ACM呀。</p>
+<p>其实客观地说，我觉得一个新手能走到现在这个程度，已经很不错了。但是走得越快越远，给自己的期望越大，压力越大，自然，就受不了了。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>台中还是印象里的台中。</p>
+<p>正月初七，宜，回校宣讲。</p>
+<p>我见到了阔别已久的同学，还有男神徐老师。尤其好玩的是，早上和jp学长漫步校园说话的时候，一男子骑车飘过，叫了声我的名字。愣了一下反应过来是谁的时候，人已经飘远了。刚想给他发信息解释一下的时候，就收到了他无比哀怨的信息“你忘记我了”。其实是小学同学，没想到，哈哈哈，一下子就认出我了，tql。</p>
+<p>徐老师开完会就回到办公室等我们了。我到的时候他和盈盈已经在说话了。其实是怕独处太尴尬才拉了盈盈，不然见男神这种事当然要自己来呀！他跟我们聊了在北京过年的经历，顺便关心了下我的大学生活，还是很惊讶他心中的文科妹子去读了计算机hhh。</p>
+<p>本来不应该是初七这么热闹的日子回来的，原意是为了见交大小哥哥一面，毕竟他马上要出国了，然而他有事鸽了QAQ。高考以后慢慢想变得不再那么关心这个小哥哥的事情，但是总会在想起来的时候不自觉地微笑。是很好的人呀，可惜我那么幸运去华东师大继续做他对面的学妹，甚至在上海都找不到什么合适的学校。呆呆，你一定会越来越优秀的！你是那么善良的小天使，从来都不用恶意揣测别人，还会在复习的重要关头每天都给一个刚熟起来的学妹辅导化学。你是我心里最文理兼修的典范！</p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>知道散人是很凑巧的机缘。</p>
+<p>本来在水哥走后，对《最强大脑》有些嗤之以鼻。但是得知高中同学进了百强以后，还是去看了，就知道了有逍遥散人这个宝藏男孩。去B站搜他的视频，其实一开始吸引我的是橙光小游戏！！！哈哈哈，他录的《龙雏》和《家族史》我都玩过，但是！他作为一直直得不能再直的直男，居然在两代六条BG线中完美绕行，打出了两条仅有的BL线，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈，我笑爆了。</p>
+<p>然后接下来一天我都在看他的游戏小视频。I Wanna系列可真是个宝藏。本来这个游戏就难度极高，散散上一秒还在吹水，下一秒就能真香，平均死亡时间绝对在5s以内。再加上散老师操着一口天津腔，时不时开启他的直男直觉，心机模式。我整整笑了一天，然后就发现，生活没有那么艰辛了，不是吗？</p>
+<p>于是我顺利成为散散粉丝中98.5%的女粉的一员。张骏xxx关逍遥散人啥事呢？上一个二次元男神轻薄的假相（也是天津人！我tm吹爆天津汉子）也说过：“萌声不萌人。”一起快乐就完事了。</p>
+<p>发现自己说了一堆废话啊~可能这篇文章不会被人发现吧，那我就不要脸地放自拍啦！小仙女当然最喜欢拍照呀！</p>
+<p><img src="http://bmob-cdn-24429.b0.upaiyun.com/2019/03/25/8a531f534093040d80b336838ba76abd.jpg" alt></p>
 
         </div>
         <!-- .entry-content -->
@@ -549,15 +475,15 @@ int Manacher()
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/08/11/【2019】【NEUQ-ACM-SUMMER-CAMP】第九次课程作业解题报告/" rel="prev">
+            <a href="/2019/03/16/All-Things-About-STL/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180507/191804-1525691884617f.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180331/113608-152246736832fb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                【2019】【NEUQ-ACM SUMMER CAMP】第九次课程作业解题报告</h3>
+                All Things About STL</h3>
                 <hr>
               </div>
             </a>
@@ -567,15 +493,15 @@ int Manacher()
           
             <div class="post-nepre half next">
           
-            <a href="/2019/08/05/字符串算法之hash/" rel="next">
+            <a href="/2019/02/02/Yisin的数据结构小练习（堆栈-队列）/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180406/222007-1523024407aeea.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180620/180728-1529489248e5e3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                字符串算法之hash</h3>
+                Yisin的数据结构小练习（堆栈+队列）</h3>
                 <hr>
               </div>
             </a>
