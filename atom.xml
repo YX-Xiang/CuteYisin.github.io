@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-02-12T03:12:29.310Z</updated>
+  <updated>2020-02-12T08:17:45.926Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>昭奚旧草</title>
+    <link href="/2020/02/12/%E6%98%AD%E5%A5%9A%E6%97%A7%E8%8D%89/"/>
+    <id>/2020/02/12/昭奚旧草/</id>
+    <published>2020-02-12T07:20:23.000Z</published>
+    <updated>2020-02-12T08:17:45.926Z</updated>
+    
+    <summary type="html">
+    
+      昭指的为大昭，奚是世外的国——奚山，旧草就是旧书。这是我最喜欢的一本古言小说。
+    
+    </summary>
+    
+      <category term="书评" scheme="/categories/%E4%B9%A6%E8%AF%84/"/>
+    
+    
+      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>code jam to i/O for Women 2019题解</title>
@@ -421,28 +441,6 @@
     
     
       <category term="图论" scheme="/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>蓝桥杯总结</title>
-    <link href="/2019/03/28/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%80%BB%E7%BB%93/"/>
-    <id>/2019/03/28/蓝桥杯总结/</id>
-    <published>2019-03-28T10:42:34.000Z</published>
-    <updated>2020-02-12T05:19:22.951Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;年轻人要多刷题，少水群，才能进Final。&lt;/p&gt;
-&lt;p&gt;by Kuangbin&lt;/p&gt;
-&lt;p&gt;其实如果可以的话，我特别不想面对这个结果。省二都排到了中游的位置，这已经不单纯是运气背的问题了……&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="比赛总结" scheme="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
