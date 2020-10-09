@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-03-04T05:04:12.030Z</updated>
+  <updated>2020-10-09T12:31:09.847Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>dp专题解题报告</title>
+    <link href="/2020/10/05/dp%E4%B8%93%E9%A2%98%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
+    <id>/2020/10/05/dp专题解题报告/</id>
+    <published>2020-10-05T12:37:19.000Z</published>
+    <updated>2020-10-09T12:31:09.847Z</updated>
+    
+    <summary type="html">
+    
+      dp永远的伤
+    
+    </summary>
+    
+      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Multi-University Training Contest 5解题报告</title>
+    <link href="/2020/08/06/2020-Multi-University-Training-Contest-5%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
+    <id>/2020/08/06/2020-Multi-University-Training-Contest-5解题报告/</id>
+    <published>2020-08-06T02:32:17.000Z</published>
+    <updated>2020-08-06T02:57:01.154Z</updated>
+    
+    <summary type="html">
+    
+      数学专场
+    
+    </summary>
+    
+      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu多校" scheme="/tags/hdu%E5%A4%9A%E6%A0%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>Codeforces 1313C2 - Skyscrapers</title>
@@ -415,50 +455,6 @@
     
     
       <category term="ACM游记" scheme="/tags/ACM%E6%B8%B8%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HDU1426 Sudoku Killer（DFS）</title>
-    <link href="/2019/04/02/HDU1426-Sudoku-Killer%EF%BC%88DFS%EF%BC%89/"/>
-    <id>/2019/04/02/HDU1426-Sudoku-Killer（DFS）/</id>
-    <published>2019-04-02T12:25:50.000Z</published>
-    <updated>2020-02-12T05:23:39.770Z</updated>
-    
-    <summary type="html">
-    
-      hdu 1426
-    
-    </summary>
-    
-      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="搜索" scheme="/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="DFS" scheme="/tags/DFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HDU1584 蜘蛛牌（DFS）</title>
-    <link href="/2019/04/02/HDU1584-%E8%9C%98%E8%9B%9B%E7%89%8C%EF%BC%88DFS%EF%BC%89/"/>
-    <id>/2019/04/02/HDU1584-蜘蛛牌（DFS）/</id>
-    <published>2019-04-02T10:54:57.000Z</published>
-    <updated>2020-02-12T05:24:56.602Z</updated>
-    
-    <summary type="html">
-    
-      hdu 1584
-    
-    </summary>
-    
-      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="搜索" scheme="/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="DFS" scheme="/tags/DFS/"/>
     
   </entry>
   
