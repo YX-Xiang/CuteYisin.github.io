@@ -472,7 +472,7 @@
     </div>
   </div>
 </footer> -->
-<footer id="colophon" class="site-footer" role="contentinfo">
+<!--<footer id="colophon" class="site-footer" role="contentinfo">
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -483,12 +483,12 @@
     </div>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
-        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
         </span>
       </p>
     </div>
-  </div><!-- .site-info -->
-</footer>
+  </div>
+</footer>-->
 
 
 
@@ -562,11 +562,14 @@ $(document).ready(function() {
 <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
 <!-- // 星星跟随坠落 -->
 <script src="https://cdn.jsdelivr.net/gh/cungudafa/cdn@2.1.2/js/cursor.js"></script>
+<!-- 点击出现社会主义彩色文字 -->
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/shehuizhuyi.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> <!-- 这条在sakura中已有，可不添加 --><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 
 <footer id="colophon" class="site-footer" role="contentinfo">
   <div class="site-info">
     <div class="footertext">
-      。。。。。
+      欢迎来到Yisin的魔法世界~
     </div>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
@@ -581,7 +584,7 @@ $(document).ready(function() {
       <script>
         var now = new Date(); 
         function createtime() { 
-          var grt= new Date("2020-02-11 17:20:00");//在此处修改你的建站时间
+          var grt= new Date("2018-12-4 00:07:29");//在此处修改你的建站时间
           now.setTime(now.getTime()+250); 
           days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
           hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
