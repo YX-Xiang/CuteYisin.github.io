@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-10-09T12:31:09.847Z</updated>
+  <updated>2022-03-09T08:58:11.336Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[论文笔记]Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统</title>
+    <link href="/2022/03/09/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Taxi-RS%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%87%BA%E7%A7%9F%E8%BD%A6GPS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%BA%E7%A7%9F%E8%BD%A6%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    <id>/2022/03/09/论文笔记-Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统/</id>
+    <published>2022-03-09T08:53:07.000Z</published>
+    <updated>2022-03-09T08:58:11.336Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Xu X, Zhou J, Liu Y, Xu Z, Zhao X. Taxi-rs: Taxi-hunting recommendation system based on taxi GPS data. IEEE Transactions on Intelligent Transportation Systems, 2015, 16(4), 1716-1727.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="论文笔记" scheme="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="论文" scheme="/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>被疫情偷走的这两年</title>
+    <link href="/2022/01/20/%E8%A2%AB%E7%96%AB%E6%83%85%E5%81%B7%E8%B5%B0%E7%9A%84%E8%BF%99%E4%B8%A4%E5%B9%B4/"/>
+    <id>/2022/01/20/被疫情偷走的这两年/</id>
+    <published>2022-01-20T03:39:51.000Z</published>
+    <updated>2022-03-09T08:57:57.336Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;重启的契机缘于大家的留言支持&lt;/p&gt;
+&lt;p&gt;崭新的一篇就跟大家聊聊退博这两年我在干什么吧~&lt;/p&gt;
+&lt;p&gt;被疫情偷走的两年，总有种时空错乱的感觉……&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="年度小结" scheme="/tags/%E5%B9%B4%E5%BA%A6%E5%B0%8F%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>dp专题解题报告</title>
@@ -402,59 +444,6 @@
     
     
       <category term="题解" scheme="/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Codeforces Round #560 (Div. 3)</title>
-    <link href="/2019/05/15/Codeforces-Round-560-Div-3/"/>
-    <id>/2019/05/15/Codeforces-Round-560-Div-3/</id>
-    <published>2019-05-15T14:08:07.000Z</published>
-    <updated>2022-01-20T01:56:25.506Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;想哭，觉得没有意义&lt;/p&gt;
-&lt;p&gt;想睡，根本没有心情&lt;/p&gt;
-&lt;p&gt;cf头一次打得这么烂&lt;/p&gt;
-&lt;p&gt;然后又是大片大片的回忆&lt;/p&gt;
-&lt;p&gt;被保护着宠爱着成长的开始&lt;/p&gt;
-&lt;p&gt;吃不了太多苦的一路&lt;/p&gt;
-&lt;p&gt;总是对算法一曝十寒&lt;/p&gt;
-&lt;p&gt;一向觉得自己的思维能力出类拔萃&lt;/p&gt;
-&lt;p&gt;原来不过尔尔&lt;/p&gt;
-&lt;p&gt;可不就是个平凡么&lt;/p&gt;
-&lt;p&gt;又是哪来的自信来说&lt;/p&gt;
-&lt;p&gt;江东子弟多才俊的呢？&lt;/p&gt;
-&lt;p&gt;抑郁少女唯一的光&lt;/p&gt;
-&lt;p&gt;只剩下你了&lt;br&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="CF" scheme="/tags/CF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>四五月小记（2050团聚+HBCPC省赛）</title>
-    <link href="/2019/05/12/%E5%9B%9B%E4%BA%94%E6%9C%88%E5%B0%8F%E8%AE%B0%EF%BC%882050%E5%9B%A2%E8%81%9A-HBCPC%E7%9C%81%E8%B5%9B%EF%BC%89/"/>
-    <id>/2019/05/12/四五月小记（2050团聚-HBCPC省赛）/</id>
-    <published>2019-05-12T11:43:08.000Z</published>
-    <updated>2022-01-20T01:51:31.139Z</updated>
-    
-    <summary type="html">
-    
-      这日子真可爱~
-    
-    </summary>
-    
-      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="ACM游记" scheme="/tags/ACM%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   

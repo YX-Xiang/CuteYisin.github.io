@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 随想 | Yisin&#39;s Blog</title>
+  <title itemprop="name">[论文笔记]Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统 | Yisin&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/1.ico">
   
@@ -373,369 +373,258 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="http://pic.netbian.com/uploads/allimg/180909/164357-153648263733bd.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://img2.baidu.com/it/u=2422848306,3437220940&amp;fm=26&amp;fmt=auto);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img2.baidu.com/it/u=2422848306,3437220940&amp;fm=26&amp;fmt=auto">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      [论文笔记]Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://yisin.top">
+            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2610041158,3661673196&fm=26&gp=0.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://yisin.top">Yisin</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-3-9<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">随想</h1>
-    <span class="cat-des">
-      <p>Essay</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>Xu X, Zhou J, Liu Y, Xu Z, Zhao X. Taxi-rs: Taxi-hunting recommendation system based on taxi GPS data. IEEE Transactions on Intelligent Transportation Systems, 2015, 16(4), 1716-1727.<br><a id="more"></a></p>
+<h1 id="Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统"><a href="#Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统" class="headerlink" title="Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统"></a>Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统</h1><h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="轨迹挖掘"><a href="#轨迹挖掘" class="headerlink" title="轨迹挖掘"></a>轨迹挖掘</h3><ul>
+<li><p>T-Drive</p>
+<ul>
+<li>基于时间依赖地标图的路由算法</li>
+<li>考虑诸多因素：天气，个人驾驶习惯，技能…</li>
+</ul>
+</li>
+<li><p>T-Finder</p>
+<ul>
+<li>聚类算法：寻找司机高收入地点</li>
+<li>概率模型：分析司机和乘客不同策略下的成本与风险</li>
+</ul>
+</li>
+<li><p>HUNTS</p>
+</li>
+</ul>
+<h3 id="路线规划"><a href="#路线规划" class="headerlink" title="路线规划"></a>路线规划</h3><ul>
+<li>局部算法/渐增型算法：贪心 -&gt; 局部最优解</li>
+<li>全局算法：运用费雷歇距离和弱费雷歇距离比较路径空间相似性</li>
+</ul>
+<h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>计算定时定点打到出租车的概率</li>
+<li>计算打到空车的等待时间</li>
+</ul>
+<h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><ul>
+<li>GPS Data Point（GPS数据点）：gps_ij （taxi_i，时间t_j，经度longtitude_i,j，纬度latitude_i,j，速度v_i,j，方向dir_i,j，运行状态state-run_i,j）</li>
+<li>Map Difference（图差值）：ΔMap(t2, t1) = Map2 − Map1，不影响结果精度</li>
+<li>Frequent Surface（频率曲面） ：TCM(x,y,z)确定经度，纬度，出租车数量</li>
+<li>Hotspot（热点）：一天内某个坐标出租车数量超过阈值K</li>
+<li>Hotspot Zone（热点区域）：相近坐标热点的聚集，最小的Zone即一个热点</li>
+<li>Trajectory（轨迹）：从时间j到时间k的gps_ij~gps_ik的集合组成</li>
+<li>Frequent Trajectory（频繁轨迹）：轨迹出现频率超过阈值FT</li>
+<li>FTG：包含所有热点的完全图</li>
+</ul>
+<h3 id="问题定义-1"><a href="#问题定义-1" class="headerlink" title="问题定义"></a>问题定义</h3><ul>
+<li>Arrival time of the first taxi ( ATFC ) ：T(x,y,t,m)代表点P(x,y)在当前时间t打车需在m时间内等到第一辆出租车的等待时间</li>
+<li>the probability of getting a taxi ride ( PGTR ) ：P(x,y,t,m)代表点P(x,y)在当前时间t打车需在m时间内等到第一辆出租车的概率</li>
+<li>Effective Trajectory（有效轨迹）：出租车在时间[t,t+m]内经过点P(x,y)的轨迹集</li>
+<li>Effective trajectory graph ( ETG ) ：出租车在时间[t,t+m]内经过点P(x,y)的轨迹图，包括子集FTG</li>
+</ul>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="离线预处理模型"><a href="#离线预处理模型" class="headerlink" title="离线预处理模型"></a>离线预处理模型</h3><h3 id="FTG模型"><a href="#FTG模型" class="headerlink" title="FTG模型"></a>FTG模型</h3><h3 id="在线处理模型"><a href="#在线处理模型" class="headerlink" title="在线处理模型"></a>在线处理模型</h3><h2 id="离线预处理算法"><a href="#离线预处理算法" class="headerlink" title="离线预处理算法"></a>离线预处理算法</h2><h3 id="文件分区"><a href="#文件分区" class="headerlink" title="文件分区"></a>文件分区</h3><ul>
+<li>按星期几分成七部分</li>
+<li><p>中间变量定义</p>
+<ul>
+<li>LO：经度转化为参考点的横向距离</li>
+<li>LA：纬度转化为参考点的纵向距离</li>
+<li>S：与参考点的欧氏距离</li>
+<li>v：速度</li>
+<li>SET：t时间的所有GPS数据集合</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<p>$$<br>R_{i}= \frac{\sum <em>{gps</em>{x_{i}}\in SET_{i}}\left ( S_{x_{i}}\times v_{x_{i}}\right )}{\left ( \left | SET_{i}\right |\right )}<br>$$</p>
+<h3 id="热点扫描"><a href="#热点扫描" class="headerlink" title="热点扫描"></a>热点扫描</h3><ul>
+<li>扫描每个文件块中的热点，获取频率曲面，使用hash简化</li>
+<li>HSS算法：递归进行区间操作（线段树）求解热点区域数量</li>
+</ul>
+<h3 id="偏好轨迹扫描"><a href="#偏好轨迹扫描" class="headerlink" title="偏好轨迹扫描"></a>偏好轨迹扫描</h3><ul>
+<li>捕捉更频繁、更一般的轨迹</li>
+<li>PTScan算法（PrefixSpan algorithm思想 ）：从长度为1的前缀开始寻找符合阈值的投影，分治求解频繁子序列</li>
+</ul>
+<h2 id="FTG"><a href="#FTG" class="headerlink" title="FTG"></a>FTG</h2><h3 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h3><ul>
+<li>根据历史数据分析速度和距离</li>
+<li>不会被其他乘客拦截，需要计算每个人每个方向的PGTR</li>
+<li>确保查询位置在首选轨迹上</li>
+</ul>
+<h3 id="设计新的数据结构time-stratified-mul-tiple-adjacent-tab（TMAT时间分层多邻表）缩减空间复杂度"><a href="#设计新的数据结构time-stratified-mul-tiple-adjacent-tab（TMAT时间分层多邻表）缩减空间复杂度" class="headerlink" title="设计新的数据结构time-stratified mul-tiple adjacent tab（TMAT时间分层多邻表）缩减空间复杂度"></a>设计新的数据结构time-stratified mul-tiple adjacent tab（TMAT时间分层多邻表）缩减空间复杂度</h3><p>### </p>
+<p>$$<br>node_{ij}<br>$$</p>
+<ul>
+<li>Location：用hash值表示位置</li>
+<li>Frequency：某一时刻的车辆频率</li>
+<li>NextLocation：</li>
+</ul>
+<p>$$<br>node_{i,j+1}<br>$$</p>
+<ul>
+<li>NextEdge：频繁子序列的后一节点及对应的P</li>
+</ul>
+<p>$$<br>node_{x,y},P<br>$$</p>
+<ul>
+<li>PreviousTime：频繁子序列的前一节点及对应的P</li>
+</ul>
+<p>$$<br>node_{a,b},P<br>$$</p>
+<h2 id="在线查询算法"><a href="#在线查询算法" class="headerlink" title="在线查询算法"></a>在线查询算法</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><ul>
+<li>上车地点</li>
+<li>查询时间</li>
+<li>可接受的等待时间</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>将查询地点定位到相应热点区域</li>
+<li>根据时间信息，找出到达查询点的轨迹数</li>
+<li>根据轨迹数，估计参数，计算P和T</li>
+</ul>
+<h3 id="两个问题的解决方案"><a href="#两个问题的解决方案" class="headerlink" title="两个问题的解决方案"></a>两个问题的解决方案</h3><ul>
+<li><p>P</p>
+<ul>
+<li>（n表示热门路线中某位置出现的次数）</li>
+</ul>
+</li>
+</ul>
+<p>$$<br>P_{i,j(preference)}=\dfrac{n_i}{n_j}<br>$$</p>
+<pre><code>- p代表路线中的PGTR
+</code></pre><p>$$<br>P_{i,j(non-get)}=1-\prod <em>{k\in E</em>{i,j}}(1-p_{k})<br>$$</p>
+<ul>
+<li>T=S/H，S平均行驶距离，H平均行驶速度</li>
+</ul>
+<h3 id="优化过程SPO"><a href="#优化过程SPO" class="headerlink" title="优化过程SPO"></a>优化过程SPO</h3><ul>
+<li>以搜索点为根，热点为叶建立搜索树</li>
+<li>μ为剪枝边界（一开始令等于m，小于0时剪枝）</li>
+<li>父子关系参数</li>
+</ul>
+<p>$$<br>\theta =1-\prod_{i=0}^{m}(1-\omega （E）.P)<br>$$</p>
+<ul>
+<li>第i层概率的平均，累和判边界</li>
+</ul>
+<p>$$<br>\beta _{i}=lg(\frac{\sum <em>{p\in PS</em>{i}}lg(\omega (E).P)}{\left | PS_{i}\right |})<br>$$</p>
+<h3 id="两个问题的计算过程"><a href="#两个问题的计算过程" class="headerlink" title="两个问题的计算过程"></a>两个问题的计算过程</h3><ul>
+<li>PGTR符合泊松分布</li>
+</ul>
+<p>$$<br>P=P(x\neq 0)=\lim <em>{n\rightarrow \infty }\sum</em>{i=1}^{m}P(x=i)=1-e^{-\lambda }.<br>$$</p>
+<ul>
+<li>第一辆出租车到达时间服从几何分布</li>
+<li></li>
+</ul>
+<p>$$<br>T=P_{1}Time_{1}+(1-P_{1})P_{2}Time_{2}+(1-P_{1})(1-P_{2})P_{3}Time_{3}+…+\prod_{i=1}^{n-1}(1-P_{i})P_{n}Time_{n}<br>$$</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>系统随时间推移而变化</li>
+<li>受外部因素影响</li>
+</ul>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><ul>
+<li>检查数据集的时间有效性，丢弃旧数据</li>
+<li>逐步替换旧数据，新数据与旧数据比例8:2</li>
+<li>使用动态图/动态规划算法构建离线模型</li>
+</ul>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="/images/alipay_code.jpg"></li>
+                <li class="wechat-code"><img src="/images/wechat_code.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2022/01/20/被疫情偷走的这两年/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201901%2F16%2F20190116181328_jlkkv.thumb.1000_0.gif&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645242413&t=3d51e07cca31cf161a377fa338c456e1" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                被疫情偷走的这两年</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2022/01/20/被疫情偷走的这两年/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201901%2F16%2F20190116181328_jlkkv.thumb.1000_0.gif&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645242413&amp;t=3d51e07cca31cf161a377fa338c456e1" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2022/01/20/被疫情偷走的这两年/">
-    被疫情偷走的这两年</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-1-20</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2022/01/20/被疫情偷走的这两年/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/29/十月末の小记/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F930dd5dd3585fe73732be3622f7bb66349e419d918c463-3UIPIH_fw658&amp;refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645236564&amp;t=d285019496966dc39d76e0699a55d54d" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/29/十月末の小记/">
-    十月末の小记</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-29</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/29/十月末の小记/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/08/21/走出舒适圈/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fq_70%2Fimages03%2F20211127%2F2d764ec1329b4a24ae7091f8fb4d0922.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/08/21/走出舒适圈/">
-    走出舒适圈</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-8-21</div>
-    <p>
-    走出舒适圈，远离垃圾人</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/08/21/走出舒适圈/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/02/11/冬日即事/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F29e2e74c3cd40bca715e078062e3292c5445098b.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/02/11/冬日即事/">
-    冬日即事</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-2-11</div>
-    <p>
-    好漫长的一段时光啊</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/02/11/冬日即事/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/01/28/岁末有感/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://pic.rmb.bdstatic.com/755fdee2b85d8abde1f0a20157571e286087.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/01/28/岁末有感/">
-    岁末有感</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-1-28</div>
-    <p>
-    年终总结</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/01/28/岁末有感/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "CzgPOtlgW4BOkXOCLpICSFIS-gzGzoHsz",
+        appKey: "VOcvpXw3KkWllYpSS76f5wnA",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="https://yisin.top" class="profile gravatar"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2610041158,3661673196&fm=26&gp=0.jpg" itemprop="image" alt="Yisin" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://yisin.top" itemprop="url" rel="author">Yisin</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>小仙女</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2022/01/20/被疫情偷走的这两年/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201901%2F16%2F20190116181328_jlkkv.thumb.1000_0.gif&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645242413&amp;t=3d51e07cca31cf161a377fa338c456e1" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2022/01/20/被疫情偷走的这两年/">
-    被疫情偷走的这两年</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-1-20</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2022/01/20/被疫情偷走的这两年/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/29/十月末の小记/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F930dd5dd3585fe73732be3622f7bb66349e419d918c463-3UIPIH_fw658&amp;refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645236564&amp;t=d285019496966dc39d76e0699a55d54d" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/29/十月末の小记/">
-    十月末の小记</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-29</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/29/十月末の小记/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/08/21/走出舒适圈/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fq_70%2Fimages03%2F20211127%2F2d764ec1329b4a24ae7091f8fb4d0922.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/08/21/走出舒适圈/">
-    走出舒适圈</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-8-21</div>
-    <p>
-    走出舒适圈，远离垃圾人</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/08/21/走出舒适圈/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/02/11/冬日即事/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F29e2e74c3cd40bca715e078062e3292c5445098b.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/02/11/冬日即事/">
-    冬日即事</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-2-11</div>
-    <p>
-    好漫长的一段时光啊</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/02/11/冬日即事/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/01/28/岁末有感/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://pic.rmb.bdstatic.com/755fdee2b85d8abde1f0a20157571e286087.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/01/28/岁末有感/">
-    岁末有感</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-1-28</div>
-    <p>
-    年终总结</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/01/28/岁末有感/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
