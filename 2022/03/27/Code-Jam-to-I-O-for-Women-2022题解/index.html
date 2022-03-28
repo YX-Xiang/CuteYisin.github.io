@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Yisin&#39;s Blog</title>
+  <title itemprop="name">Code Jam to I/O for Women 2022题解 | Yisin&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/1.ico">
   
@@ -373,331 +373,335 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F201405%2F22%2F20140522193746_vxaHk.thumb.1000_0.gif);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F201405%2F22%2F20140522193746_vxaHk.thumb.1000_0.gif">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Code Jam to I/O for Women 2022题解</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://yisin.top">
+            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2610041158,3661673196&fm=26&gp=0.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://yisin.top">Yisin</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-3-27<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-  
-  <div class="notice" style="margin-top:60px">
-    <i class="iconfont icon-notification">
-    </i>
-    <div class="notice-content">部分浏览器没法完全适配渲染。有建议都可以留言交流哦~ 撒花*★,°*:.☆(￣▽￣)/$:*.°★* 。</div>
-  </div>
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  START:DASH!!</h1>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="/theme-sakura/" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/sakura.md.png">
-        </div>
-        <div class="info">
-          <h3>Sakura</h3>
-          <p>本站 hexo 主题</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://oi-wiki.org/" target="_blank">
-        <div class="img">
-          <img src="https://oi-wiki.org/images/OI_wiki_new_year_ver.png">
-        </div>
-        <div class="info">
-          <h3>OI Wiki</h3>
-          <p>良心OI/ACM学习网站</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://www.cnblogs.com/zwfymqz/" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">
-        </div>
-        <div class="info">
-          <h3>自为风月马前卒</h3>
-          <p>推个大佬博客</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-</div>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      Discovery</h1>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>算法复建第一场www</p>
+<p>俺太菜了。思维跟以前比死板了不少。补题补题补题！<br><a id="more"></a></p>
+<h1 id="Code-Jam-to-I-O-for-Women-2022题解"><a href="#Code-Jam-to-I-O-for-Women-2022题解" class="headerlink" title="Code Jam to I/O for Women 2022题解"></a>Code Jam to I/O for Women 2022题解</h1><h2 id="Inversions-Organize"><a href="#Inversions-Organize" class="headerlink" title="Inversions Organize"></a>Inversions Organize</h2><p>谁能想到，第一题我就果断WA了一次。</p>
+<p>题目大意翻译为：给个n，随即给出2n*2n的字符矩阵，只包含I或O。我们要使用最少的步骤（每次翻转可使I变O，O变I），使左边n列的IO比例与右边n列的IO比例相同，且上边n行的IO比例与下边n行的IO比例相同。题目给出的一个样例如下——</p>
+<p>IIOO</p>
+<p>OOOI</p>
+<p>IIII</p>
+<p>OOOI</p>
+<p>需要变成</p>
+<p>IIOO</p>
+<p>OOII</p>
+<p>IIII</p>
+<p>OOOO</p>
+<p>一开始的思路以为每块必须均分IO，直接用n*n与各块现在的I/O数量求abs取最值相加。直接在TEST1 WA掉。后来细细思索了一下，每块不一定全是均等的。因为I和O视作等效的，因此我们先考虑I的情况。将矩阵分为上下左右四等分，每一块I的数量分别为X1,X3,X2,X4。根据题意，有X1+X2=X3+X4；X1+X3=X2+X4。可推出，X1=X4,X2=X3。</p>
+<p>也就是满足对角数量相等就可以。只需要统计各块现在的数量，求差。</p>
+<p>代码如下：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+#include &lt;vector&gt;
+#include &lt;math.h&gt;
+#include &lt;bitset&gt;
+#include &lt;algorithm&gt;
+#include &lt;climits&gt;
+#define ll long long
+#define U unsigned
+#define sqr(x) ((x)*(x))
+#define mem(x,y) memset(x,y,sizeof(x))
+#define scd(x) scanf(&quot;%d&quot;,&amp;x)
+#define scs(x) scanf(&quot;%s&quot;,&amp;x)
+#define prd(x) printf(&quot;%d&quot;,x)
+#define prs(x) printf(&quot;%s&quot;,x)
+#define rep(x,a,b) for(int x=a;x&lt;b;x++)
+#define rep0(x,n) for(int x=0;x&lt;n;x++)
+#define rep1(x,n) for(int x=1;x&lt;=n;x++)
+#define per(x,a,b) for(int x=a;x&gt;=b;x--)
+#define ls rt&lt;&lt;1
+#define rs rt&lt;&lt;1|1
+#define lson l,m,ls
+#define rson m+1,r,rs
+using namespace std;
+const double eps=1e-8;
+const double pi=acos(-1.0);
+const int INF=0x3f3f3f3f;
+ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a/gcd(a,b)*b;}
+ll powmod(ll a,ll b,ll MOD){ll ans=1;while(b){if(b%2)ans=ans*a%MOD;a=a*a%MOD;b/=2;}return ans;}
+
+char cc[205][205];
+
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    int t,c=1;cin&gt;&gt;t;
+    while(t--)
+    {
+        int n;cin&gt;&gt;n;
+        for(int i=0;i&lt;n*2;i++)
+            for(int j=0;j&lt;n*2;j++)
+                cin&gt;&gt;cc[i][j];
+        int x=0,y=0,xx=0,yy=0,X=0,XX=0,Y=0,YY=0;
+        for(int i=0;i&lt;n;i++)
+            for(int j=0;j&lt;n;j++)
+                if(cc[i][j]==&#39;I&#39;) x++;
+                else X++;
+        for(int i=n;i&lt;n*2;i++)
+            for(int j=n;j&lt;n*2;j++)
+                if(cc[i][j]==&#39;I&#39;) xx++;
+                else XX++;
+        for(int i=n;i&lt;n*2;i++)
+            for(int j=0;j&lt;n;j++)
+                if(cc[i][j]==&#39;I&#39;) y++;
+                else Y++;
+        for(int i=0;i&lt;n;i++)
+            for(int j=n;j&lt;n*2;j++)
+                if(cc[i][j]==&#39;I&#39;) yy++;
+                else YY++;
+        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;c++&lt;&lt;&quot;: &quot;&lt;&lt;min(abs(x-xx),abs(X-XX))+min(abs(y-yy),abs(Y-YY))&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="Ingredient-Optimization"><a href="#Ingredient-Optimization" class="headerlink" title="Ingredient Optimization"></a>Ingredient Optimization</h2><p>第二题光读题就是读了半天，给出的变量有点多。</p>
+<p>有一个罗勒叶中间商，每次需要交付给下面的N个商家U片罗勒叶，同时她有D组收到的罗勒供应。每组罗勒叶有三个参数，M代表生产时间，L代表数量，E代表罗勒叶维持新鲜的时间。需要注意的是，罗勒叶只有在[M,M+E-1]这个时间段交付才有效（M+E这个时间点罗勒叶已经腐败）。保证给出的M严格递增。</p>
+<p>同时，N个商家来收货会给出一个时间点O，O也满足严格递增。如果中间商无法给当前的订单供货，则后续订单直接取消。问对于每组给出的数据，最多可以完成多少订单。</p>
+<p>数据范围：100组测试，D,N,U,L≤100，M,E,O≤1E9。</p>
+<p>首先，可以确定的是，根据题意，总策略一定是贪心的。我们尽可能优先满足当前订单的需求。而我们交付的时候，尽可能先交付即将腐败的罗勒叶（黑心商家orz）。</p>
+<p>因为给的是时间区间，我自己在比赛的时候立刻联想到区间操作，单点查询的树状数组。然后开始了漫长的优化操作。</p>
+<p>思路偏了，数据范围1E8的话还可以考虑一下，不过属实也是大材小用了，而且对于单点更新区间十分不方便。</p>
+<p>看了题解，惊呼妙啊。题解提示可以用最小堆存储罗勒叶，每次交付在最小堆中查询即可。我自己写的时候，直接用了STL的优先队列，底层就是采用堆实现的。按照腐败的时间先后存入优先队列，每次查询取出队首元素，如果符合条件且有剩余，继续放回优先队列，每次查询O(log D)，总时间复杂度O( (N+D)log D )。</p>
+<p>还有一个细节需要留意。虽然当前罗勒叶不满足商家的时间要求，但是还是有实质不同的。如果在商家时间之前，需要直接丢弃；如果在商家时间之后，是需要保留给下面的商家的。但基于优先队列的结构，不能在这个商家没走之前就放回优先队列，否则会导致死循环，需要先存储起来，等循环结束再依次放回。</p>
+<p>代码如下：</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+#include &lt;vector&gt;
+#include &lt;math.h&gt;
+#include &lt;bitset&gt;
+#include &lt;algorithm&gt;
+#include &lt;climits&gt;
+#define ll long long
+#define U unsigned
+#define sqr(x) ((x)*(x))
+#define mem(x,y) memset(x,y,sizeof(x))
+#define scd(x) scanf(&quot;%d&quot;,&amp;x)
+#define scs(x) scanf(&quot;%s&quot;,&amp;x)
+#define prd(x) printf(&quot;%d&quot;,x)
+#define prs(x) printf(&quot;%s&quot;,x)
+#define rep(x,a,b) for(int x=a;x&lt;b;x++)
+#define rep0(x,n) for(int x=0;x&lt;n;x++)
+#define rep1(x,n) for(int x=1;x&lt;=n;x++)
+#define per(x,a,b) for(int x=a;x&gt;=b;x--)
+#define ls rt&lt;&lt;1
+#define rs rt&lt;&lt;1|1
+#define lson l,m,ls
+#define rson m+1,r,rs
+using namespace std;
+const double eps=1e-8;
+const double pi=acos(-1.0);
+const int INF=0x3f3f3f3f;
+ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a/gcd(a,b)*b;}
+ll powmod(ll a,ll b,ll MOD){ll ans=1;while(b){if(b%2)ans=ans*a%MOD;a=a*a%MOD;b/=2;}return ans;}
+
+struct leaf
+{
+    int b,e,num;
+    friend bool operator &lt; (leaf a, leaf b)
+    {
+        return a.e &gt; b.e;
+    }
+};
+
+leaf y[105];
+priority_queue&lt;leaf&gt;q,qq;
+
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    int t,cc=1;cin&gt;&gt;t;
+    while(t--)
+    {
+        int d,n,u,ans=0;cin&gt;&gt;d&gt;&gt;n&gt;&gt;u;
+        q=qq;
+        for(int i=0;i&lt;d;i++)
+        {
+            int m,l,e;
+            cin&gt;&gt;m&gt;&gt;l&gt;&gt;e;
+            y[i].b=m;
+            y[i].e=m+e-1;
+            y[i].num=l;
+            q.push(y[i]);
+        }
+        int f=1;
+        for(int i=0;i&lt;n;i++)
+        {
+            int o,nn=u,ff=0;cin&gt;&gt;o;
+            vector&lt;leaf&gt;v;
+            while(!q.empty()&amp;&amp;f)
+            {
+                leaf x=q.top();
+                //cout&lt;&lt;x.b&lt;&lt;&quot; &quot;&lt;&lt;x.e&lt;&lt;&quot; &quot;&lt;&lt;x.num&lt;&lt;endl;
+                if(x.e&lt;o)
+                {
+                    q.pop();
+                    continue;
+                }
+                else if(x.b&gt;o)
+                {
+                    q.pop();
+                    v.push_back(x);
+                    continue;
+                }
+                else if(x.num&gt;nn)
+                {
+                    x.num-=nn;
+                    q.pop();
+                    q.push(x);
+                    ff=1;
+                    break;
+                }
+                else if(x.num==nn)
+                {
+                    q.pop();
+                    ff=1;
+                    break;
+                }
+                else
+                {
+                    q.pop();
+                    nn-=x.num;
+                    continue;
+                }
+            }
+            if(!ff) f=0;
+            else ans++;
+            for(int i=0;i&lt;v.size();i++) q.push(v[i]);
+        }
+        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;cc++&lt;&lt;&quot;: &quot;&lt;&lt;ans&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="/images/alipay_code.jpg"></li>
+                <li class="wechat-code"><img src="/images/wechat_code.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2022/03/09/论文笔记-Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.qq241.com%2Fuploads%2Fimages%2Fxiaz%2F2020%2F0925%2F1601016622145.gif" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                [论文笔记]Taxi-RS：基于出租车GPS数据的出租车搜索推荐系统</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
+  <div id="vcomments"></div>
+  <script>
+    window.onload = function(){
+        var valine = new Valine();
+        valine.init({
+          el: '#vcomments',
+          appId: "CzgPOtlgW4BOkXOCLpICSFIS-gzGzoHsz",
+          appKey: "VOcvpXw3KkWllYpSS76f5wnA",
+          path: window.location.pathname,
+          placeholder: "你是我一生只会遇见一次的惊喜 ..."
+        })
+    }
+  </script>
   
-    
-<article class="post post-list-thumb post-list-thumb-left" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/02/11/冬日即事/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F29e2e74c3cd40bca715e078062e3292c5445098b.gif">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-2-11 18:02</div>
-      <a href="/2019/02/11/冬日即事/" class="post-title">
-        <h3>冬日即事</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/回忆/">回忆<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/随想/">随想</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>好漫长的一段时光啊</p>
-        <div class="post-bottom">
-          <a href="/2019/02/11/冬日即事/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="https://yisin.top" class="profile gravatar"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2610041158,3661673196&fm=26&gp=0.jpg" itemprop="image" alt="Yisin" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://yisin.top" itemprop="url" rel="author">Yisin</a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article class="post post-list-thumb" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/02/02/Yisin的数据结构小练习（堆栈-队列）/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnews.yxrb.net%2Fuploadfile%2F2019%2F1105%2F20191105041734295.gif">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-2-2 15:02</div>
-      <a href="/2019/02/02/Yisin的数据结构小练习（堆栈-队列）/" class="post-title">
-        <h3>Yisin的数据结构小练习（堆栈+队列）</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/STL/">STL<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/题解/">题解</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/02/02/Yisin的数据结构小练习（堆栈-队列）/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article class="post post-list-thumb post-list-thumb-left" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/01/28/岁末有感/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic.rmb.bdstatic.com/755fdee2b85d8abde1f0a20157571e286087.gif">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-1-28 18:01</div>
-      <a href="/2019/01/28/岁末有感/" class="post-title">
-        <h3>岁末有感</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/新年/">新年<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/随想/">随想</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>年终总结</p>
-        <div class="post-bottom">
-          <a href="/2019/01/28/岁末有感/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article class="post post-list-thumb" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/01/20/CCPC-Wannafly-winter-camp-day1/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202004%2F12%2F20200412224120_xphvg.thumb.400_0.gif">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-1-20 23:01</div>
-      <a href="/2019/01/20/CCPC-Wannafly-winter-camp-day1/" class="post-title">
-        <h3>CCPC Wannafly winter camp day1</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/camp/">camp<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/题解/">题解</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/01/20/CCPC-Wannafly-winter-camp-day1/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article class="post post-list-thumb post-list-thumb-left" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2018/12/05/Codeforces-Round-525-Div-2/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201606%2F24%2F20160624213626_xGFcH.thumb.1000_0.gif">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2018-12-5 21:12</div>
-      <a href="/2018/12/05/Codeforces-Round-525-Div-2/" class="post-title">
-        <h3>Codeforces Round #525 (Div. 2)</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/CF/">CF<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/题解/">题解</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2018/12/05/Codeforces-Round-525-Div-2/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article class="post post-list-thumb" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2018/12/04/图灵杯总结/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F8162183744%2F0.jpg&amp;refer=http%3A%2F%2Finews.gtimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645234401&amp;t=8d6ed099d4da99337b62a3dcafcf3fa1">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2018-12-4 17:12</div>
-      <a href="/2018/12/04/图灵杯总结/" class="post-title">
-        <h3>图灵杯总结</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/比赛总结/">比赛总结<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/生活/">生活</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>待到秋来九月八，我花开后百花杀</p>
-        <div class="post-bottom">
-          <a href="/2018/12/04/图灵杯总结/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!-- 
-      <nav class="navigator">
-        
-        <a class="extend prev" rel="prev" href="/page/3/"><i class="iconfont icon-back"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-      </nav>
-     -->
-  </div>
-  
+        <hr>
+        <p><i class="iconfont icon-write"></i>小蠢货</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

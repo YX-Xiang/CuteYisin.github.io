@@ -410,7 +410,7 @@
         
         <div class="entry-content">
           <p>很少单独写一道题的题解，但是这题的解题方法是比较惊艳到我的。</p>
-<p>此题可以作为leetcode常出题“山脉数组”的延伸。之前貌似也遇到过相似题目，无法得解，现在了却了之前不会的遗憾。</p>
+<p>此题可以作为leetcode常出题“山脉数组”的延伸。之前貌似也遇到过相似题目，无法得解，现在了却了之前不会的遗憾。<br><a id="more"></a></p>
 <h1 id="Codeforces-1313C2-Skyscrapers"><a href="#Codeforces-1313C2-Skyscrapers" class="headerlink" title="Codeforces 1313C2 - Skyscrapers"></a>Codeforces 1313C2 - Skyscrapers</h1><p>单调栈是我在lertcode做题过程中经常出现的名词，但在竞赛过程中一直不得见，直到寒假camp讲到此类应用。</p>
 <p>这道题的实质是给出一串数组，让你把他变成山脉数组（可以理解为中间有一个最高元素，依次向两旁越来越低，形似山脉）且各元素相加和最大。</p>
 <p>o(n^2)比较常规的处理方法就是枚举出这个最高元素，从而按照规则处理，比较出最大值。但是题目中n的范围是50000，因此这个复杂度最高为O(nlogn)。而使用单调栈处理，这个复杂度基本达到o(n)，且不可能被卡常。</p>
